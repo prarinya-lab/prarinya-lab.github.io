@@ -1,0 +1,26 @@
+{
+  "publications": [
+    {
+      "year": "2025",
+      "entries": [
+        {
+          "title": "Example Publication Title",
+          "authors": ["Author 1", "Author 2"],
+          "journal": "Journal Name",
+          "volume": "1",
+          "issue": "1",
+          "pages": "1-10",
+          "doi": "10.1234/example"
+        }
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "title": "Example Grant",
+      "agency": "Funding Agency",
+      "period": "2024-2025",
+      "amount": "¥1,000,000"
+    }
+  ]
+}

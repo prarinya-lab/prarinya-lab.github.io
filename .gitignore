@@ -1,0 +1,8 @@
+# Private data
+private/
+.env
+
+# Added exclusions
+.DS_Store
+node_modules/
+dist/
