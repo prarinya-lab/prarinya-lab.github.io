@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Prarinya Lab</title>
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <style>
+        .research-archive {
+            max-width: 1000px;
+            margin: 80px auto 2em;
+            padding: 2em;
+        }
+
+        .page-title {
+            margin-bottom: 2em;
+            color: var(--text-dark);
+        }
+
+        .page-title h1 {
+            font-size: 2em;
+            margin-bottom: 0.3em;
+        }
+
+        .year-divider {
+            font-size: 1.5em;
+            color: var(--text-dark);
+            margin: 2em 0 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .publications, .grants {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .publications li, .grants li {
+            background: var(--background);
+            padding: 1.5em;
+            border-radius: 8px;
+            border: 1px solid rgba(45, 90, 39, 0.1);
+            margin-bottom: 1.5em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .publications li:hover, .grants li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 90, 39, 0.1);
+        }
+
+        .pub-index, .grant-index {
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .pub-authors, .grant-pi {
+            color: var(--primary);
+            font-size: 0.95em;
+            margin-bottom: 0.5em;
+        }
+
+        .pub-title, .grant-title {
+            font-size: 1.1em;
+            color: var(--text-dark);
+            margin-bottom: 0.8em;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .pub-venue, .grant-details {
+            color: var(--text-light);
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .grant-amount {
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 0.5em;
+        }
+
+        .grant-period {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-top: 0.3em;
+        }
+
+        .jp, .en {
+            font-size: 0.95em;
+        }
+
+        @media screen and (max-width: 768px) {
+            .research-archive {
+                padding: 1.5em;
+            }
+
+            .publications li, .grants li {
+                padding: 1.2em;
+            }
+
+            .pub-title, .grant-title {
+                font-size: 1em;
+            }
+
+            .pub-index, .grant-index {
+                left: 10px;
+                top: 10px;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Prarinya Lab</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Research</h1>
+            <p class="subtitle">Exploring the frontiers of AI, Computer Vision, and Human-Centric Computing</p>
+        </div>
+    </section>
+
+    <!-- Research Archive -->
+    <section class="research-archive">
+        <div class="page-title">
+            <h1>Research Publications</h1>
+        </div>
+
+        <section id="publications">
+            <div class="container">
+                <h2>Publications</h2>
+                
+                <div class="publication-section">
+                    <h3>Journal Papers</h3>
+                    <div class="publication-item">
+                        <span class="pub-index">1</span>
+                        <span class="pub-type journal">2025</span>
+                        <p class="authors">Win Shwe Sin Khine, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Complex Emotion Estimation using Analysis-by-Synthesis of Facial Expression Images"</p>
+                        <p class="venue">IEEE Access (Q1, IF3.4, SJR0.96)</p>
+                        <p class="note">to be published</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">2</span>
+                        <span class="pub-type journal">2024</span>
+                        <p class="authors">Palakorn Kamnounsing, Karin Sumongkayothin, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Adversarial Halftone QR Code"</p>
+                        <p class="venue">IEEE Access, vol. 12, pp. 126729-126737 (Q1, IF3.4, SJR0.96)</p>
+                        <p class="doi">DOI: 10.1109/ACCESS.2024.3405408</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">3</span>
+                        <span class="pub-type journal">2024</span>
+                        <p class="authors">Thanyamon Pattanapisont, Kazunori Kotani, Prarinya Siritanawan, Toshiaki Kondo, Jessada Karnjana</p>
+                        <p class="title">"Multi-View Gait Analysis by Temporal Geometric Features of Human Body Parts"</p>
+                        <p class="venue">Journal of Imaging, 10(4):88 (Q2, IF3.2, SJR0.73)</p>
+                        <p class="doi">DOI: 10.3390/jimaging10040088</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">4</span>
+                        <span class="pub-type journal">2023</span>
+                        <p class="authors">Jing Liao, Jiro Sakamoto, Kouichi Misaki, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Prediction of post-embolization recurrence in internal carotid-posterior communicating aneurysms with Vel-PointNet"</p>
+                        <p class="venue">Journal of Biomechanical Science and Engineering, 18(2), 22-00471 (Q4, IF0.48, SJR0.18)</p>
+                        <p class="doi">DOI: 10.1299/jbse.22-00471</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">5</span>
+                        <span class="pub-type journal">2023</span>
+                        <p class="authors">Win Shwe Sin Khine, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Compound facial expressions image generation for complex emotions"</p>
+                        <p class="venue">Multimedia Tools and Applications, 82(8), pp. 11549–11588 (Q1, IF3.0, SJR0.72)</p>
+                        <p class="doi">DOI: 10.1007/s11042-022-14289-7</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">6</span>
+                        <span class="pub-type journal">2022</span>
+                        <p class="authors">Satoru Tomita, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"In-Line Mura Detection Using Machine Learning and Subspace Method in Display Manufacturing"</p>
+                        <p class="venue">Journal of the Society for Information Display, 30(12), pp. 915–930 (Q2, IF1.7, SJR0.6)</p>
+                        <p class="doi">DOI: 10.1002/jsid.1180</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">7</span>
+                        <span class="pub-type journal">2022</span>
+                        <p class="authors">Aran Chindaudom, Prarinya Siritanawan, Karin Sumongkayothin, Kazunori Kotani</p>
+                        <p class="title">"Surreptitious Adversarial Examples through Functioning QR Code"</p>
+                        <p class="venue">Journal of Imaging, 8(5), 122 (Q2, IF2.7, SJR0.73)</p>
+                        <p class="doi">DOI: 10.3390/jimaging8050122</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">8</span>
+                        <span class="pub-type journal">2020</span>
+                        <p class="authors">Minh Tri Nguyen, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Saliency detection in human crowd images of different density levels using attention mechanism"</p>
+                        <p class="venue">Signal Processing: Image Communication, Vol. 88, 115976 (Q1, IF3.4, SJR0.54)</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">9</span>
+                        <span class="pub-type journal">2020</span>
+                        <p class="authors">Kay thwe Min Han, Kazunori Kotani, Prarinya Siritanawan, Waree Kongprawechnon, Chanjira Sinthanayothin</p>
+                        <p class="title">"Analysis of power transmission through IOL with glistenings and whitenings by T-Matrix"</p>
+                        <p class="venue">Journal of Quantitative Spectroscopy and Radiative Transfer, Vol. 253 (Q1, IF2.3, SJR0.81)</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">10</span>
+                        <span class="pub-type journal">2019</span>
+                        <p class="authors">Chule Yang, Danwei Wang, Yijie Zeng, Yufeng Yue, Prarinya Siritanawan</p>
+                        <p class="title">"Knowledge-Based Multimodal Information Fusion for Role Recognition and Situation Assessment by Using Mobile Robot"</p>
+                        <p class="venue">Information Fusion, Vol. 50, pp. 126-138 (Q1, IF14.7, SJR2.78)</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">11</span>
+                        <span class="pub-type journal">2015</span>
+                        <p class="authors">Prarinya Siritanawan, Kazunori Kotani, Fan Chen</p>
+                        <p class="title">"Cumulative Differential Gabor Features for Facial expression classification"</p>
+                        <p class="venue">International Journal of Semantic Computing, Vol. 9, No. 2, pp. 193-213 (Q2, IF0.8, SJR0.24)</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">12</span>
+                        <span class="pub-type journal">2012</span>
+                        <p class="authors">Prarinya Siritanawan, Toshiaki Kondo, Kanokvate Tungpimolrut, Itsuo Kumazawa</p>
+                        <p class="title">"Hamming distance based visual tracking in image sequences"</p>
+                        <p class="venue">Thammasat International Journal of Science and Technology, Vol. 17, No. 2, pp. 27-40 (Q3, IF0.5)</p>
+                    </div>
+                </div>
+
+                <div class="publication-section">
+                    <h3>International Conference Papers</h3>
+                    <div class="publication-item">
+                        <span class="pub-index">1</span>
+                        <span class="pub-type conference">2025</span>
+                        <p class="authors">Satida Ruengsurat, Jaimai Eawsivigoon, Vidchaphol Sookplang, Karin Sumongkayothin, Prarinya Siritanawan, Razvan Beuran, Kazunori Kotani</p>
+                        <p class="title">"Human-in-the-loop for Machine Learning in Offensive Cybersecurity"</p>
+                        <p class="venue">International Conference on Artificial Intelligence in Information and Communication (ICAIIC), Fukuoka, Japan, February 2025</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">2</span>
+                        <span class="pub-type conference">2025</span>
+                        <p class="authors">Prarinya Siritanawan, Kasidit Chunhachatchawhankhun, Kazunori Kotani</p>
+                        <p class="title">"Image integrity analysis under defense approaches against adversarial patches"</p>
+                        <p class="venue">International Workshop on Advanced Imaging Technology (IWAIT2025), Douliu, Taiwan, January 2025</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">3</span>
+                        <span class="pub-type conference">2024</span>
+                        <p class="authors">Kazuki Sugita, Wen Gu, Koichi Ota, Prarinya Siritanawan, Shinobu Hasegawa</p>
+                        <p class="title">"A Proposal for a Quantitative Evaluation Model for Error Image Generation in L2 Vocabulary Learning"</p>
+                        <p class="venue">International Conference on Computers in Education (ICCE2024), November 2024</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">4</span>
+                        <span class="pub-type conference">2024</span>
+                        <p class="authors">Yoshiko Furusho, Kazunori Kotani, Prarinya Siritanawan</p>
+                        <p class="title">"Guiding Art Education with AI: Predicting Subjective Evaluations and Generating Feedback for Pencil Still Life Drawing"</p>
+                        <p class="venue">5th International Conference on Artificial Intelligence in Education Technology (AIET 2024), Barcelona, Spain, July 2024</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">5</span>
+                        <span class="pub-type conference">2024</span>
+                        <p class="authors">Junko Izawa, Kouki Matsuoka, Prarinya Siritanawan, Shinji Fukusawa</p>
+                        <p class="title">"A method of Vital Capacity Measurement using Three-Dimensional Depth Sensor"</p>
+                        <p class="venue">39th International Technical Conference on Circuits/Systems, Computers, and Communications (ITC-CSCC 2024), Okinawa, Japan, July 2024</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">6</span>
+                        <span class="pub-type conference">2024</span>
+                        <p class="authors">Punyawat Jaroensiripong, Karin Sumongkayothin, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Cybersecurity Intrusion Detection with Image Classification Model Using Hilbert Curve"</p>
+                        <p class="venue">19th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications (VISAPP), Rome, Italy, February 2024</p>
+                        <p class="note">Rank B, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">7</span>
+                        <span class="pub-type conference">2024</span>
+                        <p class="authors">Thanawat Tejapijaya, Prarinya Siritanawan, Karin Sumongkayothin, Kazunori Kotani</p>
+                        <p class="title">"Botnet Detection by Integrating Multiple Machine Learning Models"</p>
+                        <p class="venue">10th International Conference on Information Systems Security and Privacy, Rome, Italy, February 2024</p>
+                        <p class="note">Rank C, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">8</span>
+                        <span class="pub-type conference">2023</span>
+                        <p class="authors">Thanyamon Pattanapisont, Prarinya Siritanawan, Kazunori Kotani, Toshiaki Kondo, Jessada Karnjana</p>
+                        <p class="title">"Gait Image Analysis Based on Human Body Parts Model"</p>
+                        <p class="venue">IEEE International Conference on Agents (ICA), Kyoto, Japan, December 2023</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">9</span>
+                        <span class="pub-type conference">2023</span>
+                        <p class="authors">Prarinya Siritanawan, Haruyuki Kojima, Kazunori Kotani</p>
+                        <p class="title">"Exploring the Cultural Gaps in Facial Expression Recognition Systems by Visual Features"</p>
+                        <p class="venue">IEEE TENCON2023, Chiang Mai, Thailand, October 2023</p>
+                        <p class="note">Rank C, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">10</span>
+                        <span class="pub-type conference">2023</span>
+                        <p class="authors">Aran Chinaudom, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Exploring the Impact of Frequency Components on Adversarial Patch Attacks against an Image Classifier Model"</p>
+                        <p class="venue">IEEE TENCON2023, Chiang Mai, Thailand, October 2023</p>
+                        <p class="note">Rank C, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">11</span>
+                        <span class="pub-type conference">2023</span>
+                        <p class="authors">Prarinya Siritanawan, Attawit Chaiyaroj, Poraneepan Tantawanich, Kittikhun Sirinaksomboon, Kazunori Kotani</p>
+                        <p class="title">"Facial Expression Analysis Interpreting Emotion in Multicultural Settings"</p>
+                        <p class="venue">Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE2023), Mie, Japan, September 2023</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">12</span>
+                        <span class="pub-type conference">2022</span>
+                        <p class="authors">Win Shwe Sin Khine, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Facial Expression Features Analysis with Transfer Learning"</p>
+                        <p class="venue">14th International Conference on Knowledge and Systems Engineering (KSE2022), Nha Trang, Vietnam, October 2022</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">13</span>
+                        <span class="pub-type conference">2022</span>
+                        <p class="authors">Win Shwe Sin Khine, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Disentangled Facial Expressions Editing in Trained Latent Space"</p>
+                        <p class="venue">IEEE International Conference on Systems, Man, and Cybernetics (SMC), Prague, Czech Republic, October 2022</p>
+                        <p class="note">Rank B, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">14</span>
+                        <span class="pub-type conference">2022</span>
+                        <p class="authors">Satoru Tomita, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"In-Line Mura Detection using Convolutional Neural Network in Display Manufacturing"</p>
+                        <p class="venue">SID Symposium Digest of Technical Papers, 53: 963-966, June 2022</p>
+                        <p class="doi">DOI: 10.1002/sdtp.15656</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">15</span>
+                        <span class="pub-type conference">2021</span>
+                        <p class="authors">Keigo Hama, Prarinya Siritanawan, Kotani Kazunori</p>
+                        <p class="title">"Synthesis of Localized Flooding Disaster Scenes using Conditional Generative Adversarial Network"</p>
+                        <p class="venue">IEEE Region 10 Conference (TENCON2021), Auckland, New Zealand (Online), December 2021</p>
+                        <p class="note">Rank C, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">16</span>
+                        <span class="pub-type conference">2021</span>
+                        <p class="authors">Sila Temsiririrkkul, Prarinya Siritanawan, Rungravi Temsiririrkkul</p>
+                        <p class="title">"Which one is Kaphrao? Identify Thai Herbs with Similar Leaf Structure using Transfer Learning of Deep Convolutional Neural Networks"</p>
+                        <p class="venue">IEEE Region 10 Conference (TENCON2021), Auckland, New Zealand (Online), December 2021</p>
+                        <p class="note">Rank C, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">17</span>
+                        <span class="pub-type conference">2021</span>
+                        <p class="authors">Kasidit Chunhachatchawhankhun, Prarinya Siritanawan, Karin Sumongkayothin, Kazunori Kotani</p>
+                        <p class="title">"Investigating Protection of Deep Learning Visual Features on ECB Encrypted Images"</p>
+                        <p class="venue">13th International Conference on Knowledge and Systems Engineering (KSE2021), Bangkok Thailand (Online), November 2021</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">18</span>
+                        <span class="pub-type conference">2021</span>
+                        <p class="authors">Prarinya Siritanawan, Hideki Ichikawa, Kazunori Kotani</p>
+                        <p class="title">"Facial Age Progression using Conditional Generative Adversarial Network with Heritable Visual Features"</p>
+                        <p class="venue">IEEE International Conference on Systems, Man, and Cybernetics (SMC), Melbourne, Australia (Online), October 2021</p>
+                        <p class="note">Rank B, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">19</span>
+                        <span class="pub-type conference">2021</span>
+                        <p class="authors">Ray Tamaru, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Interaction Aware Relational Representations for Video Prediction"</p>
+                        <p class="venue">IEEE International Conference on Systems, Man, and Cybernetics (SMC), Melbourne, Australia (Online), October 2021</p>
+                        <p class="note">Rank B, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">20</span>
+                        <span class="pub-type conference">2021</span>
+                        <p class="authors">Win Shwe Sin Khine, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Automatic Peak Frame Selection from Dynamic Facial Expressions"</p>
+                        <p class="venue">60th Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE2021), Tokyo, Japan (Online), September 2021</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">21</span>
+                        <span class="pub-type conference">2021</span>
+                        <p class="authors">Win Shwe Sin Khine, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Wasserstein Based EmoGANs+"</p>
+                        <p class="venue">International Conference on Imaging, Vision & Pattern Recognition (IVPR), Fukuoka, Japan (Online), August 2021</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">22</span>
+                        <span class="pub-type conference">2020</span>
+                        <p class="authors">Aran Chindaudom, Pongpeera Sukasem, Poomdharm Benjasirimonkol, Karin Sumonkayothin, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"AdversarialQR Revisited: Improving the Adversarial Efficacy"</p>
+                        <p class="venue">27th International Conference on Neural Information Processing (ICONIP2020), Bangkok, Thailand (Online), pp. 799-806, November 2020</p>
+                        <p class="note">Rank A, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">23</span>
+                        <span class="pub-type conference">2020</span>
+                        <p class="authors">Kodai Kitamura, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Recognition and Analysis of Dynamic Smile Expression using QRNN on image sequences"</p>
+                        <p class="venue">59th Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE2020), Chiang Mai, Thailand (Online), pp. 378-381, September 2020</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">24</span>
+                        <span class="pub-type conference">2020</span>
+                        <p class="authors">Naoki Kataoka, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Integrating Human Visual Perception in Scene Understanding by Saliency Visual SLAM"</p>
+                        <p class="venue">59th Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE2020), pp. 916-923, Chiang Mai, Thailand (Online), September 2020</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">25</span>
+                        <span class="pub-type conference">2020</span>
+                        <p class="authors">Win Shwe Sin Khine, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Generation of Compound Emotions Expressions with Emotion Generative Adversarial Networks (EmoGANs)"</p>
+                        <p class="venue">59th Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE2020), pp. 748-755, September 2020</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">26</span>
+                        <span class="pub-type conference">2020</span>
+                        <p class="authors">Aran Chindaudom, Prarinya Siritanawan, Karin Sumongkayothin, Kazunori Kotani</p>
+                        <p class="title">"AdversarialQR: An adversarial patch in QR code format"</p>
+                        <p class="venue">International Conference on Imaging, Vision & Pattern Recognition (IVPR), Fukuoka, Japan (Online), August 2020</p>
+                        <p class="note">Finalist for the best paper award</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">27</span>
+                        <span class="pub-type conference">2019</span>
+                        <p class="authors">Kay Thwe Min Han, Kazunori Kotani, Prarinya Siritanawan, Waree Kongprawechnon, Chanjira Sinthanayothin</p>
+                        <p class="title">"Simulation of Multiple Light Scattering in Intraocular lens with glistenings by T-Matrix"</p>
+                        <p class="venue">International Conference on Advanced Information Technologies (ICAIT), pp.126-131, Yangon, Myanmar, November 2019</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">28</span>
+                        <span class="pub-type conference">2019</span>
+                        <p class="authors">Nam Nguyen, Tung Nguyen, Khang Tran, Tam Luong, Duy Nguyen, Nguyen Vuong, Prarinya Siritanawan, Nha Tran, Loan Nguyen, Kazunori Kotani, Hung Nguyen, Long Huynh, Huan Ho</p>
+                        <p class="title">"A Spontaneous Visible and Thermal Facial Expression of Human Emotion Database"</p>
+                        <p class="venue">6th NAFOSTED Conference on Information and Computer Science (NICS), pp. 569-574, Hanoi, Vietnam, November 2019</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">29</span>
+                        <span class="pub-type conference">2019</span>
+                        <p class="authors">Minh Tu Nguyen, Quoc Khanh Nguyen, Kazunori Kotani, Prarinya Siritanawan</p>
+                        <p class="title">"Towards recognizing facial expressions at deeper level: Discriminating genuine and fake smiles from a sequence of images"</p>
+                        <p class="venue">6th NAFOSTED Conference on Information and Computer Science (NICS), pp. 387-392, Hanoi, Vietnam, November 2019</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">30</span>
+                        <span class="pub-type conference">2019</span>
+                        <p class="authors">Tri Minh Nguyen, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Saliency Map Extraction in Human Crowd RGB Data"</p>
+                        <p class="venue">58th Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE2019), pp. 941-946, Hiroshima, Japan, September 2019</p>
+                        <p class="note">Best Poster Award</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">31</span>
+                        <span class="pub-type conference">2018</span>
+                        <p class="authors">Jun Zhang, Prarinya Siritanawan, Yufeng Yue, Chule Yang, Mingxing Wen, Danwei Wang</p>
+                        <p class="title">"A Two-step Method for Extrinsic Calibration between a Sparse 3D Lidar and a Thermal Camera"</p>
+                        <p class="venue">International Conference on Control, Automation, Robotics and Vision (ICARCV), pp. 1039-1044, Singapore, November 2018</p>
+                        <p class="note">Rank A, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">32</span>
+                        <span class="pub-type conference">2017</span>
+                        <p class="authors">Chule Yang, Yijie Zeng, Yufeng Yue, Prarinya Siritanawan, Jun Zhang, Danwei Wang</p>
+                        <p class="title">"Knowledge-Based Role Recognition by Using Human-Object Interaction and Spatio-Temporal Analysis"</p>
+                        <p class="venue">IEEE International Conference on Robotics and Biomimetics (ROBIO), pp. 159-164, Macau, December 2017</p>
+                        <p class="note">Rank B1, Qualis | Finalist for the best paper award</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">33</span>
+                        <span class="pub-type conference">2017</span>
+                        <p class="authors">Prarinya Siritanawan, Moratuwage Diluka Prasanjith, Danwei Wang</p>
+                        <p class="title">"3D Feature Points Detection on Sparse and Non-uniform Pointcloud for SLAM"</p>
+                        <p class="venue">International Conference on Advanced Robotics (ICAR), pp. 112-117, Hong Kong, July 2017</p>
+                        <p class="note">Rank B2, Qualis</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">34</span>
+                        <span class="pub-type conference">2016</span>
+                        <p class="authors">Chule Yang, Danwei Wang, Prarinya Siritanawan</p>
+                        <p class="title">"Organ-Based Facial Verification Using Thermal Camera"</p>
+                        <p class="venue">IEEE International Symposium on Multimedia (ISM), pp. 321-324, San Jose, CA, December 2016</p>
+                        <p class="note">Rank C, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">35</span>
+                        <span class="pub-type conference">2015</span>
+                        <p class="authors">Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Facial action units detection by robust temporal features"</p>
+                        <p class="venue">International Conference on Soft Computing and Pattern Recognition (SoCPaR), pp. 161-168, Fukuoka, Japan, November 2015</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">36</span>
+                        <span class="pub-type conference">2014</span>
+                        <p class="authors">Prarinya Siritanawan, Kazunori Kotani, Fan Chen</p>
+                        <p class="title">"Independent subspace of dynamic Gabor features for facial expression classification"</p>
+                        <p class="venue">IEEE International Symposium on Multimedia (ISM), pp. 47-54, Taichung, Taiwan, December 2014</p>
+                        <p class="note">Rank C, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">37</span>
+                        <span class="pub-type conference">2014</span>
+                        <p class="authors">Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Facial expression classification by temporal template features"</p>
+                        <p class="venue">SICE Annual Conference (SICE), pp.604-609, Sapporo, Japan, September 2014</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">38</span>
+                        <span class="pub-type conference">2012</span>
+                        <p class="authors">Prarinya Siritanawan, Toshiaki Kondo, Kanokvate Tungpimolrut, Itsuo Kumazawa</p>
+                        <p class="title">"A visual tracking method using the Hamming distance"</p>
+                        <p class="venue">International Conference on Information and Communication Technology for Embedded System 3rd, Bangkok, Thailand, March 2012</p>
+                        <p class="note">Best paper</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">39</span>
+                        <span class="pub-type conference">2012</span>
+                        <p class="authors">Prarinya Siritanawan, Toshiaki Kondo</p>
+                        <p class="title">"Hamming Distance based Gradient Orientation Pattern Matching"</p>
+                        <p class="venue">International Symposium of Artificial life and Robotics 17th, Oita, Japan, January 2012</p>
+                        <p class="note">Rank C, CORE</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">40</span>
+                        <span class="pub-type conference">2010</span>
+                        <p class="authors">Wattanit Hotrakool, Prarinya Siritanawan, Toshiaki Kondo</p>
+                        <p class="title">"A Real-time Eye-tracking Method using Time-varying Gradient Orientation Patterns"</p>
+                        <p class="venue">International Conference on Electrical Engineering/Electronics, Computer, Telecommunications, and Information Technology (ECTI-CON), Chiang Mai, Thailand, May 2010</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">41</span>
+                        <span class="pub-type conference">2010</span>
+                        <p class="authors">Wattanit Hotrakool, Prarinya Siritanawan, Toshiaki Kondo</p>
+                        <p class="title">"Real-time Gradient Orientation Pattern Matching"</p>
+                        <p class="venue">International Conference on Embedded System and information Technology, pp. 492-496, Chiang Mai, Thailand, January 2010</p>
+                    </div>
+                </div>
+
+                <div class="publication-section">
+                    <h3>Domestic Conference Papers</h3>
+                    <div class="publication-item">
+                        <span class="pub-index">1</span>
+                        <span class="pub-type domestic">2024</span>
+                        <p class="authors">真嘉比浩乃，杉田一樹，太田光一，谷　文，シリタナワン パーリンヤ，長谷川　忍</p>
+                        <p class="title">小学生のペアプログラミング学習における話し合い支援手法の提案</p>
+                        <p class="venue">教育工学研究会（ET）, 2024年10月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">2</span>
+                        <span class="pub-type domestic">2024</span>
+                        <p class="authors">Kasidit Chunhachatchawhankhun, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Redefining Adversarial Patch Defense: Exploring Partial Patch Masking Approaches"</p>
+                        <p class="venue">画像電子学会 第307回研究会, 2024年2月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">3</span>
+                        <span class="pub-type domestic">2024</span>
+                        <p class="authors">Thanyamon Pattanapisont, Kazunori Kotani, Prarinya Siritanawan</p>
+                        <p class="title">"Gait image analysis by the voting method on the body parts feature"</p>
+                        <p class="venue">画像電子学会 第307回研究会, 2024年2月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">4</span>
+                        <span class="pub-type domestic">2024</span>
+                        <p class="authors">井上翔, Prarinya Siritanawan, 小谷一孔, 井澤純子</p>
+                        <p class="title">超音波断層画像を用いたオプティカルフロー解析による心不全推定</p>
+                        <p class="venue">画像電子学会 第307回研究会, 2024年2月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">5</span>
+                        <span class="pub-type domestic">2023</span>
+                        <p class="authors">Thanyamon Pattanapisont, Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Gait Recognition by the Voting Method on Temporal Geometric Features of Human Body Parts"</p>
+                        <p class="venue">2023年映像メディア処理シンポジウム（PCSJ/IMPS2023), 2023年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">6</span>
+                        <span class="pub-type domestic">2023</span>
+                        <p class="authors">井上翔，Siritanawan Prarinya，小谷一孔</p>
+                        <p class="title">超音波断層画像を用いた動態特性に基づく心不全の推定</p>
+                        <p class="venue">2023年映像メディア処理シンポジウム（PCSJ/IMPS2023), 2023年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">7</span>
+                        <span class="pub-type domestic">2020</span>
+                        <p class="authors">藤原 秀平，Siritanawan Prarinya，小谷 一孔</p>
+                        <p class="title">顔表情識別器を用いた非同調反応がもたらす人とロボットのインタラクション特性の解析</p>
+                        <p class="venue">インタラクション, 2020年03月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">8</span>
+                        <span class="pub-type domestic">2020</span>
+                        <p class="authors">尾風仁, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">手書き文字により想起される表出感情の解析</p>
+                        <p class="venue">画像工学研究会 (IE), 2020年03月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">9</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">宇佐見浩之, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">複数のロボットと人との感情インタラクション特性に関する研究</p>
+                        <p class="venue">ヒューマンインフォメーション研究会（HI2018）, 2018年12月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">10</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">北村昂大, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">QRNNを用いた顔動画像解析による笑顔表情特性の解析と識別に関する研究</p>
+                        <p class="venue">ヒューマンインフォメーション研究会（HI2018）, 2018年12月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">11</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">相澤成樹, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">3D画像から受けるポジティブな印象と画像特徴量との関係の解析</p>
+                        <p class="venue">2018年映像メディア処理シンポジウム（PCSJ/IMPS2018), 2018年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">12</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">北村昂大, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">深層学習を用いた動画像解析による偽の笑顔表情の検出</p>
+                        <p class="venue">2018年映像メディア処理シンポジウム（PCSJ/IMPS2018）, 2018年11月</p>
+                        <p class="note">ベストポスター賞</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">13</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">藤巻ありさ, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">イラスト作成におけるラフスケッチ上の線群からの主線の自動抽出に関する研究</p>
+                        <p class="venue">2018年映像メディア処理シンポジウム（PCSJ/IMPS2018）, 2018年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">14</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">新谷侑, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">モルフォロジカルパターンスペクトルを用いた飛行する野鳥の品種識別と個体数カウントに関する研究</p>
+                        <p class="venue">2018年映像メディア処理シンポジウム（PCSJ/IMPS2018）, 2018年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">15</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">伊藤未彩希, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">歩行者の視線動作のモデル化と特性解析に関する研究</p>
+                        <p class="venue">2018年映像メディア処理シンポジウム（PCSJ/IMPS2018）, 2018年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">16</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">宇佐見浩之, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">場の空気を創るロボットの実現と人の感情への効果の解析に関する研究</p>
+                        <p class="venue">2018年映像メディア処理シンポジウム（PCSJ/IMPS2018）, 2018年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">17</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">伊藤壮汰, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">画像中のオブジェクトの動きによる人の心理特性への効果に関する研究</p>
+                        <p class="venue">2018年映像メディア処理シンポジウム（PCSJ/IMPS2018）, 2018年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">18</span>
+                        <span class="pub-type domestic">2018</span>
+                        <p class="authors">石軍, 小谷一孔, Siritanawan Prarinya</p>
+                        <p class="title">"The Synthesis of Chinese Realistic Paintings"</p>
+                        <p class="venue">2018年映像メディア処理シンポジウム（PCSJ/IMPS2018), 2018年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">19</span>
+                        <span class="pub-type domestic">2015</span>
+                        <p class="authors">Prarinya Siritanawan, Kazunori Kotani</p>
+                        <p class="title">"Estimating dimensional emotion parameters from facial image features"</p>
+                        <p class="venue">2015年映像メディア処理シンポジウム (PCSJ/IMPS2015), 2015年11月</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">20</span>
+                        <span class="pub-type domestic">2014</span>
+                        <p class="authors">Prarinya Siritanawan, Bao Tu Ho, Kazunori Kotani</p>
+                        <p class="title">"Unsupervised learning from facial expression by Latent Dirichlet Allocation"</p>
+                        <p class="venue">IEICE Technical Report, BioX2014-37, 2014</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="pub-index">21</span>
+                        <span class="pub-type domestic">2013</span>
+                        <p class="authors">Prarinya Siritanawan, Kazunori Kotani, Fan Chen</p>
+                        <p class="title">"Feature extraction method for facial expression classification using cumulative change of 2D and 3D image sequences"</p>
+                        <p class="venue">2013年映像メディア処理シンポジウム (PCSJ/IMPS2013), 2013年11月</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-title">
+            <h1>Grants & Funding</h1>
+        </div>
+
+        <ul class="grants">
+            <li data-grant-id="G2024-01">
+                <span class="grant-index">G1</span>
+                <div class="grant-pi">Principal Investigator: Prarinya Siritanawan</div>
+                <div class="grant-title">
+                    <div class="jp">北陸先端科学技術大学院大学，令和６年度　萌芽的研究支援, 研究拠点形成支援事業，最新の機械学習・画像解析システムにおける敵対的攻撃に対する防御</div>
+                    <div class="en">FY2024 JAIST Research Grant (Fundamental Research), Secured AI: Defending Against Adversarial Attacks in Modern Machine Learning and Image Analysis Systems</div>
+                </div>
+                <div class="grant-members">Prarinya Siritanawan (PI), Razvan Flori Beuran, Karin Sumongkayothin</div>
+                <div class="grant-details">JAIST Research Grant (Fundamental Research)</div>
+                <div class="grant-amount">¥400,000</div>
+                <div class="grant-period">FY2024 (Project terminated due to change of employment)</div>
+            </li>
+            <li data-grant-id="G2024-02">
+                <span class="grant-index">G2</span>
+                <div class="grant-pi">Principal Investigator: Natthawut Kertkeidkachorn</div>
+                <div class="grant-title">
+                    <div class="jp">北陸先端科学技術大学院大学，令和６年度　先端研究拠点形成支援（JAISTサイエンスハブ構築支援），研究拠点形成支援事業</div>
+                    <div class="en">FY2024 JAIST Research Grant, Grant for the establishment of an advanced research base (JAIST Science Hub)</div>
+                </div>
+                <div class="grant-subtitle">JAIST-Thailand Science Hub: Establishing Next Generation Generative AI and Beyond</div>
+                <div class="grant-members">Natthawut Kertkeidkachorn (PI), Toshiaki Aoki, Shinobu Hasegawa, Kiyoaki Shirai, Racharak Teeradaj, Siritanawan Prarinya, Proadpran Punyabukkana, Dittaya Wanvarie, Narit Hnoohom, Thanapon Noraset, Apichon Witayangkurn, Akkharawoot Takhom</div>
+                <div class="grant-details">JAIST Research Grant (JAIST Science Hub)</div>
+                <div class="grant-amount">¥1,200,000</div>
+                <div class="grant-period">FY2024</div>
+            </li>
+            <li data-grant-id="G2023-01">
+                <span class="grant-index">G3</span>
+                <div class="grant-pi">Principal Investigator: Prarinya Siritanawan</div>
+                <div class="grant-title">
+                    <div class="jp">科研費（若手）, 画像情報処理による国境を越えた感情表現の解析</div>
+                    <div class="en">JSPS Grant-in-Aid for Scientific Research (Early-Career-Scientists), Analysis of Emotional Expressions Beyond Borders using Image Information Processing</div>
+                </div>
+                <div class="grant-details">JSPS Grant-in-Aid for Scientific Research (Early-Career-Scientists)</div>
+                <div class="grant-amount">¥3,500,000</div>
+                <div class="grant-period">FY2023-2026</div>
+            </li>
+            <li data-grant-id="G2023-02">
+                <span class="grant-index">G4</span>
+                <div class="grant-pi">Principal Investigator: Junko Izawa</div>
+                <div class="grant-title">
+                    <div class="jp">科研費（基盤（C））, 非侵襲で在宅使用可能な呼吸機能診断支援システムのための基盤研究</div>
+                    <div class="en">JSPS Grant-in-Aid for Scientific Research (Fundamental Research C), Fundamental research for a non-invasive, home-use respiratory function diagnostic support system</div>
+                </div>
+                <div class="grant-members">Junko Izawa (PI), Prarinya Siritanawan, Shinji Fukasawa</div>
+                <div class="grant-details">JSPS Grant-in-Aid for Scientific Research (Fundamental Research C)</div>
+                <div class="grant-amount">¥3,600,000</div>
+                <div class="grant-period">FY2023-2026</div>
+            </li>
+            <li data-grant-id="G2023-03">
+                <span class="grant-index">G5</span>
+                <div class="grant-pi">Principal Investigator: Prarinya Siritanawan</div>
+                <div class="grant-title">
+                    <div class="jp">北陸先端科学技術大学院大学，令和5年度　萌芽的研究支援, 研究拠点形成支援事業, 画像認識における敵対的攻撃の画像特徴と防御策に関する研究</div>
+                    <div class="en">FY2023 JAIST Research Grant (Fundamental Research), Research on the Fundamental Visual Image Features of Adversarial Examples and the Defense Counterparts</div>
+                </div>
+                <div class="grant-members">Prarinya Siritanawan (PI), Kazunori Kotani</div>
+                <div class="grant-details">JAIST Research Grant (Fundamental Research)</div>
+                <div class="grant-amount">¥400,000</div>
+                <div class="grant-period">FY2023</div>
+            </li>
+            <li data-grant-id="G2022-01">
+                <span class="grant-index">G6</span>
+                <div class="grant-pi">Principal Investigator: Prarinya Siritanawan</div>
+                <div class="grant-title">
+                    <div class="jp">北陸先端科学技術大学院大学，令和４年度　萌芽的研究支援, 研究拠点形成支援事業, 多文化共生社会における異文化間感情表現認識</div>
+                    <div class="en">FY2022 JAIST Research Grant (Fundamental Research), Emotional Expression Analysis in a Multicultural Society</div>
+                </div>
+                <div class="grant-members">Prarinya Siritanawan (PI), Kazunori Kotani, Shinobu Hasegawa, Teeradaj Racharak, Haruyuki Kojima</div>
+                <div class="grant-details">JAIST Research Grant (Fundamental Research)</div>
+                <div class="grant-amount">¥340,000</div>
+                <div class="grant-period">FY2022</div>
+            </li>
+            <li data-grant-id="G2022-02">
+                <span class="grant-index">G7</span>
+                <div class="grant-pi">Principal Investigator: Haruyuki Kojima</div>
+                <div class="grant-title">
+                    <div class="jp">北陸先端科学技術大学院大学，令和３年度金沢大学と北陸先端科学技術大学院大学による「融合科学共同専攻」における分野融合型研究支援, 情動認知システム研究グループ</div>
+                    <div class="en">FY2022 support scheme of the Transdisciplinary program provided by Japan Advanced Institute of Science and Technology and Kanazawa University</div>
+                </div>
+                <div class="grant-members">Haruyuki Kojima, Prarinya Siritanawan</div>
+                <div class="grant-details">JAIST-KU Transdisciplinary Program</div>
+                <div class="grant-amount">¥500,000</div>
+                <div class="grant-period">FY2022</div>
+            </li>
+            <li data-grant-id="G2021-01">
+                <span class="grant-index">G8</span>
+                <div class="grant-title">
+                    <div class="jp">公益財団法人 情報科学国際交流財団 (IISF), 研究者海外派遣助成 (国際会議参加登録費)</div>
+                    <div class="en">Grant for Registration Fee for International Conferences, International Information Science Foundation</div>
+                </div>
+                <div class="grant-details">Grant No. 2021.1.2.161, International Information Science Foundation (IISF)</div>
+                <div class="grant-amount">¥40,000</div>
+                <div class="grant-period">FY2021</div>
+            </li>
+            <li data-grant-id="G2021-02">
+                <span class="grant-index">G9</span>
+                <div class="grant-pi">Principal Investigator: Haruyuki Kojima</div>
+                <div class="grant-title">
+                    <div class="jp">北陸先端科学技術大学院大学，令和３年度金沢大学と北陸先端科学技術大学院大学による「融合科学共同専攻」における分野融合型研究支援, 情動認知システム研究グループ</div>
+                    <div class="en">FY2021 support scheme of the Transdisciplinary program provided by Japan Advanced Institute of Science and Technology and Kanazawa University</div>
+                </div>
+                <div class="grant-members">Haruyuki Kojima, Prarinya Siritanawan</div>
+                <div class="grant-details">JAIST-KU Transdisciplinary Program</div>
+                <div class="grant-amount">¥500,000</div>
+                <div class="grant-period">FY2021</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="content">
+            <p>&copy; 2025 Prarinya Lab - Shinshu University. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // This will be used by the homepage to load specific publications
+        window.publications = {
+            getById: function(id) {
+                const item = document.querySelector(`[data-pub-id="${id}"]`);
+                return item ? item.innerHTML : null;
+            },
+            getLatestGrants: function(count = 3) {
+                const grants = Array.from(document.querySelectorAll('.grants li')).slice(0, count);
+                return grants.map(grant => grant.innerHTML);
+            }
+        };
+    </script>
+</body>
+</html>
