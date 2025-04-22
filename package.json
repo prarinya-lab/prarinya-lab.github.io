@@ -1,0 +1,11 @@
+{
+  "name": "prarinya-lab",
+  "version": "1.0.0",
+  "description": "Prarinya Lab Website",
+  "scripts": {
+    "start": "serve"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
