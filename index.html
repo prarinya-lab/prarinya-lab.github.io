@@ -6,6 +6,7 @@
     <title>Prarinya Lab - Shinshu University</title>
     <link rel="stylesheet" href="assets/css/main.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         .publications {
             list-style: none;
@@ -196,6 +197,198 @@
         .view-more-news a:hover {
             text-decoration: underline;
         }
+
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2em;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 90, 39, 0.05), rgba(44, 90, 39, 0.1));
+            padding: 4em 0 3em;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #2c5a27;
+            font-size: 2.6em;
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h2 {
+            color: #2c5a27;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 2.2em;
+            margin-bottom: 0.8em;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            color: #444;
+            margin: 0.2em 0;
+            line-height: 1.5;
+        }
+
+        .hero .subtitle:lang(ja) {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+        }
+
+        /* Research Highlights Section */
+        .research-highlights {
+            padding: 2.5em 0;
+            background: #fff;
+        }
+
+        .research-highlights h2 {
+            color: #2c5a27;
+            font-size: 1.8em;
+            margin-bottom: 1em;
+            text-align: center;
+            position: relative;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5em;
+            margin-top: 1em;
+        }
+
+        .highlight-item {
+            background: #f8f9fa;
+            padding: 1.5em;
+            border-radius: 8px;
+            border: 1px solid rgba(44, 90, 39, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .highlight-item h3 {
+            color: #2c5a27;
+            font-size: 1.2em;
+            margin-bottom: 0.7em;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .highlight-item p {
+            color: #666;
+            font-size: 0.92em;
+            line-height: 1.5;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 90, 39, 0.1);
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .highlight-grid {
+                grid-template-columns: 1fr;
+                gap: 1em;
+            }
+
+            .highlight-item {
+                padding: 1.2em;
+            }
+
+            .highlight-item h3 {
+                font-size: 1.1em;
+                margin-bottom: 0.5em;
+            }
+
+            .highlight-item p {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Latest News Section */
+        .latest-news {
+            padding: 2.5em 0;
+            background: #f8f9fa;
+        }
+
+        .latest-news h2 {
+            color: #2c5a27;
+            font-size: 1.8em;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        .news-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .news-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1em;
+            padding: 0.8em 0;
+            border-bottom: 1px solid rgba(44, 90, 39, 0.1);
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.9em;
+            min-width: 90px;
+        }
+
+        .news-content {
+            flex: 1;
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #444;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3em 1em 2em;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero h2 {
+                font-size: 1.6em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+                gap: 1em;
+            }
+
+            .highlight-item {
+                padding: 1.2em;
+            }
+
+            .news-item {
+                flex-direction: column;
+                gap: 0.3em;
+            }
+
+            .news-date {
+                min-width: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -216,8 +409,11 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Welcome to Prarinya Lab</h1>
-            <p class="subtitle">Advancing Research in Trustworthy AI and Computer Vision</p>
+            <h1>Prarinya Laboratory
+            </h1>
+            <h2>パリンヤー研究室</h2>
+            <p class="subtitle">Trustworthy Human-Centric Image Information Engineering</p>
+            <p class="subtitle" lang="ja">人間中心の信頼できる画像情報工学</p>
         </div>
     </section>
 
@@ -226,16 +422,16 @@
             <h2>Research Highlights</h2>
             <div class="highlight-grid">
                 <div class="highlight-item">
-                    <h3>Items 1</h3>
-                    <p>To be edited</p>
+                    <h3>Computer Vision</h3>
+                    <p>Advanced algorithms for human behavior analysis and understanding, focusing on visual perception and cognitive modeling.</p>
                 </div>
                 <div class="highlight-item">
-                    <h3>Items 2</h3>
-                    <p>To be edited</p>
+                    <h3>Affective Computing</h3>
+                    <p>Understanding human emotions and psychology across different cultural contexts through computer vision and behavioral analysis.</p>
                 </div>
                 <div class="highlight-item">
-                    <h3>Items 3</h3>
-                    <p>To be edited</p>
+                    <h3>Secure and Trustworthy AI</h3>
+                    <p>Developing reliable and secure image understanding systems with privacy preservation and ethical considerations.</p>
                 </div>
             </div>
         </div>
@@ -244,8 +440,19 @@
     <section class="latest-news">
         <div class="container">
             <h2>Latest News</h2>
-            <div class="news-grid" id="latestNewsContainer">
-                <!-- Latest news items will be loaded here -->
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-date">2025.04.23</div>
+                    <div class="news-content">Website redesign completed with improved user experience and modern design.</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2025.04.15</div>
+                    <div class="news-content">New research project on cross-cultural emotion recognition started.</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2025.04.01</div>
+                    <div class="news-content">Welcome to new students joining our laboratory!</div>
+                </div>
             </div>
             <div class="view-more-news">
                 <a href="news.html">View all news →</a>

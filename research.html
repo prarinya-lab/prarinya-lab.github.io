@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - Prarinya Laboratory</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Research page styles */
@@ -14,13 +14,13 @@
             padding: 2em;
         }
 
-        .research-projects {
+        .research-topics {
             max-width: 1000px;
             margin: 0 auto 2em;
             padding: 2em;
         }
 
-        .research-project {
+        .research-topic {
             background: var(--background);
             padding: 1.5em;
             border-radius: 8px;
@@ -29,17 +29,20 @@
             transition: all 0.3s ease;
         }
 
-        .research-project:hover {
+        .research-topic:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(45, 90, 39, 0.1);
         }
 
         /* Subnavigation styling */
         .subnav {
+            position: sticky;
+            top: 72px;
             background: #fff;
             border-bottom: 1px solid #eee;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             margin-bottom: 2em;
+            z-index: 100;
         }
 
         .subnav .container {
@@ -64,7 +67,6 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95em;
-            position: relative;
             transition: all 0.3s ease;
         }
 
@@ -86,6 +88,209 @@
             background: #2c5a27;
         }
 
+        /* Section spacing */
+        section[id] {
+            scroll-margin-top: 160px;
+            padding-top: 2em;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2em;
+        }
+
+        /* Research Overview Section */
+        .research-overview {
+            padding: 3em 0;
+        }
+
+        .research-overview .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .research-overview h2 {
+            color: #2c5a27;
+            font-size: 2em;
+            margin-bottom: 1.5em;
+            text-align: center;
+            position: relative;
+        }
+
+        .research-overview h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #2c5a27;
+        }
+
+        .research-overview .vision-statement {
+            font-size: 1.4em;
+            color: #2c5a27;
+            text-align: center;
+            margin-bottom: 2em;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .research-overview .description {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 2em;
+            text-align: justify;
+        }
+
+        .research-overview .areas-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 1em;
+            font-weight: 500;
+        }
+
+        .research-overview .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5em;
+            margin-top: 1em;
+        }
+
+        .research-overview .area-item {
+            background: #f8f9fa;
+            padding: 1.5em;
+            border-radius: 8px;
+            border: 1px solid rgba(44, 90, 39, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .research-overview .area-item i {
+            font-size: 1.5em;
+            color: #2c5a27;
+            opacity: 0.9;
+        }
+
+        .research-overview .area-item p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .research-overview .area-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 90, 39, 0.1);
+            background: #fff;
+        }
+
+        .research-overview .area-item:hover i {
+            opacity: 1;
+        }
+
+        /* Research Topics Section */
+        .research-topics {
+            padding: 4em 0;
+            background: #f8f9fa;
+        }
+
+        .research-topics h2 {
+            color: #2c5a27;
+            font-size: 2em;
+            margin-bottom: 2em;
+            text-align: center;
+            position: relative;
+        }
+
+        .research-topics h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #2c5a27;
+        }
+
+        .research-topic {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .research-topic:last-child {
+            margin-bottom: 0;
+        }
+
+        .topic-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .topic-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .research-topic:hover .topic-image img {
+            transform: scale(1.05);
+        }
+
+        .topic-content {
+            padding: 2em;
+        }
+
+        .topic-content h3 {
+            color: #2c5a27;
+            font-size: 1.4em;
+            margin-bottom: 0.8em;
+            font-weight: 600;
+        }
+
+        .topic-content p {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        .topic-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+        }
+
+        .topic-content li {
+            color: #666;
+            padding-left: 1.5em;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .topic-content li::before {
+            content: '•';
+            color: #2c5a27;
+            position: absolute;
+            left: 0.5em;
+        }
+
         @media (max-width: 768px) {
             .subnav .nav-links {
                 flex-wrap: wrap;
@@ -98,6 +303,46 @@
                 font-size: 0.9em;
             }
         }
+
+        @media (max-width: 768px) {
+            .research-overview {
+                padding: 2em 1em;
+            }
+
+            .research-overview .vision-statement {
+                font-size: 1.2em;
+            }
+
+            .research-overview .description {
+                font-size: 1em;
+            }
+
+            .research-overview .research-areas {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .research-topics {
+                padding: 3em 1em;
+            }
+
+            .topic-image {
+                height: 200px;
+            }
+
+            .topic-content {
+                padding: 1.5em;
+            }
+
+            .topic-content h3 {
+                font-size: 1.2em;
+            }
+
+            .topic-content ul {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -106,7 +351,7 @@
             <img src="images/shinshu-logo.png" alt="Shinshu University Logo" class="university-logo">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="research.html">Research</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="members.html">Members</a></li>
                 <li><a href="education.html">Education</a></li>
@@ -119,7 +364,7 @@
     <section class="hero">
         <div class="container">
             <h1>Research</h1>
-            <p class="subtitle">Exploring the frontiers of AI and Computer Vision</p>
+            <p class="subtitle">Exploring the next-generation image recognition and understanding</p>
         </div>
     </section>
 
@@ -127,7 +372,7 @@
         <div class="container">
             <ul class="nav-links">
                 <li><a href="#overview">Overview</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#topics">Topics</a></li>
             </ul>
         </div>
     </nav>
@@ -135,72 +380,111 @@
     <main class="container">
         <!-- Research Overview Section -->
         <section id="overview" class="research-overview">
-            <h2>Research Overview</h2>
-            <p>Our laboratory focuses on developing trustworthy AI systems and advancing computer vision technologies. We work at the intersection of artificial intelligence, computer vision, and human-centric computing to create reliable and interpretable solutions that benefit society.</p>
-            <p>Key research areas include:</p>
-            <ul>
-                <li>Trustworthy AI and Explainable AI</li>
-                <li>Computer Vision and Image Processing</li>
-                <li>Human-Centric Computing</li>
-                <li>Machine Learning Applications</li>
-            </ul>
+            <div class="content-wrapper">
+                <h2>Research Overview</h2>
+                <p class="vision-statement">Shaping a Better World through Image Information Engineering.</p>
+                <p class="description">In a society with higher diversity awareness, our aim is to deepen the understanding of human behavior, and the psychology of people across different values and cultures, while studying interactions between humans and machines. To achieve this, we are interested in research on computer vision by integrating in-depth human behavioral analysis with computational techniques, focusing on elemental technologies of image information science, such as image analysis, recognition, and understanding. Furthermore, we will ensure that intelligent machines (Computers, Robots, Interactive agents, etc.) can reliably interact with both humans and the world in a safe, secure, and compassionate manner, ultimately shaping a future where these intelligent machines can enrich human life in this AI-driven generation.</p>
+                <h3 class="areas-title">Key Research Areas</h3>
+                <div class="research-areas">
+                    <div class="area-item">
+                        <i class="fas fa-camera"></i>
+                        <p>Computer Vision</p>
+                    </div>
+                    <div class="area-item">
+                        <i class="fas fa-heart"></i>
+                        <p>Affective Computing</p>
+                    </div>
+                    <div class="area-item">
+                        <i class="fas fa-lock"></i>
+                        <p>Secure and Trustworthy Image Understanding</p>
+                    </div>
+                    <div class="area-item">
+                        <i class="fas fa-eye"></i>
+                        <p>Human Visual Perception</p>
+                    </div>
+                    <div class="area-item">
+                        <i class="fas fa-desktop"></i>
+                        <p>Human-Computer Interaction</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Research Projects Section -->
-        <section id="projects" class="research-projects">
-            <h2>Research Projects</h2>
-            
-            <!-- Trustworthy AI Project -->
-            <div class="research-project">
-                <div class="project-image">
-                    <img src="images/research/trustworthy-ai.jpg" alt="Trustworthy AI Research">
+        <!-- Research Topics Section -->
+        <section id="topics" class="research-topics">
+            <div class="content-wrapper">
+                <h2>Research Topics</h2>
+                
+                <!-- Computer Vision Topic -->
+                <div class="research-topic">
+                    <div class="topic-image">
+                        <img src="images/research/computer-vision.jpg" alt="Computer Vision Research">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Computer Vision and Image Understanding</h3>
+                        <p>We develop advanced computer vision algorithms to understand and analyze human behavior, focusing on creating intelligent systems that can perceive and interpret visual information in ways that complement human capabilities.</p>
+                        <p>Key aspects:</p>
+                        <ul>
+                            <li>Human behavior analysis and understanding</li>
+                            <li>Visual perception and cognitive modeling</li>
+                            <li>Scene understanding and context analysis</li>
+                            <li>Multi-modal image processing techniques</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="project-content">
-                    <h3>Trustworthy AI and Explainable AI</h3>
-                    <p>Our research focuses on developing reliable and interpretable AI systems that users can trust. We work on methods to make AI decisions more transparent and understandable.</p>
-                    <p>Key aspects:</p>
-                    <ul>
-                        <li>Explainable AI methods for deep learning models</li>
-                        <li>Bias detection and mitigation in AI systems</li>
-                        <li>Robustness against adversarial attacks</li>
-                        <li>Privacy-preserving machine learning</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Computer Vision Project -->
-            <div class="research-project">
-                <div class="project-image">
-                    <img src="images/research/computer-vision.jpg" alt="Computer Vision Research">
+                <!-- Affective Computing Topic -->
+                <div class="research-topic">
+                    <div class="topic-image">
+                        <img src="images/research/affective-computing.jpg" alt="Affective Computing Research">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Affective Computing and Human Psychology</h3>
+                        <p>Our research explores the intersection of human emotions, psychology, and computer vision, aiming to develop systems that can understand and respond to human emotional states across different cultural contexts.</p>
+                        <p>Key aspects:</p>
+                        <ul>
+                            <li>Cross-cultural emotion recognition</li>
+                            <li>Behavioral pattern analysis</li>
+                            <li>Psychological state assessment</li>
+                            <li>Cultural-aware interaction systems</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="project-content">
-                    <h3>Computer Vision and Image Processing</h3>
-                    <p>Our computer vision research spans various applications and techniques, focusing on developing advanced algorithms for image understanding and analysis.</p>
-                    <p>Key aspects:</p>
-                    <ul>
-                        <li>Deep learning for image analysis</li>
-                        <li>Object detection and recognition</li>
-                        <li>Scene understanding and 3D reconstruction</li>
-                        <li>Medical image analysis</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Human-Centric Computing Project -->
-            <div class="research-project">
-                <div class="project-image">
-                    <img src="images/research/human-centric.jpg" alt="Human-Centric Computing Research">
+                <!-- Trustworthy AI Topic -->
+                <div class="research-topic">
+                    <div class="topic-image">
+                        <img src="images/research/trustworthy-ai.jpg" alt="Trustworthy AI Research">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Secure and Trustworthy Image Understanding</h3>
+                        <p>We focus on developing reliable and secure image understanding systems that can be trusted in real-world applications, ensuring privacy, fairness, and robustness in AI-driven visual analysis.</p>
+                        <p>Key aspects:</p>
+                        <ul>
+                            <li>Privacy-preserving image analysis</li>
+                            <li>Robust and reliable visual recognition</li>
+                            <li>Secure multi-party computation for visual data</li>
+                            <li>Ethical considerations in visual AI</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="project-content">
-                    <h3>Human-Centric Computing</h3>
-                    <p>We focus on developing AI systems that enhance human capabilities and improve human-computer interaction through intelligent interfaces and adaptive systems.</p>
-                    <p>Key aspects:</p>
-                    <ul>
-                        <li>Human-AI interaction design</li>
-                        <li>Cognitive workload assessment</li>
-                        <li>Adaptive interfaces</li>
-                        <li>User behavior analysis</li>
-                    </ul>
+
+                <!-- Human-Computer Interaction Topic -->
+                <div class="research-topic">
+                    <div class="topic-image">
+                        <img src="images/research/hci.jpg" alt="Human-Computer Interaction Research">
+                    </div>
+                    <div class="topic-content">
+                        <h3>Human-Centric Interactive Systems</h3>
+                        <p>Our research in HCI focuses on creating intuitive and natural interfaces between humans and intelligent machines, emphasizing the importance of human-centered design in visual interaction systems.</p>
+                        <p>Key aspects:</p>
+                        <ul>
+                            <li>Natural visual interfaces</li>
+                            <li>Interactive visualization systems</li>
+                            <li>Adaptive user experience design</li>
+                            <li>Cross-cultural interaction patterns</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -248,29 +532,14 @@
     <script src="assets/js/main.js"></script>
     <script>
         $(document).ready(function() {
-            // Get all navigation links
-            const navLinks = $('.subnav .nav-links a');
-            
-            // Handle click events
-            navLinks.click(function(e) {
+            // Smooth scroll to section
+            $('.subnav .nav-links a').click(function(e) {
                 e.preventDefault();
-                
-                // Remove active class from all links
-                navLinks.removeClass('active');
-                
-                // Add active class to clicked link
-                $(this).addClass('active');
-                
-                // Smooth scroll to target
-                const targetId = $(this).attr('href');
+                const href = $(this).attr('href');
                 $('html, body').animate({
-                    scrollTop: $(targetId).offset().top - 80
+                    scrollTop: $(href).offset().top - 140
                 }, 400);
             });
-
-            // Set initial active state
-            const hash = window.location.hash || '#overview';
-            $(`.subnav .nav-links a[href="${hash}"]`).addClass('active');
         });
     </script>
 </body>
