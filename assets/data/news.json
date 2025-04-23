@@ -1,0 +1,14 @@
+{
+    "news": [
+        {
+            "date": "2025/4/7",
+            "title": "Welcome the first batch of B4 students joining our lab",
+            "content": "We are excited to welcome our first batch of B4 students to the laboratory. We look forward to working together on innovative research projects."
+        },
+        {
+            "date": "2025/4",
+            "title": "The laboratory's website is now transfer to github.io",
+            "content": "We have successfully migrated our laboratory website to GitHub Pages (github.io) for improved accessibility and maintenance."
+        }
+    ]
+}

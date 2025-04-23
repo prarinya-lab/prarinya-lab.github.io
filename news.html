@@ -11,9 +11,6 @@
     <nav class="main-nav">
         <div class="container">
             <img src="images/shinshu-logo.png" alt="Shinshu University Logo" class="university-logo">
-            <div class="nav-brand">
-                <a href="index.html">Prarinya Laboratory</a>
-            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="research.html">Research</a></li>
@@ -34,7 +31,7 @@
 
     <section class="news-archive">
         <div class="container">
-            <div class="news-grid">
+            <div class="news-grid" id="newsContainer">
                 <!-- News items will be loaded here -->
             </div>
         </div>
@@ -76,5 +73,31 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Load and display news items
+        async function loadNews() {
+            try {
+                const response = await fetch('assets/data/news.json');
+                const data = await response.json();
+                const newsContainer = document.getElementById('newsContainer');
+                
+                data.news.forEach(item => {
+                    const newsItem = document.createElement('div');
+                    newsItem.className = 'news-item';
+                    newsItem.innerHTML = `
+                        <div class="news-date">${item.date}</div>
+                        <h3 class="news-title">${item.title}</h3>
+                        <p class="news-content">${item.content}</p>
+                    `;
+                    newsContainer.appendChild(newsItem);
+                });
+            } catch (error) {
+                console.error('Error loading news:', error);
+            }
+        }
+
+        // Load news when the page is ready
+        document.addEventListener('DOMContentLoaded', loadNews);
+    </script>
 </body>
 </html>

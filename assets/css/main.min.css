@@ -1,31 +1,196 @@
-/* Reset & Base Styles */
+/* Reset and base styles */
 :root {
+    --text-light: #666;
     --primary: #2D5A27;
     --primary-dark: #1a3517;
     --background: #ffffff;
     --text-dark: #333333;
-    --text-light: #666666;
     --border-color: rgba(45, 90, 39, 0.1);
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'DM Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    padding-top: 70px; /* Space for fixed navbar */
 }
 
 .container {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 2em;
+}
+
+/* Navigation styles */
+.main-nav {
+    background: white;
+    padding: 0.75em 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.university-logo {
+    height: 40px;
+    margin-right: 2em;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 1em;
+}
+
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #000;
+}
+
+/* Hero section */
+.hero {
+    background-color: #f9f9f9;
+    padding: 4em 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: var(--primary);
+}
+
+.hero .subtitle {
+    font-size: 1.2em;
+    color: var(--text-light);
+}
+
+/* Footer styles */
+footer {
+    background: var(--primary-dark);
+    padding: 3em 0;
+    margin-top: 4em;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 1em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 0.5em;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-nav {
+        padding: 0.5em 0;
+    }
+    
+    .main-nav .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .university-logo {
+        height: 32px;
+        margin-right: 0;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5em;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    .nav-links::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .nav-links li {
+        margin: 0 0.8em;
+        white-space: nowrap;
+    }
+    
+    .nav-links a {
+        font-size: 0.9em;
+        padding: 0.5em 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1em;
+    }
+    
+    .nav-links li {
+        margin: 0 0.5em;
+    }
+    
+    .nav-links a {
+        font-size: 0.85em;
+    }
 }
 
 /* Typography */
@@ -41,164 +206,6 @@ h3 { font-size: 1.5rem; }
 h4 { font-size: 1.25rem; }
 
 p { margin-bottom: 1rem; }
-
-/* Navigation */
-.main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1001;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 0.75rem 0;
-}
-
-.main-nav .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.university-logo {
-    height: 40px;
-    width: auto;
-}
-
-.nav-brand a {
-    color: var(--text-dark);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    color: var(--text-dark);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--primary);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-    .main-nav .container {
-        padding: 0 1rem;
-    }
-
-    .university-logo {
-        height: 32px;
-    }
-
-    .nav-brand a {
-        font-size: 1rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
-    }
-}
-
-/* Mobile Menu */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.menu-icon {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--primary);
-    position: relative;
-    transition: background 0.3s ease;
-}
-
-.menu-icon::before,
-.menu-icon::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background: var(--primary);
-    transition: transform 0.3s ease;
-}
-
-.menu-icon::before { top: -6px; }
-.menu-icon::after { bottom: -6px; }
-
-.mobile-menu-btn.active .menu-icon {
-    background: transparent;
-}
-
-.mobile-menu-btn.active .menu-icon::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.mobile-menu-btn.active .menu-icon::after {
-    transform: rotate(-45deg);
-    bottom: 0;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(45, 90, 39, 0.05), rgba(45, 90, 39, 0.02));
-    padding: 6rem 0 4rem;
-    text-align: center;
-    margin-top: 70px;  /* Height of main nav */
-}
-
-.hero h1 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-}
-
-.hero .subtitle {
-    color: var(--text-light);
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
 
 /* Section Styles */
 section {
@@ -1152,9 +1159,11 @@ footer {
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
+    margin-top: 2em;
+    padding-top: 2em;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: white;
 }
 
 /* Buttons */
@@ -1190,87 +1199,6 @@ footer {
 
     .nav-links {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--background);
-        padding: 1rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .hero {
-        padding: 4rem 0 3rem;
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-
-    .grants li {
-        padding: 2.5rem 1.2rem 1.2rem;
-    }
-
-    .grant-index {
-        left: 50%;
-        top: -20px;
-        transform: translateX(-50%);
-    }
-
-    .grant-title {
-        border-left: none;
-        padding-left: 0;
-        border-top: 3px solid var(--primary);
-        padding-top: 1rem;
-    }
-
-    .member-photo {
-        height: 250px;
-    }
-
-    .contact-card {
-        padding: 1.5rem;
-    }
-
-    .map-container iframe {
-        height: 300px;
-    }
-
-    .news-item {
-        padding: 1.5rem;
-    }
-
-    .news-title {
-        font-size: 1.3rem;
-    }
-
-    .year-divider {
-        font-size: 1.5rem;
-        margin: 2rem 0 1.5rem;
-    }
-
-    .publication-section h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .publication-item {
-        padding: 1.5rem;
-    }
-
-    .year-section h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .publication-item .title {
-        font-size: 1rem;
     }
 }
 
