@@ -18,7 +18,7 @@
         .member-info .profile-header {
             margin-bottom: 2em;
         }
-        .member-info .name {
+        .name {
             font-size: 1.8em;
             margin: 0 0 0.2em;
             color: #333;
@@ -52,6 +52,7 @@
         .experiences, .education {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         .experiences li, .education li {
             margin-bottom: 1em;
@@ -220,6 +221,251 @@
         .collapsible-content.collapsed {
             max-height: 0;
         }
+        .member-profile {
+            margin: 1.5em 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            overflow: hidden;
+            display: flex;
+            padding: 2em;
+            gap: 2.5em;
+            align-items: flex-start;
+        }
+        .profile-photo-wrapper {
+            flex-shrink: 0;
+        }
+        .profile-photo {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .profile-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .profile-header {
+            margin-bottom: 1em;
+            padding-bottom: 0.8em;
+            border-bottom: 2px solid #eaecef;
+        }
+        .name {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 0.2em 0;
+        }
+        .position {
+            font-size: 1.1em;
+            color: #34495e;
+            margin: 0;
+            font-weight: 500;
+            display: inline-block;
+            margin-right: 1em;
+        }
+        .position-jp {
+            font-size: 1em;
+            color: #5a6c7d;
+            margin: 0;
+            display: inline-block;
+        }
+        .info-section {
+            margin: 1em 0;
+        }
+        .department {
+            font-size: 0.95em;
+            color: #34495e;
+            line-height: 1.5;
+            margin: 0 0 0.5em 0;
+        }
+        .department-jp {
+            font-size: 0.9em;
+            color: #5a6c7d;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .research-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            margin: 1em 0;
+        }
+        .research-fields li {
+            background: #e8f4fc;
+            color: #2980b9;
+            padding: 0.3em 0.8em;
+            border-radius: 15px;
+            font-size: 0.85em;
+            transition: all 0.2s ease;
+        }
+        .collapsible-section {
+            margin-top: 1.5em;
+        }
+        .collapsible-header {
+            font-size: 1.1em;
+            color: #2c3e50;
+            padding: 0.8em 1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+        .collapsible-header:hover {
+            border-color: #3498db;
+            color: #3498db;
+        }
+        .collapsible-header::after {
+            content: '+';
+            margin-left: auto;
+            font-size: 1.2em;
+            color: #3498db;
+            transition: transform 0.2s ease;
+        }
+        .collapsible-header.collapsed::after {
+            transform: rotate(0deg);
+        }
+        .collapsible-header:not(.collapsed)::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            background: white;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 1.2em;
+            margin-top: 0.5em;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        .collapsible-content:not(.collapsed) {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 0.5em;
+        }
+        .collapsible-content.collapsed {
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+        .experiences {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        .experiences::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: #e1e4e8;
+            border-radius: 1px;
+        }
+        .experiences li {
+            position: relative;
+            padding-left: 2em;
+            margin-bottom: 1.2em;
+            color: #34495e;
+        }
+        .experiences li:last-child {
+            margin-bottom: 0;
+        }
+        .experiences li::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        .experiences li:hover::before {
+            background: #3498db;
+            transform: scale(1.2);
+        }
+        .experiences .date {
+            color: #3498db;
+            font-weight: 500;
+            font-size: 0.9em;
+            margin-bottom: 0.3em;
+            display: block;
+        }
+        .experiences .role {
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 1em;
+            margin-bottom: 0.2em;
+            display: block;
+        }
+        .experiences .institution {
+            color: #5a6c7d;
+            font-size: 0.9em;
+            display: block;
+        }
+        .experiences .degree {
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 1em;
+            margin-bottom: 0.2em;
+            display: block;
+        }
+        .collapsible-content {
+            background: white;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 1.5em;
+            margin-top: 0.5em;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        .collapsible-content:not(.collapsed) {
+            max-height: 2000px;
+            opacity: 1;
+            margin-top: 0.5em;
+        }
+        @media (max-width: 768px) {
+            .member-profile {
+                flex-direction: column;
+                padding: 1.5em;
+                gap: 2em;
+            }
+            .profile-photo {
+                width: 180px;
+                height: 220px;
+                margin: 0 auto;
+            }
+            .name {
+                font-size: 1.6em;
+            }
+            .position {
+                font-size: 1.1em;
+            }
+            .research-fields {
+                gap: 0.6em;
+            }
+            .research-fields li {
+                padding: 0.4em 1em;
+                font-size: 0.85em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -248,79 +494,84 @@
         <div class="container">
             <h2>Faculty</h2>
             <div class="member-profile">
-                <img src="images/faculty/prarinya-photo3.JPG" alt="Prarinya Siritanawan" class="profile-photo">
-                <div class="member-info">
+                <div class="profile-photo-wrapper">
+                    <img src="images/faculty/prarinya-photo3.JPG" alt="Prarinya Siritanawan" class="profile-photo">
+                </div>
+                <div class="profile-content">
                     <div class="profile-header">
                         <h3 class="name">Prarinya Siritanawan, Ph.D.</h3>
                         <p class="position">Associate Professor</p>
-                        <p class="department">Graduate School of Science and Technology<br>
-                        Department of Engineering<br>
-                        Informatics and Interdisciplinary Systems Division<br>
-                        Shinshu University, Japan</p>
-                        
-                        <ul class="research-fields">
-                            <li>Computer Vision</li>
-                            <li>Affective Computing</li>
-                            <li>Secure and Trustworthy Image Understanding</li>
-                            <li>Human Visual Perception</li>
-                            <li>Human-Computer Interaction</li>
-                        </ul>
+                        <p class="position-jp">准教授（特定雇用）</p>
                     </div>
-
-                    <h4 class="collapsible-header collapsed">Professional Experiences</h4>
-                    <div class="collapsible-content collapsed experiences-content">
-                        <ul class="experiences">
-                            <li><span class="date">Sep 2024 ~ Present</span>
-                                <span class="role">Associate Professor</span>
-                                <span class="institution">Graduate School of Science and Technology, Shinshu University, Japan</span>
-                            </li>
-                            <li><span class="date">Apr 2018 – Aug 2024</span>
-                                <span class="role">Assistant Professor</span>
-                                <span class="institution">Graduate School of Advanced Science and Technology, JAIST, Japan</span>
-                            </li>
-                            <li><span class="date">Jan 2016 – Mar 2018</span>
-                                <span class="role">Research Fellow</span>
-                                <span class="institution">ST Engineering-NTU Corporate Laboratory, NTU, Singapore</span>
-                            </li>
-                            <li><span class="date">Oct 2012 - Sep 2015</span>
-                                <span class="role">Research Assistant</span>
-                                <span class="institution">School of Information Science, JAIST, Japan</span>
-                            </li>
-                            <li><span class="date">Jul 2012 - Sep 2012</span>
-                                <span class="role">Contract Researcher</span>
-                                <span class="institution">Advanced Automation System Laboratory, NECTEC, Thailand</span>
-                            </li>
-                            <li><span class="date">Jun 2011 - Mar 2012</span>
-                                <span class="role">Research Assistant & Teaching Assistant</span>
-                                <span class="institution">SIIT, Thammasat University, Thailand</span>
-                            </li>
-                            <li><span class="date">Apr 2009 - May 2009</span>
-                                <span class="role">Internship</span>
-                                <span class="institution">Siam Integration System Co., Ltd, Thailand</span>
-                            </li>
-                            <li><span class="date">Apr 2008 - May 2008</span>
-                                <span class="role">Internship</span>
-                                <span class="institution">Metamedia Technology Co., Ltd, Thailand</span>
-                            </li>
-                        </ul>
+                    <div class="info-section">
+                        <p class="department">Graduate School of Science and Technology, Department of Engineering, Informatics and Interdisciplinary Systems Division, Shinshu University</p>
+                        <p class="department-jp">信州大学 大学院総合理工学研究科 工学専攻 情報数理・融合システム分野</p>
                     </div>
+                    
+                    <ul class="research-fields">
+                        <li>Computer Vision</li>
+                        <li>Affective Computing</li>
+                        <li>Secure and Trustworthy Image Understanding</li>
+                        <li>Human Visual Perception</li>
+                        <li>Human-Computer Interaction</li>
+                    </ul>
 
-                    <h4 class="collapsible-header collapsed">Education</h4>
-                    <div class="collapsible-content collapsed education-content">
-                        <ul class="education">
-                            <li><span class="date">Oct 2012 – Dec 2015</span>
-                                <span class="degree">Ph.D. Information Science</span>
-                                <span class="institution">School of Information Science, JAIST, Japan</span>
-                            </li>
-                            <li><span class="date">Jun 2010 – Sep 2012</span>
-                                <span class="degree">Master of Engineering, Information and Communication Technology for Embedded Systems</span>
-                                <span class="institution">SIIT, Thammasat University, Thailand</span>
-                            </li>
-                            <li><span class="date">Jun 2006 - Mar 2010</span>
-                                <span class="degree">Bachelor of Engineering, Communication Engineering</span>
-                                <span class="institution">SIIT, Thammasat University, Thailand</span>
-                            </li>
-                        </ul>
+                    <div class="collapsible-section">
+                        <h4 class="collapsible-header collapsed">Professional Experiences</h4>
+                        <div class="collapsible-content collapsed">
+                            <ul class="experiences">
+                                <li><span class="date">Sep 2024 ~ Present</span>
+                                    <span class="role">Associate Professor</span>
+                                    <span class="institution">Graduate School of Science and Technology, Shinshu University, Japan</span>
+                                </li>
+                                <li><span class="date">Apr 2018 – Aug 2024</span>
+                                    <span class="role">Assistant Professor</span>
+                                    <span class="institution">Graduate School of Advanced Science and Technology, JAIST, Japan</span>
+                                </li>
+                                <li><span class="date">Jan 2016 – Mar 2018</span>
+                                    <span class="role">Research Fellow</span>
+                                    <span class="institution">ST Engineering-NTU Corporate Laboratory, NTU, Singapore</span>
+                                </li>
+                                <li><span class="date">Oct 2012 - Sep 2015</span>
+                                    <span class="role">Research Assistant</span>
+                                    <span class="institution">School of Information Science, JAIST, Japan</span>
+                                </li>
+                                <li><span class="date">Jul 2012 - Sep 2012</span>
+                                    <span class="role">Contract Researcher</span>
+                                    <span class="institution">Advanced Automation System Laboratory, NECTEC, Thailand</span>
+                                </li>
+                                <li><span class="date">Jun 2011 - Mar 2012</span>
+                                    <span class="role">Research Assistant & Teaching Assistant</span>
+                                    <span class="institution">SIIT, Thammasat University, Thailand</span>
+                                </li>
+                                <li><span class="date">Apr 2009 - May 2009</span>
+                                    <span class="role">Internship</span>
+                                    <span class="institution">Siam Integration System Co., Ltd, Thailand</span>
+                                </li>
+                                <li><span class="date">Apr 2008 - May 2008</span>
+                                    <span class="role">Internship</span>
+                                    <span class="institution">Metamedia Technology Co., Ltd, Thailand</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h4 class="collapsible-header collapsed">Education</h4>
+                        <div class="collapsible-content collapsed">
+                            <ul class="experiences">
+                                <li><span class="date">Oct 2012 – Dec 2015</span>
+                                    <span class="degree">Ph.D. Information Science</span>
+                                    <span class="institution">School of Information Science, JAIST, Japan</span>
+                                </li>
+                                <li><span class="date">Jun 2010 – Sep 2012</span>
+                                    <span class="degree">Master of Engineering, Information and Communication Technology for Embedded Systems</span>
+                                    <span class="institution">SIIT, Thammasat University, Thailand</span>
+                                </li>
+                                <li><span class="date">Jun 2006 - Mar 2010</span>
+                                    <span class="degree">Bachelor of Engineering, Communication Engineering</span>
+                                    <span class="institution">SIIT, Thammasat University, Thailand</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -344,10 +595,10 @@
                                     <p class="student-name-jp">柴垣　遼大</p>
                                     <p class="research-topic">
                                         <strong>Research Topic:</strong>
-                                        Image Engineering for secure autonomous driving System
+                                        Image Engineering for secure autonomous driving System (tentative)
                                     </p>
                                     <p class="research-topic-jp">
-                                        自動運転システムのための画像工学
+                                        自動運転システムのための画像工学 (暫定)
                                     </p>
                                 </div>
                             </div>
@@ -360,10 +611,10 @@
                                     <p class="student-name-jp">嶋岡　心</p>
                                     <p class="research-topic">
                                         <strong>Research Topic:</strong>
-                                        High Dynamics Weather prediction through image analysis
+                                        High Dynamics Weather prediction through image analysis (tentative)
                                     </p>
-                                        <p class="research-topic-jp">
-                                        画像解析による気象予測
+                                    <p class="research-topic-jp">
+                                        画像解析による気象予測 (暫定)
                                     </p>
                                 </div>
                             </div>
@@ -376,10 +627,10 @@
                                     <p class="student-name-jp">平沼　圭悟</p>
                                     <p class="research-topic">
                                         <strong>Research Topic:</strong>
-                                        Education Technology
+                                        Education Technology (tentative)
                                     </p>
                                     <p class="research-topic-jp">
-                                        教育工学
+                                        教育工学 (暫定)
                                     </p>
                                 </div>
                             </div>
@@ -393,15 +644,6 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li>Shinshu University</li>
-                        <li>Faculty of Engineering</li>
-                        <li>4-17-1 Wakasato</li>
-                        <li>Nagano 380-8553, Japan</li>
-                    </ul>
-                </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
