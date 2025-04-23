@@ -6,6 +6,32 @@
     <title>Contact - Prarinya Lab</title>
     <link rel="stylesheet" href="assets/css/main.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .address-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+        }
+        .address-english, .address-japanese {
+            flex: 1;
+        }
+        .address-japanese {
+            border-top: 1px solid #eaecef;
+            padding-top: 1.5em;
+        }
+        .address-english p, .address-japanese p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .address-section {
+                gap: 1.2em;
+            }
+            .address-japanese {
+                padding-top: 1.2em;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="main-nav">
@@ -16,6 +42,7 @@
                 <li><a href="research.html">Research</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="members.html">Members</a></li>
+                <li><a href="education.html">Education</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
@@ -34,19 +61,29 @@
             <div class="contact-grid">
                 <div class="contact-card">
                     <h3>Laboratory Address</h3>
-                    <p>Prarinya Laboratory<br>
-                    Faculty of Engineering<br>
-                    Shinshu University<br>
-                    4-17-1 Wakasato<br>
-                    Nagano 380-8553<br>
-                    Japan</p>
+                    <div class="address-section">
+                        <div class="address-english">
+                            <p>Prarinya Laboratory<br>
+                            W1 Building, Room 414<br>
+                            Faculty of Engineering<br>
+                            Shinshu University<br>
+                            4-17-1 Wakasato<br>
+                            Nagano 380-8553<br>
+                            Japan</p>
+                        </div>
+                        <div class="address-japanese">
+                            <p>パリンヤー研究室<br>
+                            信州大学 工学部<br>
+                            〒380-8553<br>
+                            長野県長野市若里4-17-1<br>
+                            W1棟414号室（教員室）</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="contact-card">
                     <h3>Contact Information</h3>
-                    <p><strong>Email:</strong> prarinya@shinshu-u.ac.jp</p>
-                    <p><strong>Phone:</strong> +81-26-269-5XXX</p>
-                    <p><strong>Fax:</strong> +81-26-269-5XXX</p>
+                    <p><strong>Email:</strong> prarinya[at]shinshu-u.ac.jp</p>
                 </div>
 
                 <div class="contact-card">
@@ -54,7 +91,7 @@
                     <p>We welcome motivated students interested in:</p>
                     <ul>
                         <li>Trustworthy AI</li>
-                        <li>Computer Vision</li>
+                        <li>Computer Vision and Image Processing</li>
                         <li>Human-Centric Computing</li>
                     </ul>
                     <p>Please contact us by email for inquiries about joining our lab.</p>
@@ -96,6 +133,7 @@
                     <ul>
                         <li><a href="research.html">Research</a></li>
                         <li><a href="members.html">Members</a></li>
+                        <li><a href="education.html">Education</a></li>
                         <li><a href="news.html">News</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>

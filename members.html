@@ -147,22 +147,12 @@
             letter-spacing: 0.02em;
         }
         .research-topic {
-            font-size: 0.95em;
+            font-size: 0.9em;
             color: #2c3e50;
             margin: 0;
             line-height: 1.6;
             position: relative;
             padding-left: 1em;
-        }
-        .research-topic::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5em;
-            width: 4px;
-            height: 4px;
-            background: #3498db;
-            border-radius: 50%;
         }
         .research-topic strong {
             display: block;
@@ -172,6 +162,14 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             padding-left: 0;
+        }
+        .research-topic span {
+            display: block;
+        }
+        .research-topic .topic-jp {
+            font-size: 0.95em;
+            color: #5a6c7d;
+            margin-top: 0.2em;
         }
         .research-topic-jp {
             font-size: 0.9em;
@@ -227,50 +225,55 @@
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             overflow: hidden;
-            display: flex;
+            display: grid;
+            grid-template-columns: auto 1fr;
             padding: 2em;
             gap: 2.5em;
-            align-items: flex-start;
+            align-items: start;
         }
         .profile-photo-wrapper {
-            flex-shrink: 0;
+            margin-top: 0.3em;
         }
         .profile-photo {
-            width: 180px;
-            height: 220px;
+            width: 160px;
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
         .profile-content {
-            flex: 1;
             min-width: 0;
         }
         .profile-header {
-            margin-bottom: 1em;
-            padding-bottom: 0.8em;
-            border-bottom: 2px solid #eaecef;
+            margin: 0 0 1.2em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid #eaecef;
         }
         .name {
-            font-size: 1.6em;
+            font-size: 1.5em;
             font-weight: 600;
             color: #2c3e50;
-            margin: 0 0 0.2em 0;
+            margin: 0 0 0.4em 0;
+            line-height: 1.2;
+        }
+        .titles {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8em;
+            flex-wrap: wrap;
+            margin-top: 0.2em;
         }
         .position {
-            font-size: 1.1em;
+            font-size: 1.05em;
             color: #34495e;
             margin: 0;
             font-weight: 500;
-            display: inline-block;
-            margin-right: 1em;
         }
         .position-jp {
-            font-size: 1em;
+            font-size: 0.95em;
             color: #5a6c7d;
             margin: 0;
-            display: inline-block;
         }
         .info-section {
             margin: 1em 0;
@@ -348,122 +351,118 @@
             transition: all 0.3s ease-out;
         }
         .collapsible-content:not(.collapsed) {
-            max-height: 1000px;
-            opacity: 1;
-            margin-top: 0.5em;
-        }
-        .collapsible-content.collapsed {
-            padding: 0;
-            margin: 0;
-            border: none;
-        }
-        .experiences {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            position: relative;
-        }
-        .experiences::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            bottom: 8px;
-            width: 2px;
-            background: #e1e4e8;
-            border-radius: 1px;
-        }
-        .experiences li {
-            position: relative;
-            padding-left: 2em;
-            margin-bottom: 1.2em;
-            color: #34495e;
-        }
-        .experiences li:last-child {
-            margin-bottom: 0;
-        }
-        .experiences li::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 8px;
-            width: 10px;
-            height: 10px;
-            background: white;
-            border: 2px solid #3498db;
-            border-radius: 50%;
-            transition: all 0.2s ease;
-        }
-        .experiences li:hover::before {
-            background: #3498db;
-            transform: scale(1.2);
-        }
-        .experiences .date {
-            color: #3498db;
-            font-weight: 500;
-            font-size: 0.9em;
-            margin-bottom: 0.3em;
-            display: block;
-        }
-        .experiences .role {
-            font-weight: 500;
-            color: #2c3e50;
-            font-size: 1em;
-            margin-bottom: 0.2em;
-            display: block;
-        }
-        .experiences .institution {
-            color: #5a6c7d;
-            font-size: 0.9em;
-            display: block;
-        }
-        .experiences .degree {
-            font-weight: 500;
-            color: #2c3e50;
-            font-size: 1em;
-            margin-bottom: 0.2em;
-            display: block;
-        }
-        .collapsible-content {
-            background: white;
-            border: 1px solid #e1e4e8;
-            border-radius: 8px;
-            padding: 1.5em;
-            margin-top: 0.5em;
-            line-height: 1.6;
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: all 0.3s ease-out;
-        }
-        .collapsible-content:not(.collapsed) {
             max-height: 2000px;
             opacity: 1;
             margin-top: 0.5em;
         }
         @media (max-width: 768px) {
             .member-profile {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                gap: 1.5em;
                 padding: 1.5em;
-                gap: 2em;
+            }
+            .profile-photo-wrapper {
+                margin-top: 0;
+                text-align: center;
             }
             .profile-photo {
-                width: 180px;
-                height: 220px;
-                margin: 0 auto;
+                width: 140px;
+                height: 175px;
             }
-            .name {
-                font-size: 1.6em;
+            .profile-header {
+                text-align: center;
             }
-            .position {
-                font-size: 1.1em;
+            .titles {
+                justify-content: center;
             }
-            .research-fields {
-                gap: 0.6em;
+        }
+        .student-section {
+            margin: 2em 0;
+        }
+        .student-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5em;
+            margin-top: 1em;
+        }
+        .student-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+            overflow: hidden;
+            display: flex;
+            align-items: start;
+            padding: 1.2em;
+        }
+        .student-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .student-image {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            margin-right: 1.2em;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+        .student-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .student-card:hover .student-image img {
+            transform: scale(1.05);
+        }
+        .student-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .student-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+        }
+        .student-name-jp {
+            font-size: 0.95em;
+            color: #5a6c7d;
+            margin: 0.2em 0 0.8em;
+        }
+        .research-topic {
+            margin: 0;
+            font-size: 0.9em;
+            color: #34495e;
+            line-height: 1.5;
+        }
+        .research-topic strong {
+            display: block;
+            font-size: 0.9em;
+            color: #2c3e50;
+            margin-bottom: 0.3em;
+            font-weight: 600;
+        }
+        .research-topic span {
+            display: block;
+        }
+        .research-topic .topic-jp {
+            font-size: 0.9em;
+            color: #5a6c7d;
+            margin-top: 0.2em;
+        }
+        @media (max-width: 768px) {
+            .student-cards {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1em;
             }
-            .research-fields li {
-                padding: 0.4em 1em;
-                font-size: 0.85em;
+            .student-card {
+                padding: 1em;
+            }
+            .student-image {
+                width: 80px;
+                height: 80px;
+                margin-right: 1em;
             }
         }
     </style>
@@ -477,6 +476,7 @@
                 <li><a href="research.html">Research</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="members.html" class="active">Members</a></li>
+                <li><a href="education.html">Education</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -500,8 +500,10 @@
                 <div class="profile-content">
                     <div class="profile-header">
                         <h3 class="name">Prarinya Siritanawan, Ph.D.</h3>
-                        <p class="position">Associate Professor</p>
-                        <p class="position-jp">准教授（特定雇用）</p>
+                        <div class="titles">
+                            <p class="position">Associate Professor</p>
+                            <p class="position-jp">准教授（特定雇用）</p>
+                        </div>
                     </div>
                     <div class="info-section">
                         <p class="department">Graduate School of Science and Technology, Department of Engineering, Informatics and Interdisciplinary Systems Division, Shinshu University</p>
@@ -581,59 +583,51 @@
     <section class="students">
         <div class="container">
             <h2>Students</h2>
-            <div class="student-groups">
-                <div class="bachelor-students">
-                    <div class="student-year">
-                        <h4>B4 Students (2025)</h4>
-                        <div class="student-list">
-                            <div class="student-card">
-                                <div class="student-image">
-                                    <img src="images/members/dummy.JPG" alt="Rio Shibagaki" onerror="this.src='images/profile-placeholder.jpg'">
-                                </div>
-                                <div class="student-info">
-                                    <h5 class="student-name">Rio Shibagaki</h5>
-                                    <p class="student-name-jp">柴垣　遼大</p>
-                                    <p class="research-topic">
-                                        <strong>Research Topic:</strong>
-                                        Image Engineering for secure autonomous driving System (tentative)
-                                    </p>
-                                    <p class="research-topic-jp">
-                                        自動運転システムのための画像工学 (暫定)
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="student-card">
-                                <div class="student-image">
-                                    <img src="images/members/dummy.JPG" alt="Shin Shimaoka" onerror="this.src='images/profile-placeholder.jpg'">
-                                </div>
-                                <div class="student-info">
-                                    <h5 class="student-name">Shin Shimaoka</h5>
-                                    <p class="student-name-jp">嶋岡　心</p>
-                                    <p class="research-topic">
-                                        <strong>Research Topic:</strong>
-                                        High Dynamics Weather prediction through image analysis (tentative)
-                                    </p>
-                                    <p class="research-topic-jp">
-                                        画像解析による気象予測 (暫定)
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="student-card">
-                                <div class="student-image">
-                                    <img src="images/members/dummy.JPG" alt="Keigo Hiranuma" onerror="this.src='images/profile-placeholder.jpg'">
-                                </div>
-                                <div class="student-info">
-                                    <h5 class="student-name">Keigo Hiranuma</h5>
-                                    <p class="student-name-jp">平沼　圭悟</p>
-                                    <p class="research-topic">
-                                        <strong>Research Topic:</strong>
-                                        Education Technology (tentative)
-                                    </p>
-                                    <p class="research-topic-jp">
-                                        教育工学 (暫定)
-                                    </p>
-                                </div>
-                            </div>
+            <div class="student-section">
+                <h3>B4 Students (2025)</h3>
+                <div class="student-cards">
+                    <div class="student-card">
+                        <div class="student-image">
+                            <img src="images/members/dummy.JPG" alt="Rio Shibagaki" onerror="this.src='images/profile-placeholder.jpg'">
+                        </div>
+                        <div class="student-info">
+                            <h4 class="student-name">Rio Shibagaki</h4>
+                            <p class="student-name-jp">柴垣　遼大</p>
+                            <p class="research-topic">
+                                <strong>Research Topic:</strong>
+                                <span>Image Engineering for Secure Autonomous Driving System (tentative)</span>
+                                <span class="topic-jp">自動運転システムのための画像工学 (仮)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="student-card">
+                        <div class="student-image">
+                            <img src="images/members/dummy.JPG" alt="Shin Shimaoka" onerror="this.src='images/profile-placeholder.jpg'">
+                        </div>
+                        <div class="student-info">
+                            <h4 class="student-name">Shin Shimaoka</h4>
+                            <p class="student-name-jp">嶋岡　心</p>
+                            <p class="research-topic">
+                                <strong>Research Topic:</strong>
+                                <span>High Dynamics Weather Prediction through Image Analysis (tentative)</span>
+                                <span class="topic-jp">画像解析による気象予測 (仮)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="student-card">
+                        <div class="student-image">
+                            <img src="images/members/dummy.JPG" alt="Keigo Hiranuma" onerror="this.src='images/profile-placeholder.jpg'">
+                        </div>
+                        <div class="student-info">
+                            <h4 class="student-name">Keigo Hiranuma</h4>
+                            <p class="student-name-jp">平沼　圭悟</p>
+                            <p class="research-topic">
+                                <strong>Research Topic:</strong>
+                                <span>Image Analysis for Education Technology (tentative)</span>
+                                <span class="topic-jp">教育工学における画像解析 (仮)</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -645,10 +639,20 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Shinshu University</li>
+                        <li>Faculty of Engineering</li>
+                        <li>4-17-1 Wakasato</li>
+                        <li>Nagano 380-8553, Japan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="research.html">Research</a></li>
                         <li><a href="members.html">Members</a></li>
+                        <li><a href="education.html">Education</a></li>
                         <li><a href="news.html">News</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
