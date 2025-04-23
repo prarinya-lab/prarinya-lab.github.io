@@ -51,6 +51,71 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(45, 90, 39, 0.1);
         }
+
+        /* Subnavigation styling */
+        .subnav {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 2em;
+        }
+
+        .subnav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .subnav .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        .subnav .nav-links a {
+            display: block;
+            padding: 1em 0;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .subnav .nav-links a:hover {
+            color: #2c5a27;
+        }
+
+        .subnav .nav-links a.active {
+            color: #2c5a27;
+        }
+
+        .subnav .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #2c5a27;
+        }
+
+        @media (max-width: 768px) {
+            .subnav .nav-links {
+                flex-wrap: wrap;
+                gap: 1em;
+                padding: 0.5em 0;
+            }
+            
+            .subnav .nav-links a {
+                padding: 0.5em 0;
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,14 +137,27 @@
     <section class="hero">
         <div class="container">
             <h1>Publications</h1>
-            <p class="subtitle">Research Publications and Presentations</p>
+            <p class="subtitle">Research Publications and Grants</p>
         </div>
     </section>
 
-    <main class="container">
-        <section class="publication-section">
-            <h2>Journal Papers</h2>
-            <div class="publications-list">
+    <nav class="subnav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#journal-papers" class="active">Journal Papers</a></li>
+                <li><a href="#international-conference">International Conference</a></li>
+                <li><a href="#domestic-conference">Domestic Conference</a></li>
+                <li><a href="#grants">Grants & Funding</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="research-archive">
+        <section id="journal-papers">
+            <div class="page-title">
+                <h1>Journal Papers</h1>
+            </div>
+            <div class="publication-section">
                 <div class="publication-item">
                     <span class="pub-index">1</span>
                     <p class="authors">Win Shwe Sin Khine, Prarinya Siritanawan, Kazunori Kotani</p>
@@ -161,9 +239,11 @@
             </div>
         </section>
 
-        <section class="publication-section">
-            <h2>International Conference Papers</h2>
-            <div class="publications-list">
+        <section id="international-conference">
+            <div class="page-title">
+                <h1>International Conference Papers</h1>
+            </div>
+            <div class="publication-section">
                 <div class="publication-item">
                     <span class="pub-index">1</span>
                     <p class="authors">Satida Ruengsurat, Jaimai Eawsivigoon, Vidchaphol Sookplang, Karin Sumongkayothin, Prarinya Siritanawan, Razvan Beuran, Kazunori Kotani</p>
@@ -435,9 +515,11 @@
             </div>
         </section>
 
-        <section class="publication-section">
-            <h2>Domestic Conference Papers</h2>
-            <div class="publications-list">
+        <section id="domestic-conference">
+            <div class="page-title">
+                <h1>Domestic Conference Papers</h1>
+            </div>
+            <div class="publication-section">
                 <div class="publication-item">
                     <span class="pub-index">1</span>
                     <p class="authors">真嘉比浩乃，杉田一樹，太田光一，谷　文，シリタナワン パーリンヤ，長谷川　忍</p>
@@ -658,43 +740,7 @@
                 </li>
             </ul>
         </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li>Shinshu University</li>
-                        <li>Faculty of Engineering</li>
-                        <li>4-17-1 Wakasato</li>
-                        <li>Nagano 380-8553, Japan</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="members.html">Members</a></li>
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="https://www.shinshu-u.ac.jp/english/" target="_blank">Shinshu University</a></li>
-                        <li><a href="https://www.shinshu-u.ac.jp/faculty/engineering/english/" target="_blank">Faculty of Engineering</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Prarinya Lab, Shinshu University. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    </section>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>

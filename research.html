@@ -6,6 +6,99 @@
     <title>Research - Prarinya Laboratory</title>
     <link rel="stylesheet" href="assets/css/main.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Research page styles */
+        .research-overview {
+            max-width: 1000px;
+            margin: 0 auto 2em;
+            padding: 2em;
+        }
+
+        .research-projects {
+            max-width: 1000px;
+            margin: 0 auto 2em;
+            padding: 2em;
+        }
+
+        .research-project {
+            background: var(--background);
+            padding: 1.5em;
+            border-radius: 8px;
+            border: 1px solid rgba(45, 90, 39, 0.1);
+            margin-bottom: 1.5em;
+            transition: all 0.3s ease;
+        }
+
+        .research-project:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 90, 39, 0.1);
+        }
+
+        /* Subnavigation styling */
+        .subnav {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 2em;
+        }
+
+        .subnav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .subnav .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        .subnav .nav-links a {
+            display: block;
+            padding: 1em 0;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .subnav .nav-links a:hover {
+            color: #2c5a27;
+        }
+
+        .subnav .nav-links a.active {
+            color: #2c5a27;
+        }
+
+        .subnav .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #2c5a27;
+        }
+
+        @media (max-width: 768px) {
+            .subnav .nav-links {
+                flex-wrap: wrap;
+                gap: 1em;
+                padding: 0.5em 0;
+            }
+            
+            .subnav .nav-links a {
+                padding: 0.5em 0;
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="main-nav">
@@ -30,9 +123,18 @@
         </div>
     </section>
 
+    <nav class="subnav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main class="container">
         <!-- Research Overview Section -->
-        <section class="research-overview">
+        <section id="overview" class="research-overview">
             <h2>Research Overview</h2>
             <p>Our laboratory focuses on developing trustworthy AI systems and advancing computer vision technologies. We work at the intersection of artificial intelligence, computer vision, and human-centric computing to create reliable and interpretable solutions that benefit society.</p>
             <p>Key research areas include:</p>
@@ -45,39 +147,59 @@
         </section>
 
         <!-- Research Projects Section -->
-        <section class="research-projects">
+        <section id="projects" class="research-projects">
             <h2>Research Projects</h2>
             
-            <!-- Project Template 1 -->
+            <!-- Trustworthy AI Project -->
             <div class="research-project">
                 <div class="project-image">
-                    <img src="images/research/project1.jpg" alt="Project 1 Image">
+                    <img src="images/research/trustworthy-ai.jpg" alt="Trustworthy AI Research">
                 </div>
                 <div class="project-content">
-                    <h3>Project Title 1</h3>
-                    <p>Brief description of the research project. Explain the main objectives, methodology, and expected outcomes. Highlight any significant achievements or milestones.</p>
+                    <h3>Trustworthy AI and Explainable AI</h3>
+                    <p>Our research focuses on developing reliable and interpretable AI systems that users can trust. We work on methods to make AI decisions more transparent and understandable.</p>
                     <p>Key aspects:</p>
                     <ul>
-                        <li>Key technology or methodology used</li>
-                        <li>Main research challenges</li>
-                        <li>Potential applications</li>
+                        <li>Explainable AI methods for deep learning models</li>
+                        <li>Bias detection and mitigation in AI systems</li>
+                        <li>Robustness against adversarial attacks</li>
+                        <li>Privacy-preserving machine learning</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Project Template 2 -->
+            <!-- Computer Vision Project -->
             <div class="research-project">
                 <div class="project-image">
-                    <img src="images/research/project2.jpg" alt="Project 2 Image">
+                    <img src="images/research/computer-vision.jpg" alt="Computer Vision Research">
                 </div>
                 <div class="project-content">
-                    <h3>Project Title 2</h3>
-                    <p>Brief description of the research project. Explain the main objectives, methodology, and expected outcomes. Highlight any significant achievements or milestones.</p>
+                    <h3>Computer Vision and Image Processing</h3>
+                    <p>Our computer vision research spans various applications and techniques, focusing on developing advanced algorithms for image understanding and analysis.</p>
                     <p>Key aspects:</p>
                     <ul>
-                        <li>Key technology or methodology used</li>
-                        <li>Main research challenges</li>
-                        <li>Potential applications</li>
+                        <li>Deep learning for image analysis</li>
+                        <li>Object detection and recognition</li>
+                        <li>Scene understanding and 3D reconstruction</li>
+                        <li>Medical image analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Human-Centric Computing Project -->
+            <div class="research-project">
+                <div class="project-image">
+                    <img src="images/research/human-centric.jpg" alt="Human-Centric Computing Research">
+                </div>
+                <div class="project-content">
+                    <h3>Human-Centric Computing</h3>
+                    <p>We focus on developing AI systems that enhance human capabilities and improve human-computer interaction through intelligent interfaces and adaptive systems.</p>
+                    <p>Key aspects:</p>
+                    <ul>
+                        <li>Human-AI interaction design</li>
+                        <li>Cognitive workload assessment</li>
+                        <li>Adaptive interfaces</li>
+                        <li>User behavior analysis</li>
                     </ul>
                 </div>
             </div>
@@ -119,5 +241,37 @@
             </div>
         </div>
     </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Get all navigation links
+            const navLinks = $('.subnav .nav-links a');
+            
+            // Handle click events
+            navLinks.click(function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.removeClass('active');
+                
+                // Add active class to clicked link
+                $(this).addClass('active');
+                
+                // Smooth scroll to target
+                const targetId = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(targetId).offset().top - 80
+                }, 400);
+            });
+
+            // Set initial active state
+            const hash = window.location.hash || '#overview';
+            $(`.subnav .nav-links a[href="${hash}"]`).addClass('active');
+        });
+    </script>
 </body>
 </html>
