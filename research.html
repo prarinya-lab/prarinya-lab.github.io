@@ -3,11 +3,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Research - Prarinya Lab</title>
     <link rel="stylesheet" href="assets/css/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* Research page styles */
+        :root {
+            --primary: #2C5A27;
+            --primary-light: rgba(44, 90, 39, 0.1);
+            --text-dark: #333;
+            --text-medium: #666;
+            --text-light: #999;
+            --background: #fff;
+            --background-light: #f8f9fa;
+            --border-color: #eee;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --shadow-hover: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
         .research-overview {
             max-width: 1000px;
             margin: 0 auto 2em;
@@ -20,18 +35,149 @@
             padding: 2em;
         }
 
-        .research-topic {
-            background: var(--background);
-            padding: 1.5em;
-            border-radius: 8px;
-            border: 1px solid rgba(45, 90, 39, 0.1);
-            margin-bottom: 1.5em;
-            transition: all 0.3s ease;
+        /* Grants section styling */
+        .grants-section {
+            max-width: 1000px;
+            margin: 0 auto 3em;
+            padding: 2em;
         }
 
-        .research-topic:hover {
+        .grants-section h2 {
+            color: var(--primary);
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-align: center;
+            position: relative;
+        }
+
+        .grants-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 0.5em auto 0;
+        }
+
+        .year-header {
+            margin: 2.5em 0 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 1.5em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .year-header::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--primary-light);
+        }
+
+        .year-header:first-child {
+            margin-top: 0;
+        }
+
+        .grant-item {
+            background: var(--background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            transition: var(--transition);
+        }
+
+        .grant-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(45, 90, 39, 0.1);
+            box-shadow: 0 4px 12px var(--shadow-hover);
+        }
+
+        .grant-item h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .grant-name-jp {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .project-name-jp {
+            color: var(--text-medium);
+            font-size: 1rem;
+            margin: 0.8rem 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+        }
+
+        .grant-meta {
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .grant-meta span {
+            background: var(--background-light);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            color: var(--text-medium);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grant-meta .period {
+            color: #2196F3;
+            font-weight: 500;
+        }
+
+        .grant-meta .period::before {
+            content: '📅';
+        }
+
+        .grant-meta .org {
+            color: #4CAF50;
+        }
+
+        .grant-meta .org::before {
+            content: '🏢';
+        }
+
+        .grant-meta .amount {
+            color: #F44336;
+            font-weight: 500;
+        }
+
+        .grant-meta .amount::before {
+            content: '💰';
+        }
+
+        .grant-meta .members {
+            color: #673AB7;
+        }
+
+        .grant-meta .members::before {
+            content: '👤';
+        }
+
+        .grant-meta .co-members {
+            color: #673AB7;
+        }
+
+        .grant-meta .co-members::before {
+            content: '👥';
         }
 
         /* Subnavigation styling */
@@ -52,40 +198,41 @@
         }
 
         .subnav .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
             display: flex;
-            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
             gap: 2em;
         }
 
         .subnav .nav-links a {
             display: block;
             padding: 1em 0;
-            color: #333;
+            color: #666;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95em;
-            transition: all 0.3s ease;
+            position: relative;
+            transition: color 0.3s ease;
         }
 
         .subnav .nav-links a:hover {
-            color: #2c5a27;
+            color: #2C5A27;
         }
 
-        .subnav .nav-links a.active {
-            color: #2c5a27;
-        }
-
-        .subnav .nav-links a.active::after {
+        .subnav .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -1px;
+            bottom: 0;
             left: 0;
             width: 100%;
             height: 2px;
-            background: #2c5a27;
+            background: #2C5A27;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .subnav .nav-links a:hover::after {
+            transform: scaleX(1);
         }
 
         /* Section spacing */
@@ -323,6 +470,83 @@
             left: 0.5em;
         }
 
+        /* Grant Section Styles */
+        .section-header {
+            font-size: 1.5em;
+            color: var(--primary);
+            margin: 2em 0 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .grant-subsection {
+            margin-bottom: 3em;
+        }
+
+        .year-header {
+            color: #666;
+            font-size: 1.2em;
+            margin: 1.5em 0 1em;
+            padding-left: 0.5em;
+            border-left: 4px solid var(--primary);
+        }
+
+        .grant-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5em;
+            margin-bottom: 1.5em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .grant-item h3 {
+            color: var(--primary);
+            margin-bottom: 1em;
+            line-height: 1.4;
+        }
+
+        .grant-name-jp {
+            margin-bottom: 1em;
+            line-height: 1.4;
+        }
+
+        .grant-org {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1em;
+        }
+
+        .grant-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            margin-bottom: 1em;
+            color: #666;
+        }
+
+        .grant-meta span {
+            display: inline-block;
+        }
+
+        .grant-meta .note {
+            color: #e74c3c;
+            font-style: italic;
+        }
+
+        .members {
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .grant-item {
+                padding: 1em;
+            }
+
+            .grant-meta {
+                font-size: 0.85em;
+            }
+        }
+
         @media (max-width: 768px) {
             .subnav .nav-links {
                 flex-wrap: wrap;
@@ -417,6 +641,7 @@
             <ul class="nav-links">
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#topics">Topics</a></li>
+                <li><a href="#grants">Grants</a></li>
             </ul>
         </div>
     </nav>
@@ -537,6 +762,161 @@
                             <li>Adaptive user experience design</li>
                             <li>Cross-cultural interaction patterns</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grants Section -->
+        <section id="grants" class="grants-section">
+            <div class="container">
+                <h2>Research Grants</h2>
+                <div class="content-wrapper">
+                    <!-- Government Grants (JSPS) -->
+                    <h3 class="section-header">Government Grants</h3>
+                    <div class="grant-subsection">
+                        <h3 class="year-header">2023-2026</h3>
+                        <div class="grant-item">
+                            <h3>科研費 若手 23K16925<br>
+                            JSPS KAKENHI Grant-in-Aid for Early-Career Scientists </h3>
+                            <div class="grant-name-jp">画像情報処理による国境を越えた感情表現の解析<br>
+                            Analysis of Emotional Expressions Beyond Borders using Image Information Processing</div>
+                            <div class="grant-org">Japan Society for the Promotion of Science (JSPS)</div>
+                            <div class="grant-meta">
+                                <span class="period">2023年度-2025年度</span>
+                                <span class="amount">3,500,000円</span>
+                            </div>
+                            <div class="members">Principal Investigator: Prarinya Siritanawan</div>
+                        </div>
+
+                        <div class="grant-item">
+                            <h3>科研費 基盤（C）23K11950<br>
+                            JSPS KAKENHI Grant-in-Aid for Scientific Research (C)</h3>
+                            <div class="grant-name-jp">非侵襲で在宅使用可能な呼吸機能診断支援システムのための基盤研究<br>
+                            Fundamental research for a non-invasive, home-use respiratory function diagnostic support system</div>
+                            <div class="grant-org">Japan Society for the Promotion of Science (JSPS)</div>
+                            <div class="grant-meta">
+                                <span class="period">2023年度-2025年度</span>
+                                <span class="amount">3,600,000円</span>
+                            </div>
+                            <div class="members">Principal Investigator: Junko Izawa<br>
+                            Co-Is: Prarinya Siritanawan, Shinji Fukasawa</div>
+                        </div>
+                    </div>
+
+                    <!-- Institutional and Other Grants -->
+                    <h3 class="section-header">Institutional and Other Grants</h3>
+                    <div class="grant-subsection">
+                        <h3 class="year-header">2024</h3>
+                        <div class="grant-item">
+                            <h3>令和６年度　先端研究拠点形成支援（JAISTサイエンスハブ構築支援）<br>
+                            FY2024 JAIST Research Grant for Advanced Research Hub (JAIST Science Hub)</h3>
+                            <div class="grant-name-jp">JAIST-Thailand Science Hub: Establishing Next Generation Generative AI and Beyond</div>
+                            <div class="grant-org">Japan Advanced Institute of Science and Technology (JAIST)</div>
+                            <div class="grant-meta">
+                                <span class="period">2024年度</span>
+                                <span class="amount">1,400,000円</span>
+                            </div>
+                            <div class="members">Principal Investigator: Natthawut Kertkeidkachorn<br>
+                            Co-Is: Toshiaki Aoki, Shinobu Hasegawa, Kiyoaki Shirai, Teeradaj Racharak, Prarinya Siritanawan, Proadpran Punyabukkana, Dittaya Wanvarie, Narit Hnoohom, Thanapon Noraset, Apichon Witayangkurn, Akkharawoot Takhom</div>
+                        </div>
+
+                        <div class="grant-item">
+                            <h3>令和６年度　萌芽的研究支援<br>
+                            FY2024 JAIST Research Grant (Fundamental Research)</h3>
+                            <div class="grant-name-jp">最新の機械学習・画像解析システムにおける敵対的攻撃に対する防御<br>
+                            Secured AI: Defending Against Adversarial Attacks in Modern Machine Learning and Image Analysis Systems</div>
+                            <div class="grant-org">Japan Advanced Institute of Science and Technology (JAIST)</div>
+                            <div class="grant-meta">
+                                <span class="period">2024年度</span>
+                                <span class="amount">400,000円</span>
+                                <span class="note">(Project terminated due to change of employment)</span>
+                            </div>
+                            <div class="members">Principal Investigator: Prarinya Siritanawan<br>
+                            Co-Is: Razvan Flori Beuran, Karin Sumongkayothin</div>
+                        </div>
+
+                        <h3 class="year-header">2023</h3>
+                        <div class="grant-item">
+                            <h3>令和5年度　萌芽的研究支援<br>
+                            FY2023 JAIST Research Grant (Fundamental Research)</h3>
+                            <div class="grant-name-jp">画像認識における敵対的攻撃の画像特徴と防御策に関する研究<br>
+                            Research on the Fundamental Visual Image Features of Adversarial Examples and the Defense Counterparts</div>
+                            <div class="grant-org">Japan Advanced Institute of Science and Technology (JAIST)</div>
+                            <div class="grant-meta">
+                                <span class="period">2023年度</span>
+                                <span class="amount">400,000円</span>
+                            </div>
+                            <div class="members">Principal Investigator: Prarinya Siritanawan<br>
+                            Co-I: Kazunori Kotani</div>
+                        </div>
+
+                        <h3 class="year-header">2022</h3>
+                        <div class="grant-item">
+                            <h3>令和４年度　萌芽的研究支援<br>
+                            FY2022 JAIST Research Grant (Fundamental Research)</h3>
+                            <div class="grant-name-jp">多文化共生社会における異文化間感情表現認識<br>
+                            Emotional Expression Analysis in a Multicultural Society</div>
+                            <div class="grant-org">Japan Advanced Institute of Science and Technology (JAIST)</div>
+                            <div class="grant-meta">
+                                <span class="period">2022年度</span>
+                                <span class="amount">340,000円</span>
+                            </div>
+                            <div class="members">Principal Investigator: Prarinya Siritanawan<br>
+                            Co-Is: Kazunori Kotani, Shinobu Hasegawa, Teeradaj Racharak, Haruyuki Kojima</div>
+                        </div>
+
+                        <div class="grant-item">
+                            <h3>令和４年度 融合科学共同専攻における分野融合型研究支援<br>
+                            FY2022 Support for Transdisciplinary Research in Joint Degree Program</h3>
+                            <div class="grant-name-jp">情動認知システム研究グループ<br>
+                            Emotional Cognition System Research Group</div>
+                            <div class="grant-org">Japan Advanced Institute of Science and Technology (JAIST) and Kanazawa University</div>
+                            <div class="grant-meta">
+                                <span class="period">2022年度</span>
+                                <span class="amount">500,000円</span>
+                            </div>
+                            <div class="members">Principal Investigator (Kanazawa University): Haruyuki Kojima<br>
+                            Principal Investigator (JAIST): Prarinya Siritanawan</div>
+                        </div>
+
+                        <h3 class="year-header">2021</h3>
+                        <div class="grant-item">
+                            <h3>令和3年度 情報科学国際交流財団 (IISF) 研究者海外派遣助成<br>
+                            FY2021 IISF Grant for International Conference Participation</h3>
+                            <div class="grant-name-jp">Grant No. 2021.1.2.161 - International Conference Registration Fee Support</div>
+                            <div class="grant-org">International Information Science Foundation (IISF)</div>
+                            <div class="grant-meta">
+                                <span class="period">2021年度</span>
+                                <span class="amount">40,000円</span>
+                                <span class="note">(Registration fee only due to COVID-19 impact)</span>
+                            </div>
+                        </div>
+
+                        <div class="grant-item">
+                            <h3>令和3年度 融合科学共同専攻における分野融合型研究支援<br>
+                            FY2021 Support for Transdisciplinary Research in Joint Degree Program</h3>
+                            <div class="grant-name-jp">情動認知システム研究グループ<br>
+                            Emotional Cognition System Research Group</div>
+                            <div class="grant-org">Japan Advanced Institute of Science and Technology (JAIST) and Kanazawa University</div>
+                            <div class="grant-meta">
+                                <span class="period">2021年度</span>
+                                <span class="amount">500,000円</span>
+                            </div>
+                            <div class="members">Principal Investigator (Kanazawa University): Haruyuki Kojima<br>
+                            Principal Investigator (JAIST): Prarinya Siritanawan</div>
+                        </div>
+
+                        <h3 class="year-header">2011-2012</h3>
+                        <div class="grant-item">
+                            <h3>National Research University Project (NRU)</h3>
+                            <div class="grant-name-jp">Thailand Office of Higher Education Commission</div>
+                            <div class="grant-org">Office of Higher Education Commission, Thailand</div>
+                            <div class="grant-meta">
+                                <span class="period">2011年6月 - 2012年3月</span>
+                                <span class="amount">70,000 baht (~210,000円)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

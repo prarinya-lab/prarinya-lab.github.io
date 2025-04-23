@@ -31,13 +31,13 @@
             border-bottom: 2px solid var(--primary);
         }
 
-        .publications, .grants {
+        .publications {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .publications li, .grants li {
+        .publications li {
             background: var(--background);
             padding: 1.5em;
             border-radius: 8px;
@@ -47,7 +47,7 @@
             position: relative;
         }
 
-        .publications li:hover, .grants li:hover {
+        .publications li:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(45, 90, 39, 0.1);
         }
@@ -107,10 +107,24 @@
             background: #fff;
             border: 1px solid rgba(45, 90, 39, 0.1);
             border-radius: 8px;
-            padding: 1.5em;
-            margin: 0 0 1.5em 2em;
+            padding: 0.8em;
+            margin: 0 0 1em 2em;
             position: relative;
             transition: all 0.3s ease;
+        }
+
+        .publication-item h3 {
+            margin-bottom: 0.4em;
+        }
+
+        .publication-item p {
+            margin-bottom: 0.4em;
+            line-height: 1.4;
+        }
+
+        .publication-meta {
+            margin-top: 0.4em;
+            font-size: 0.9em;
         }
 
         @media (max-width: 768px) {
@@ -119,7 +133,7 @@
             }
 
             .publication-item {
-                padding: 1.2em;
+                padding: 0.8em;
                 margin: 0 0 1em 2em;
             }
         }
@@ -144,7 +158,7 @@
     <section class="hero">
         <div class="container">
             <h1>Publications</h1>
-            <p class="subtitle">Research Publications and Grants</p>
+            <p class="subtitle">Research Publications</p>
         </div>
     </section>
 
@@ -154,7 +168,6 @@
                 <li><a href="#journal-papers">Journal Papers</a></li>
                 <li><a href="#international-conference">International Conference</a></li>
                 <li><a href="#domestic-conference">Domestic Conference</a></li>
-                <li><a href="#grants">Grants & Funding</a></li>
             </ul>
         </div>
     </nav>
@@ -662,90 +675,6 @@
                     <p class="venue">2013年映像メディア処理シンポジウム (PCSJ/IMPS2013) <span class="year">(2013年11月)</span></p>
                 </div>
             </div>
-        </section>
-
-        <section id="grants">
-            <div class="page-title">
-                <h1>Grants & Funding</h1>
-            </div>
-            <ul class="grants">
-                <li>
-                    <h3>JAIST Research Grant (Fundamental Research)</h3>
-                    <p class="grant-details">最新の機械学習・画像解析システムにおける敵対的攻撃に対する防御</p>
-                    <p class="grant-details">Secured AI: Defending Against Adversarial Attacks in Modern Machine Learning and Image Analysis Systems</p>
-                    <p class="grant-period">2024</p>
-                    <p class="grant-amount">¥400,000</p>
-                    <p class="grant-members">PI: Prarinya Siritanawan<br>Co-PIs: Razvan Flori Beuran, Karin Sumongkayothin</p>
-                    <p class="grant-note">Project terminated due to change of employment</p>
-                </li>
-                <li>
-                    <h3>JAIST Research Grant (JAIST Science Hub)</h3>
-                    <p class="grant-details">JAIST-Thailand Science Hub: Establishing Next Generation Generative AI and Beyond</p>
-                    <p class="grant-period">2024</p>
-                    <p class="grant-amount">¥1,200,000</p>
-                    <p class="grant-members">PI: Natthawut Kertkeidkachorn<br>Co-PIs: Toshiaki Aoki, Shinobu Hasegawa, Kiyoaki Shirai, Racharak Teeradaj, Siritanawan Prarinya, Proadpran Punyabukkana, Dittaya Wanvarie, Narit Hnoohom, Thanapon Noraset, Apichon Witayangkurn, Akkharawoot Takhom</p>
-                </li>
-                <li>
-                    <h3>JSPS KAKENHI Grant (Early-Career Scientists)</h3>
-                    <p class="grant-details">画像情報処理による国境を越えた感情表現の解析</p>
-                    <p class="grant-details">Analysis of Emotional Expressions Beyond Borders using Image Information Processing</p>
-                    <p class="grant-period">2023-2026</p>
-                    <p class="grant-amount">¥3,500,000</p>
-                    <p class="grant-members">PI: Prarinya Siritanawan</p>
-                </li>
-                <li>
-                    <h3>JSPS KAKENHI Grant (Fundamental Research C)</h3>
-                    <p class="grant-details">非侵襲で在宅使用可能な呼吸機能診断支援システムのための基盤研究</p>
-                    <p class="grant-details">Fundamental research for a non-invasive, home-use respiratory function diagnostic support system</p>
-                    <p class="grant-period">2023-2026</p>
-                    <p class="grant-amount">¥3,600,000</p>
-                    <p class="grant-members">PI: Junko Izawa<br>Co-PIs: Prarinya Siritanawan, Shinji Fukasawa</p>
-                </li>
-                <li>
-                    <h3>JAIST Research Grant (Fundamental Research)</h3>
-                    <p class="grant-details">画像認識における敵対的攻撃の画像特徴と防御策に関する研究</p>
-                    <p class="grant-details">Research on the Fundamental Visual Image Features of Adversarial Examples and the Defense Counterparts</p>
-                    <p class="grant-period">2023</p>
-                    <p class="grant-amount">¥400,000</p>
-                    <p class="grant-members">PI: Prarinya Siritanawan<br>Co-PI: Kazunori Kotani</p>
-                </li>
-                <li>
-                    <h3>JAIST Research Grant (Fundamental Research)</h3>
-                    <p class="grant-details">多文化共生社会における異文化間感情表現認識</p>
-                    <p class="grant-details">Emotional Expression Analysis in a Multicultural Society</p>
-                    <p class="grant-period">2022</p>
-                    <p class="grant-amount">¥340,000</p>
-                    <p class="grant-members">PI: Prarinya Siritanawan<br>Co-PIs: Kazunori Kotani, Shinobu Hasegawa, Teeradaj Racharak, Haruyuki Kojima</p>
-                </li>
-                <li>
-                    <h3>JAIST-KU Transdisciplinary Program Research Support</h3>
-                    <p class="grant-details">情動認知システム研究グループ</p>
-                    <p class="grant-period">2022</p>
-                    <p class="grant-amount">¥500,000</p>
-                    <p class="grant-members">PI: Haruyuki Kojima<br>Co-PI: Prarinya Siritanawan</p>
-                </li>
-                <li>
-                    <h3>International Information Science Foundation (IISF) Grant</h3>
-                    <p class="grant-details">研究者海外派遣助成 (国際会議参加登録費)</p>
-                    <p class="grant-details">Grant for Registration Fee for International Conferences</p>
-                    <p class="grant-period">2021</p>
-                    <p class="grant-amount">¥40,000</p>
-                    <p class="grant-id">Grant No. 2021.1.2.161</p>
-                </li>
-                <li>
-                    <h3>JAIST-KU Transdisciplinary Program Research Support</h3>
-                    <p class="grant-details">情動認知システム研究グループ</p>
-                    <p class="grant-period">2021</p>
-                    <p class="grant-amount">¥500,000</p>
-                    <p class="grant-members">PI: Haruyuki Kojima<br>Co-PI: Prarinya Siritanawan</p>
-                </li>
-                <li>
-                    <h3>National Research University Project (NRU)</h3>
-                    <p class="grant-details">Thailand Office of Higher Education Commission</p>
-                    <p class="grant-period">Jun 2011 – Mar 2012</p>
-                    <p class="grant-amount">70,000 baht (~¥210,000)</p>
-                </li>
-            </ul>
         </section>
     </section>
 
