@@ -399,6 +399,43 @@
                 font-size: 0.95em;
             }
         }
+
+        .research-overview {
+            margin-bottom: 2.5em;
+        }
+
+        .research-image {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8f9fa;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .research-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .image-placeholder {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .research-overview {
+                margin: 1.5em 0 2em;
+            }
+
+            .research-image {
+                border-radius: 6px;
+            }
+        }
     </style>
 </head>
 <body>

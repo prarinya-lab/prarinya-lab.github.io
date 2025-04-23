@@ -104,95 +104,114 @@
         /* Research Overview Section */
         .research-overview {
             padding: 3em 0;
-        }
-
-        .research-overview .content-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
+            background: #fff;
         }
 
         .research-overview h2 {
             color: #2c5a27;
-            font-size: 2em;
-            margin-bottom: 1.5em;
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
             text-align: center;
-            position: relative;
         }
 
-        .research-overview h2::after {
-            content: '';
-            position: absolute;
-            bottom: -0.5em;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: #2c5a27;
-        }
-
-        .research-overview .vision-statement {
-            font-size: 1.4em;
-            color: #2c5a27;
+        .vision-statement {
             text-align: center;
+            color: #666;
+            font-size: 1.2em;
             margin-bottom: 2em;
-            line-height: 1.6;
-            font-weight: 500;
+            font-style: italic;
         }
 
-        .research-overview .description {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 2em;
-            text-align: justify;
-        }
-
-        .research-overview .areas-title {
-            font-size: 1.3em;
-            color: #333;
-            margin-bottom: 1em;
-            font-weight: 500;
-        }
-
-        .research-overview .research-areas {
+        .overview-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5em;
-            margin-top: 1em;
+            grid-template-columns: minmax(300px, 45%) 1fr;
+            gap: 2em;
+            align-items: start;
         }
 
-        .research-overview .area-item {
-            background: #f8f9fa;
-            padding: 1.5em;
+        .research-image {
+            width: 100%;
             border-radius: 8px;
-            border: 1px solid rgba(44, 90, 39, 0.1);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 1em;
+            overflow: hidden;
+            background: #f8f9fa;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 140px; /* Match the scroll-margin-top */
         }
 
-        .research-overview .area-item i {
-            font-size: 1.5em;
-            color: #2c5a27;
-            opacity: 0.9;
-        }
-
-        .research-overview .area-item p {
-            margin: 0;
-            font-size: 1.1em;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .research-overview .area-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(44, 90, 39, 0.1);
+        .research-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
             background: #fff;
         }
 
-        .research-overview .area-item:hover i {
-            opacity: 1;
+        .content-wrapper {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .content-wrapper p {
+            margin-bottom: 1.2em;
+        }
+
+        .content-wrapper ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+        }
+
+        .content-wrapper li {
+            padding: 0.8em 1em;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid rgba(44, 90, 39, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .content-wrapper li:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 90, 39, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .research-overview {
+                padding: 2em 1em;
+            }
+
+            .vision-statement {
+                font-size: 1.1em;
+                margin-bottom: 1.5em;
+            }
+
+            .research-image {
+                border-radius: 6px;
+            }
+
+            .content-wrapper ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .overview-content {
+                grid-template-columns: 1fr;
+            }
+
+            .research-image {
+                position: relative;
+                top: 0;
+                max-width: 500px;
+                margin: 0 auto;
+            }
         }
 
         /* Research Topics Section */
@@ -305,24 +324,6 @@
         }
 
         @media (max-width: 768px) {
-            .research-overview {
-                padding: 2em 1em;
-            }
-
-            .research-overview .vision-statement {
-                font-size: 1.2em;
-            }
-
-            .research-overview .description {
-                font-size: 1em;
-            }
-
-            .research-overview .research-areas {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
             .research-topics {
                 padding: 3em 1em;
             }
@@ -380,31 +381,24 @@
     <main class="container">
         <!-- Research Overview Section -->
         <section id="overview" class="research-overview">
-            <div class="content-wrapper">
+            <div class="container">
                 <h2>Research Overview</h2>
                 <p class="vision-statement">Shaping a Better World through Image Information Engineering.</p>
-                <p class="description">In a society with higher diversity awareness, our aim is to deepen the understanding of human behavior, and the psychology of people across different values and cultures, while studying interactions between humans and machines. To achieve this, we are interested in research on computer vision by integrating in-depth human behavioral analysis with computational techniques, focusing on elemental technologies of image information science, such as image analysis, recognition, and understanding. Furthermore, we will ensure that intelligent machines (Computers, Robots, Interactive agents, etc.) can reliably interact with both humans and the world in a safe, secure, and compassionate manner, ultimately shaping a future where these intelligent machines can enrich human life in this AI-driven generation.</p>
-                <h3 class="areas-title">Key Research Areas</h3>
-                <div class="research-areas">
-                    <div class="area-item">
-                        <i class="fas fa-camera"></i>
-                        <p>Computer Vision</p>
+                <div class="overview-content">
+                    <div class="research-image">
+                        <img src="images/research-overview.png" alt="Research Overview" id="research-overview-img">
                     </div>
-                    <div class="area-item">
-                        <i class="fas fa-heart"></i>
-                        <p>Affective Computing</p>
-                    </div>
-                    <div class="area-item">
-                        <i class="fas fa-lock"></i>
-                        <p>Secure and Trustworthy Image Understanding</p>
-                    </div>
-                    <div class="area-item">
-                        <i class="fas fa-eye"></i>
-                        <p>Human Visual Perception</p>
-                    </div>
-                    <div class="area-item">
-                        <i class="fas fa-desktop"></i>
-                        <p>Human-Computer Interaction</p>
+                    <div class="content-wrapper">
+                        <p>Our laboratory focuses on developing innovative solutions in image information engineering, with a particular emphasis on human-centric approaches and trustworthy AI systems. We strive to create technology that enhances human capabilities while ensuring reliability, safety, and ethical considerations.</p>
+                        
+                        <p>Key research areas include:</p>
+                        <ul>
+                            <li>Computer Vision and Image Processing</li>
+                            <li>Human Behavior Analysis</li>
+                            <li>Affective Computing</li>
+                            <li>Trustworthy AI Systems</li>
+                            <li>Human-Computer Interaction</li>
+                        </ul>
                     </div>
                 </div>
             </div>
