@@ -257,9 +257,12 @@
 
         .highlight-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5em;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2em;
             margin-top: 1em;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .highlight-item {
@@ -275,15 +278,15 @@
 
         .highlight-item h3 {
             color: #2c5a27;
-            font-size: 1.2em;
-            margin-bottom: 0.7em;
+            font-size: 1.15em;
+            margin-bottom: 0.6em;
             font-weight: 600;
             line-height: 1.3;
         }
 
         .highlight-item p {
             color: #666;
-            font-size: 0.92em;
+            font-size: 0.9em;
             line-height: 1.5;
             margin: 0;
             flex-grow: 1;
@@ -299,6 +302,7 @@
             .highlight-grid {
                 grid-template-columns: 1fr;
                 gap: 1em;
+                padding: 0 1em;
             }
 
             .highlight-item {
@@ -335,58 +339,64 @@
 
         .news-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 1em;
-            padding: 0.8em 0;
+            padding: 0.8em 1em;
             border-bottom: 1px solid rgba(44, 90, 39, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .news-item:hover {
+            background-color: #fff;
         }
 
         .news-date {
             color: #666;
             font-size: 0.9em;
             min-width: 90px;
+            text-align: right;
         }
 
-        .news-content {
+        .news-title {
             flex: 1;
+            font-size: 1em;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .news-title:hover {
+            color: #2c5a27;
+        }
+
+        .view-more-news {
+            text-align: center;
+            margin-top: 1.5em;
+        }
+
+        .view-more-news a {
+            color: #2c5a27;
+            text-decoration: none;
+            font-weight: 500;
             font-size: 0.95em;
-            line-height: 1.4;
-            color: #444;
+            transition: color 0.3s ease;
+        }
+
+        .view-more-news a:hover {
+            color: #1a3618;
         }
 
         @media (max-width: 768px) {
-            .hero {
-                padding: 3em 1em 2em;
-            }
-
-            .hero h1 {
-                font-size: 2em;
-            }
-
-            .hero h2 {
-                font-size: 1.6em;
-            }
-
-            .hero .subtitle {
-                font-size: 1.1em;
-            }
-
-            .highlight-grid {
-                grid-template-columns: 1fr;
-                gap: 1em;
-            }
-
-            .highlight-item {
-                padding: 1.2em;
-            }
-
             .news-item {
-                flex-direction: column;
-                gap: 0.3em;
+                padding: 0.8em 0;
             }
 
             .news-date {
-                min-width: auto;
+                font-size: 0.85em;
+                min-width: 80px;
+            }
+
+            .news-title {
+                font-size: 0.95em;
             }
         }
     </style>
@@ -433,6 +443,10 @@
                     <h3>Secure and Trustworthy AI</h3>
                     <p>Developing reliable and secure image understanding systems with privacy preservation and ethical considerations.</p>
                 </div>
+                <div class="highlight-item">
+                    <h3>Human-Computer Interaction</h3>
+                    <p>Creating intuitive and natural interfaces between humans and intelligent machines with adaptive user experience design.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -440,19 +454,8 @@
     <section class="latest-news">
         <div class="container">
             <h2>Latest News</h2>
-            <div class="news-list">
-                <div class="news-item">
-                    <div class="news-date">2025.04.23</div>
-                    <div class="news-content">Website redesign completed with improved user experience and modern design.</div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2025.04.15</div>
-                    <div class="news-content">New research project on cross-cultural emotion recognition started.</div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2025.04.01</div>
-                    <div class="news-content">Welcome to new students joining our laboratory!</div>
-                </div>
+            <div class="news-list" id="latestNewsContainer">
+                <!-- Latest news items will be loaded here -->
             </div>
             <div class="view-more-news">
                 <a href="news.html">View all news →</a>
@@ -496,110 +499,47 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
     <script>
-        // Add loaded class to body when page is ready
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
-        });
-
-        // Highlight current section in navigation
+        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('#nav a');
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const navLinks = document.querySelector('.nav-links');
             
-            window.addEventListener('scroll', function() {
-                let current = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= (sectionTop - 60)) {
-                        current = section.getAttribute('id');
-                    }
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
                 });
+            }
+        });
 
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === current) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
-    <script>
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
-                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked button and corresponding content
-                button.classList.add('active');
-                document.getElementById(button.dataset.tab + '-content').classList.add('active');
-            });
-        });
-    </script>
-    <script>
-        // Load latest news items
+        // Load and display latest news items
         async function loadLatestNews() {
             try {
                 const response = await fetch('assets/data/news.json');
                 const data = await response.json();
                 const newsContainer = document.getElementById('latestNewsContainer');
                 
-                // Get the last 3 news items
+                // Take only the latest 3 news items
                 const latestNews = data.news.slice(0, 3);
                 
                 latestNews.forEach(item => {
                     const newsItem = document.createElement('div');
                     newsItem.className = 'news-item';
+                    
+                    const date = item.date.replace('/', '.').replace('/', '.');
                     newsItem.innerHTML = `
-                        <div class="news-date">${item.date}</div>
-                        <h3 class="news-title">${item.title}</h3>
-                        <p class="news-content">${item.content}</p>
+                        <div class="news-date">${date}</div>
+                        <a href="news.html" class="news-title">${item.title}</a>
                     `;
                     newsContainer.appendChild(newsItem);
                 });
             } catch (error) {
-                console.error('Error loading latest news:', error);
+                console.error('Error loading news:', error);
             }
         }
 
-        // Load latest grants
-        function loadLatestGrants() {
-            fetch('research.html')
-                .then(response => response.text())
-                .then(html => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    const grants = Array.from(doc.querySelectorAll('.grants li')).slice(0, 3);
-                    const grantContainer = document.querySelector('.grants-grid');
-                    grants.forEach(grant => {
-                        grantContainer.appendChild(grant.cloneNode(true));
-                    });
-                });
-        }
-
-        // Tab switching
-        document.querySelectorAll('.tab-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-                // Hide all tab content
-                document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
-                // Show selected tab content
-                document.getElementById(button.dataset.tab).style.display = 'block';
-            });
-        });
-
-        // Load content when page loads
-        window.addEventListener('load', () => {
-            loadLatestNews();
-        });
+        // Load news when the page is ready
+        document.addEventListener('DOMContentLoaded', loadLatestNews);
     </script>
 </body>
 </html>

@@ -1,6 +1,11 @@
 {
     "news": [
         {
+            "date": "2025/4/23",
+            "title": "Updated website with new design and content",
+            "content": "We have updated the website with a new design and content to provide a better user experience."
+        },
+        {
             "date": "2025/4/7",
             "title": "Welcome the first batch of B4 students joining our lab",
             "content": "We are excited to welcome our first batch of B4 students to the laboratory. We look forward to working together on innovative research projects."
