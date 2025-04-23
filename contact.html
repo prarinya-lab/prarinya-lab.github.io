@@ -7,28 +7,96 @@
     <link rel="stylesheet" href="assets/css/main.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2em;
+            margin-bottom: 2em;
+        }
+
         .address-section {
             display: flex;
             flex-direction: column;
             gap: 1.5em;
         }
+
         .address-english, .address-japanese {
             flex: 1;
         }
+
         .address-japanese {
             border-top: 1px solid #eaecef;
             padding-top: 1.5em;
         }
+
         .address-english p, .address-japanese p {
             margin: 0;
             line-height: 1.6;
         }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 Aspect Ratio */
+            height: 0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .contact-info {
+            padding: 3em 0;
+        }
+
+        .contact-card {
+            background: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card h3 {
+            color: #2c5a27;
+            margin-bottom: 1em;
+            font-size: 1.3em;
+        }
+
+        .additional-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2em;
+            margin-top: 2em;
+        }
+
         @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5em;
+            }
+
+            .map-container {
+                padding-bottom: 66.67%; /* 3:2 Aspect Ratio for mobile */
+            }
+
             .address-section {
                 gap: 1.2em;
             }
+
             .address-japanese {
                 padding-top: 1.2em;
+            }
+
+            .additional-info {
+                grid-template-columns: 1fr;
+                gap: 1.5em;
             }
         }
     </style>
@@ -80,6 +148,21 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d564.0434879912434!2d138.18844816078365!3d36.63146189049815!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sjp!4v1745401338015!5m2!1sen!2sjp" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
                 
                 <div class="contact-card">
                     <h3>Contact Information</h3>
@@ -96,22 +179,8 @@
                     </ul>
                     <p>Please contact us by email for inquiries about joining our lab.</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="map">
-        <div class="container">
-            <h2>Location</h2>
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.537156925265!2d138.18843731526978!3d36.65116087997692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d869c501ac431%3A0x87f6e56e3c742b31!2sShinshu%20University%20Engineering%20Campus!5e0!3m2!1sen!2sjp!4v1650432185412!5m2!1sen!2sjp" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+                
             </div>
         </div>
     </section>
