@@ -1,9 +1,24 @@
 {
     "news": [
         {
+            "date": "2025/7/16",
+            "title": "Our paper on \"Network Intrusion Detection System Based on Reinforcement Learning Technique Optimization\" accepted by ProvSec2025",
+            "content": ""
+        },
+        {
+            "date": "2025/6/28",
+            "title": "3 of our papers accepted to SICE2025",
+            "content": ""
+        },
+        {
             "date": "2025/4/23",
             "title": "Updated website with new design and content",
             "content": "We have updated the website with a new design and content to provide a better user experience."
+        },
+        {
+            "date": "2025/4/21",
+            "title": "Our paper on \"Complex Emotion Estimation using Analysis-by-Synthesis of Facial Expression Images\" accepted by IEEE Access",
+            "content": ""
         },
         {
             "date": "2025/4/7",
