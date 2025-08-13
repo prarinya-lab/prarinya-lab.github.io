@@ -6,6 +6,101 @@
     <title>News - Prarinya Lab</title>
     <link rel="stylesheet" href="assets/css/main.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* News Grid Layout */
+        .news-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .news-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 1rem;
+            border: 1px solid #eee;
+        }
+
+        .news-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .news-images {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            background: #f9f9f9;
+            padding: 2px;
+        }
+
+        .news-image {
+            flex: 1 1 200px;
+            min-width: 0;
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        
+        .news-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .news-item:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-content {
+            padding: 1rem 1.25rem 1.25rem;
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.8rem;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .news-title {
+            color: #2c5a27;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            line-height: 1.3;
+            text-decoration: none;
+            display: block;
+        }
+
+        .news-title:hover {
+            text-decoration: underline;
+        }
+
+        .news-excerpt {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Single column layout */
+    </style>
 </head>
 <body>
     <nav class="main-nav">
@@ -86,10 +181,26 @@
                 data.news.forEach(item => {
                     const newsItem = document.createElement('div');
                     newsItem.className = 'news-item';
+                    
+                    let imageHtml = '';
+                    if (item.images && item.images.length > 0) {
+                        imageHtml = `
+                        <div class="news-images">
+                            ${item.images.map(img => `
+                                <div class="news-image">
+                                    <img src="${img}" alt="${item.title}">
+                                </div>
+                            `).join('')}
+                        </div>`;
+                    }
+                    
                     newsItem.innerHTML = `
-                        <div class="news-date">${item.date}</div>
-                        <h3 class="news-title">${item.title}</h3>
-                        <p class="news-content">${item.content}</p>
+                        ${imageHtml}
+                        <div class="news-content">
+                            <div class="news-date">${item.date}</div>
+                            <h3 class="news-title">${item.title}</h3>
+                            <p class="news-excerpt">${item.content}</p>
+                        </div>
                     `;
                     newsContainer.appendChild(newsItem);
                 });

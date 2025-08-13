@@ -1,34 +1,46 @@
 {
     "news": [
         {
+            "date": "2025/8/01",
+            "title": "Visitors from MUEG",
+            "content": "Faculty members and staffs from the Department of Computer Enginneering, Faculty of Engineerinng, Mahidol University have visited to our lab",
+            "images": ["images/news/202508/MUEG-visit-2025-1.JPG", "images/news/202508/MUEG-visit-2025-2.jpg", "images/news/202508/MUEG-visit-2025-3.jpg"]
+        },
+        {
             "date": "2025/7/16",
             "title": "Our paper on \"Network Intrusion Detection System Based on Reinforcement Learning Technique Optimization\" accepted by ProvSec2025",
-            "content": ""
+            "content": "",
+            "images": []
         },
         {
             "date": "2025/6/28",
             "title": "3 of our papers accepted to SICE2025",
-            "content": ""
+            "content": "",
+            "images": []
         },
         {
             "date": "2025/4/23",
             "title": "Updated website with new design and content",
-            "content": "We have updated the website with a new design and content to provide a better user experience."
+            "content": "We have updated the website with a new design and content to provide a better user experience.",
+            "images": []
         },
         {
             "date": "2025/4/21",
             "title": "Our paper on \"Complex Emotion Estimation using Analysis-by-Synthesis of Facial Expression Images\" accepted by IEEE Access",
-            "content": ""
+            "content": "",
+            "images": []
         },
         {
             "date": "2025/4/7",
             "title": "Welcome the first batch of B4 students joining our lab",
-            "content": "We are excited to welcome our first batch of B4 students to the laboratory. We look forward to working together on innovative research projects."
+            "content": "We are excited to welcome our first batch of B4 students to the laboratory. We look forward to working together on innovative research projects.",
+            "images": []
         },
         {
             "date": "2025/4",
             "title": "The laboratory's website is now transfer to github.io",
-            "content": "We have successfully migrated our laboratory website to GitHub Pages (github.io) for improved accessibility and maintenance."
+            "content": "We have successfully migrated our laboratory website to GitHub Pages (github.io) for improved accessibility and maintenance.",
+            "images": []
         }
     ]
 }
