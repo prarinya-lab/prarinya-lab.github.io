@@ -265,6 +265,7 @@
             font-size: 0.8rem;
             margin-bottom: 0.25rem;
             display: block;
+            text-align: left;
         }
 
         .news-title {
@@ -289,6 +290,108 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-height: 90vh;
+            max-width: 90vw;
+            object-fit: contain;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        .lightbox-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-nav button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
         }
 
         .hero {
@@ -424,12 +527,13 @@
         }
 
         .news-item {
-            display: flex;
-            align-items: center;
-            gap: 1em;
-            padding: 0.8em 1em;
-            border-bottom: 1px solid rgba(44, 90, 39, 0.1);
-            transition: background-color 0.3s ease;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 1rem;
+            border: 1px solid #eee;
         }
 
         .news-item:hover {
@@ -438,16 +542,19 @@
 
         .news-date {
             color: #666;
-            font-size: 0.9em;
-            min-width: 90px;
-            text-align: right;
+            font-size: 0.8rem;
+            margin-bottom: 0.25rem;
+            display: block;
+            text-align: left;
         }
 
         .news-title {
-            flex: 1;
-            font-size: 1em;
-            color: #333;
+            color: #2c5a27;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            line-height: 1.3;
             text-decoration: none;
+            display: block;
         }
 
         .news-title:hover {
@@ -622,6 +729,19 @@
         </div>
     </footer>
 
+    <!-- Lightbox HTML -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-nav">
+                <button id="lightbox-prev">❮</button>
+                <button id="lightbox-next">❯</button>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+        </div>
+    </div>
+
     <script>
         // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -655,7 +775,7 @@
                         // Show all images in a grid
                         imageHtml = `
                         <div class="news-images">
-                            ${item.images.slice(0, 1).map(img => `
+                            ${item.images.slice(0, 3).map(img => `
                                 <div class="news-image">
                                     <img src="${img}" alt="${item.title}">
                                 </div>
@@ -667,7 +787,9 @@
                         ${imageHtml}
                         <div class="news-content">
                             <div class="news-date">${date}</div>
-                            <a href="news.html" class="news-title">${item.title}</a>
+                            <h3 class="news-title">
+                                <a href="news.html">${item.title}</a>
+                            </h3>
                             ${item.content ? `<p class="news-excerpt">${item.content}</p>` : ''}
                         </div>
                     `;
@@ -678,8 +800,105 @@
             }
         }
 
-        // Load news when the page is ready
-        document.addEventListener('DOMContentLoaded', loadLatestNews);
+        // Initialize lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+
+        let currentImageIndex = 0;
+        let currentImages = [];
+
+        function openLightbox(images, startIndex = 0) {
+            currentImages = images;
+            currentImageIndex = startIndex;
+            updateLightboxImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            if (currentImages.length > 0) {
+                lightboxImage.src = currentImages[currentImageIndex];
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+            }
+        }
+
+        function showNextImage() {
+            if (currentImages.length > 0) {
+                currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+                updateLightboxImage();
+            }
+        }
+
+        function showPrevImage() {
+            if (currentImages.length > 0) {
+                currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+                updateLightboxImage();
+            }
+        }
+
+        // Event listeners
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showPrevImage();
+        });
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNextImage();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    closeLightbox();
+                    break;
+                case 'ArrowLeft':
+                    showPrevImage();
+                    break;
+                case 'ArrowRight':
+                    showNextImage();
+                    break;
+            }
+        });
+
+        // Close when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Initialize news when the page is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            loadLatestNews();
+            
+            // Add click handlers to news images after they're loaded
+            setTimeout(() => {
+                document.querySelectorAll('.news-item').forEach((item, index) => {
+                    const images = Array.from(item.querySelectorAll('.news-image img')).map(img => img.src);
+                    if (images.length > 0) {
+                        item.querySelectorAll('.news-image').forEach((imgContainer, imgIndex) => {
+                            imgContainer.style.cursor = 'pointer';
+                            imgContainer.addEventListener('click', () => {
+                                openLightbox(images, imgIndex);
+                            });
+                        });
+                    }
+                });
+            }, 500); // Small delay to ensure images are loaded
+        });
     </script>
 </body>
 </html>
