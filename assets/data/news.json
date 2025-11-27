@@ -1,6 +1,24 @@
 {
     "news": [
         {
+            "date": "2025/11/24",
+            "title": "Welcome 2 internship students from Chiangmai University joining our lab from November 24, 2025 - March 13, 2026",
+            "content": "We are excited to welcome Panipak and Yingyi from Collage of Arts, Media, and Technology, Chiangmai University to the laboratory. ",
+            "images": []
+        },
+        {
+            "date": "2025/11/11",
+            "title": "Invited talk at AI So-Go-Chi Research Seminar, Tohoku University",
+            "content": "Prarinya has given an invited talk on Toward Trustworthy Image Recognition: Understanding and Mitigating Adversarial Examples. Details of talk can be found at https://www.aisogochi.tohoku.ac.jp/en/archives/729",
+            "images": ["images/news/202511/so-go-chi-1.jpg"]
+        },
+        {
+            "date": "2025/10/25",
+            "title": "Our students have given introduction of our laboratory at poster session at open campus event (Koubou-sai)",
+            "content": "",
+            "images": ["images/news/202510/open-camp-1.jpg", "images/news/202510/open-camp-2.jpg"]
+        },
+        {
             "date": "2025/8/01",
             "title": "Visitors from MUEG",
             "content": "Faculty members and staffs from the Department of Computer Enginneering, Faculty of Engineerinng, Mahidol University have visited to our lab",
