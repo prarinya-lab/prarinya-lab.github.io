@@ -2,13 +2,13 @@
     "news": [
         {
             "date": "2026/04/13",
-            "title": "Welcome 5 internship students from universities in Thailand",
+            "title": "Welcome to the 4 internship students from universities in Thailand",
             "content": "From the begining of April, we have several internship students joinging our lab from Naresuan University and Mahidol University. Cheering for them!",
             "images": []
         },
         {
             "date": "2025/4/7",
-            "title": "Welcome the 2nd batch of B4 students, and 1st batch of M1 students joining our lab",
+            "title": "Welcome to the new B4/M1 students joining our lab",
             "content": "We are excited to welcome our 2nd batch of B4 students and 1st batch of M1 students to the laboratory. We look forward to working together on innovative research projects.",
             "images": []
         },
@@ -19,9 +19,15 @@
             "images": []
         },
         {
+            "date": "2026/03/22",
+            "title": "Graduation of the first batch B4 students",
+            "content": "Congratulation of the B4 students who succcessfuly pass their final year research and receive their Bachelor degree today. ",
+            "images": []
+        },
+        {
             "date": "2026/03/13",
             "title": "Visitors from CMU",
-            "content": "Welcome to Prof. Pikul Vejjanugraha, the faculty member from Collage of Arts, Media, and Technology, Chiangmai University who visited our lab for the closing meeting of Panipuk and Yingyi",
+            "content": "Welcome to Prof. Pikul Vejjanugraha, the faculty member from Collage of Arts, Media, and Technology, Chiangmai University who visited our lab for the closing meeting of internship students. Good work!",
             "images": []
         },
         {
