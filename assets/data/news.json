@@ -1,9 +1,33 @@
 {
     "news": [
         {
+            "date": "2026/04/13",
+            "title": "Welcome 5 internship students from universities in Thailand",
+            "content": "From the begining of April, we have several internship students joinging our lab from Naresuan University and Mahidol University. Cheering for them!",
+            "images": []
+        },
+        {
+            "date": "2025/4/7",
+            "title": "Welcome the 2nd batch of B4 students, and 1st batch of M1 students joining our lab",
+            "content": "We are excited to welcome our 2nd batch of B4 students and 1st batch of M1 students to the laboratory. We look forward to working together on innovative research projects.",
+            "images": []
+        },
+        {
+            "date": "2026/04/06",
+            "title": "Visitors from HCU",
+            "content": "Welcome to Prof. Sila Temsiririrkkul and his team from Huachew Chalermprakiet University (HCU) for their visiting to our lab",
+            "images": []
+        },
+        {
+            "date": "2026/03/13",
+            "title": "Visitors from CMU",
+            "content": "Welcome to Prof. Pikul Vejjanugraha, the faculty member from Collage of Arts, Media, and Technology, Chiangmai University who visited our lab for the closing meeting of Panipuk and Yingyi",
+            "images": []
+        },
+        {
             "date": "2025/11/24",
             "title": "Welcome 2 internship students from Chiangmai University joining our lab from November 24, 2025 - March 13, 2026",
-            "content": "We are excited to welcome Panipak and Yingyi from Collage of Arts, Media, and Technology, Chiangmai University to the laboratory. ",
+            "content": "We are excited to welcome Panipuk and Yingyi from Collage of Arts, Media, and Technology, Chiangmai University to the laboratory. ",
             "images": []
         },
         {
