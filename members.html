@@ -221,41 +221,46 @@
         }
         .member-profile {
             margin: 1.5em 0;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,247,0.98) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(206, 219, 210, 0.9);
+            box-shadow: 0 16px 40px rgba(28, 54, 38, 0.08);
             overflow: hidden;
             display: grid;
             grid-template-columns: auto 1fr;
-            padding: 2em;
-            gap: 2.5em;
+            padding: 2.2em;
+            gap: 2.2em;
             align-items: start;
         }
         .profile-photo-wrapper {
-            margin-top: 0.3em;
+            margin-top: 0.1em;
         }
         .profile-photo {
-            width: 160px;
-            height: 200px;
+            width: 172px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 18px;
+            box-shadow: 0 14px 30px rgba(28, 54, 38, 0.14);
             transition: transform 0.3s ease;
+            -webkit-user-drag: none;
+            user-select: none;
+            -webkit-touch-callout: none;
         }
         .profile-content {
             min-width: 0;
         }
         .profile-header {
             margin: 0 0 1.2em;
-            padding-bottom: 1em;
-            border-bottom: 1px solid #eaecef;
+            padding-bottom: 1.15em;
+            border-bottom: 1px solid #e3ebe4;
         }
         .name {
-            font-size: 1.5em;
-            font-weight: 600;
-            color: #2c3e50;
+            font-size: 1.72em;
+            font-weight: 700;
+            color: #21382a;
             margin: 0 0 0.4em 0;
             line-height: 1.2;
+            letter-spacing: -0.01em;
         }
         .titles {
             display: flex;
@@ -265,70 +270,77 @@
             margin-top: 0.2em;
         }
         .position {
-            font-size: 1.05em;
-            color: #34495e;
+            font-size: 1.02em;
+            color: #344b3d;
             margin: 0;
-            font-weight: 500;
+            font-weight: 600;
         }
         .position-jp {
             font-size: 0.95em;
-            color: #5a6c7d;
+            color: #667868;
             margin: 0;
         }
         .info-section {
-            margin: 1em 0;
+            margin: 1.15em 0;
+            padding: 1em 1.1em;
+            background: linear-gradient(180deg, #f7fbf8 0%, #eef5f0 100%);
+            border: 1px solid #dde8df;
+            border-radius: 16px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
         }
         .department {
             font-size: 0.95em;
             color: #34495e;
-            line-height: 1.5;
+            line-height: 1.65;
             margin: 0 0 0.5em 0;
         }
         .department-jp {
             font-size: 0.9em;
-            color: #5a6c7d;
-            line-height: 1.5;
+            color: #667868;
+            line-height: 1.65;
             margin: 0;
         }
         .research-fields {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5em;
-            margin: 1em 0;
+            gap: 0.6em;
+            margin: 1.15em 0;
         }
         .research-fields li {
-            background: #e8f4fc;
-            color: #2980b9;
-            padding: 0.3em 0.8em;
-            border-radius: 15px;
-            font-size: 0.85em;
+            background: linear-gradient(180deg, #f4f8f4 0%, #eaf1eb 100%);
+            color: #32533d;
+            padding: 0.45em 0.9em;
+            border-radius: 999px;
+            border: 1px solid #d8e4da;
+            font-size: 0.84em;
+            font-weight: 600;
             transition: all 0.2s ease;
         }
         .collapsible-section {
-            margin-top: 1.5em;
+            margin-top: 1.7em;
         }
         .collapsible-header {
             font-size: 1.1em;
-            color: #2c3e50;
-            padding: 0.8em 1em;
+            color: #21382a;
+            padding: 0.9em 1.05em;
             cursor: pointer;
             display: flex;
             align-items: center;
-            font-weight: 500;
-            border: 1px solid #e1e4e8;
-            border-radius: 8px;
+            font-weight: 600;
+            border: 1px solid #dfe8e1;
+            border-radius: 16px;
             transition: all 0.2s ease;
-            background: white;
+            background: rgba(255,255,255,0.82);
         }
         .collapsible-header:hover {
-            border-color: #3498db;
-            color: #3498db;
+            border-color: #8aa893;
+            color: #2f5b3c;
         }
         .collapsible-header::after {
             content: '+';
             margin-left: auto;
             font-size: 1.2em;
-            color: #3498db;
+            color: #2f5b3c;
             transition: transform 0.2s ease;
         }
         .collapsible-header.collapsed::after {
@@ -339,11 +351,11 @@
             transform: rotate(180deg);
         }
         .collapsible-content {
-            background: white;
-            border: 1px solid #e1e4e8;
-            border-radius: 8px;
-            padding: 1.2em;
-            margin-top: 0.5em;
+            background: linear-gradient(180deg, #fafcf9 0%, #f3f7f4 100%);
+            border: 1px solid #dfe8e1;
+            border-radius: 16px;
+            padding: 1.25em;
+            margin-top: 0.65em;
             line-height: 1.6;
             max-height: 0;
             overflow: hidden;
@@ -358,7 +370,7 @@
         @media (max-width: 768px) {
             .member-profile {
                 grid-template-columns: 1fr;
-                gap: 1.5em;
+                gap: 1.4em;
                 padding: 1.5em;
             }
             .profile-photo-wrapper {
@@ -366,8 +378,8 @@
                 text-align: center;
             }
             .profile-photo {
-                width: 140px;
-                height: 175px;
+                width: 148px;
+                height: 188px;
             }
             .profile-header {
                 text-align: center;
@@ -414,31 +426,43 @@
             margin-top: 1em;
         }
         .student-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+            background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(249,251,248,0.98) 100%);
+            border-radius: 22px;
+            border: 1px solid rgba(206, 219, 210, 0.9);
+            box-shadow: 0 14px 34px rgba(28, 54, 38, 0.08);
             overflow: hidden;
             display: flex;
             align-items: start;
-            padding: 1.35em;
+            gap: 1.15em;
+            padding: 1.45em;
+            position: relative;
         }
         .student-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 42px rgba(28, 54, 38, 0.12);
         }
         .student-image {
-            width: 100px;
-            height: 100px;
+            width: 104px;
+            height: 132px;
             flex-shrink: 0;
-            margin-right: 1.2em;
-            border-radius: 8px;
+            margin-right: 0;
+            border-radius: 16px;
             overflow: hidden;
-            background: #f8f9fa;
+            background: linear-gradient(180deg, #eef3ef 0%, #dfe8e0 100%);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7);
+            -webkit-user-drag: none;
+            user-select: none;
+            -webkit-touch-callout: none;
         }
         .student-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+            -webkit-user-drag: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            pointer-events: none;
         }
         .student-image.real-photo img {
             transform: scale(1.18);
@@ -466,50 +490,54 @@
             min-width: 0;
         }
         .student-name {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #2c3e50;
+            font-size: 1.18em;
+            font-weight: 700;
+            color: #21382a;
             margin: 0;
             line-height: 1.3;
+            letter-spacing: -0.01em;
         }
         .student-name-jp {
-            font-size: 0.95em;
-            color: #5a6c7d;
-            margin: 0.2em 0 0.8em;
+            font-size: 0.9em;
+            color: #667868;
+            margin: 0.3em 0 0;
+            line-height: 1.45;
         }
         .research-topic {
-            margin: 0.95em 0 0;
-            padding: 0.9em 1em;
+            margin: 1em 0 0;
+            padding: 1em 1.05em;
             font-size: 0.92em;
             color: #34495e;
             line-height: 1.65;
-            background: linear-gradient(180deg, #f8fbf9 0%, #f3f7f4 100%);
-            border: 1px solid #e0e9e3;
-            border-radius: 12px;
+            background: linear-gradient(180deg, #f7fbf8 0%, #eef5f0 100%);
+            border: 1px solid #dde8df;
+            border-radius: 16px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
         }
         .research-topic strong {
             display: block;
-            font-size: 0.8em;
-            color: #51606f;
-            margin-bottom: 0.45em;
+            font-size: 0.76em;
+            color: #5c6d63;
+            margin-bottom: 0.55em;
             font-weight: 700;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
         .research-topic span {
             display: block;
         }
         .research-topic .topic-jp {
-            font-size: 0.88em;
-            color: #5a6c7d;
-            margin-top: 0.35em;
+            font-size: 0.86em;
+            color: #67786c;
+            margin-top: 0.45em;
         }
         .alumni-project {
-            margin: 0.95em 0 0;
-            padding: 0.9em 1em;
-            background: linear-gradient(180deg, #fafaf8 0%, #f5f5f1 100%);
-            border: 1px solid #e5e5dd;
-            border-radius: 12px;
+            margin: 1em 0 0;
+            padding: 1em 1.05em;
+            background: linear-gradient(180deg, #fafaf7 0%, #f3f2ec 100%);
+            border: 1px solid #e7e4da;
+            border-radius: 16px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
         }
         .alumni-project-label {
             display: block;
@@ -528,8 +556,8 @@
             color: #34495e;
         }
         .alumni-project-title-jp {
-            color: #5a6c7d;
-            margin-top: 0.35em;
+            color: #68756a;
+            margin-top: 0.45em;
         }
         @media (max-width: 768px) {
             .student-cards {
@@ -537,12 +565,13 @@
                 gap: 1em;
             }
             .student-card {
-                padding: 1em;
+                padding: 1.1em;
+                gap: 0.95em;
             }
             .student-image {
-                width: 80px;
-                height: 80px;
-                margin-right: 1em;
+                width: 88px;
+                height: 112px;
+                border-radius: 14px;
             }
         }
     </style>
@@ -835,7 +864,7 @@
                             <div class="student-cards">
                                 <div class="student-card">
                                     <div class="student-image real-photo tight-face extra-tight">
-                                        <img src="images/members/2025-Intern/panipuk.jpg" alt="Panipuk Yotthamee" onerror="this.src='images/profile-placeholder.jpg'" style="object-position: 50% 120%;">
+                                        <img src="images/members/2025-Intern/panipuk.jpg" alt="Panipuk Yotthamee" onerror="this.src='images/profile-placeholder.jpg'" style="object-position: 50% 400%;">
                                     </div>
                                     <div class="student-info">
                                         <h4 class="student-name">Panipuk Yotthamee</h4>
@@ -848,7 +877,7 @@
                                 </div>
                                 <div class="student-card">
                                     <div class="student-image real-photo">
-                                        <img src="images/members/2025-Intern/yingyi.jpg" alt="Yingyi Mao" onerror="this.src='images/profile-placeholder.jpg'" style="object-position: 48% 24%;">
+                                        <img src="images/members/2025-Intern/yingyi.jpg" alt="Yingyi Mao" onerror="this.src='images/profile-placeholder.jpg'" style="object-position: 48% 0%;">
                                     </div>
                                     <div class="student-info">
                                         <h4 class="student-name">Yingyi Mao</h4>
@@ -912,6 +941,12 @@
                 header.classList.toggle('collapsed');
                 content.classList.toggle('collapsed');
             });
+        });
+
+        // Discourage casual saving of member photos.
+        document.querySelectorAll('.profile-photo, .student-image').forEach(element => {
+            element.addEventListener('contextmenu', event => event.preventDefault());
+            element.addEventListener('dragstart', event => event.preventDefault());
         });
     </script>
 </body>
