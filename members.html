@@ -379,6 +379,34 @@
         .student-section {
             margin: 2em 0;
         }
+        .member-block {
+            margin-top: 2.5em;
+        }
+        .member-group {
+            margin-top: 2em;
+        }
+        .member-group:first-of-type {
+            margin-top: 0;
+        }
+        .group-title {
+            margin-bottom: 0.35em;
+        }
+        .group-year {
+            display: inline-block;
+            margin-bottom: 1em;
+            padding: 0.35em 0.85em;
+            border-radius: 999px;
+            background: #eef4ef;
+            color: #2f5b3c;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .alumni-section {
+            margin-top: 3.5em;
+            padding-top: 2.5em;
+            border-top: 1px solid #e6ece7;
+        }
         .student-cards {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -392,7 +420,7 @@
             overflow: hidden;
             display: flex;
             align-items: start;
-            padding: 1.2em;
+            padding: 1.35em;
         }
         .student-card:hover {
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -412,8 +440,26 @@
             object-fit: cover;
             transition: transform 0.3s ease;
         }
+        .student-image.real-photo img {
+            transform: scale(1.18);
+        }
+        .student-image.real-photo.tight-face img {
+            transform: scale(1.9);
+        }
+        .student-image.real-photo.tight-face.extra-tight img {
+            transform: scale(2.7);
+        }
         .student-card:hover .student-image img {
             transform: scale(1.05);
+        }
+        .student-card:hover .student-image.real-photo img {
+            transform: scale(1.24);
+        }
+        .student-card:hover .student-image.real-photo.tight-face img {
+            transform: scale(1.98);
+        }
+        .student-card:hover .student-image.real-photo.tight-face.extra-tight img {
+            transform: scale(2.78);
         }
         .student-info {
             flex: 1;
@@ -424,6 +470,7 @@
             font-weight: 600;
             color: #2c3e50;
             margin: 0;
+            line-height: 1.3;
         }
         .student-name-jp {
             font-size: 0.95em;
@@ -431,25 +478,58 @@
             margin: 0.2em 0 0.8em;
         }
         .research-topic {
-            margin: 0;
-            font-size: 0.9em;
+            margin: 0.95em 0 0;
+            padding: 0.9em 1em;
+            font-size: 0.92em;
             color: #34495e;
-            line-height: 1.5;
+            line-height: 1.65;
+            background: linear-gradient(180deg, #f8fbf9 0%, #f3f7f4 100%);
+            border: 1px solid #e0e9e3;
+            border-radius: 12px;
         }
         .research-topic strong {
             display: block;
-            font-size: 0.9em;
-            color: #2c3e50;
-            margin-bottom: 0.3em;
-            font-weight: 600;
+            font-size: 0.8em;
+            color: #51606f;
+            margin-bottom: 0.45em;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
         }
         .research-topic span {
             display: block;
         }
         .research-topic .topic-jp {
-            font-size: 0.9em;
+            font-size: 0.88em;
             color: #5a6c7d;
-            margin-top: 0.2em;
+            margin-top: 0.35em;
+        }
+        .alumni-project {
+            margin: 0.95em 0 0;
+            padding: 0.9em 1em;
+            background: linear-gradient(180deg, #fafaf8 0%, #f5f5f1 100%);
+            border: 1px solid #e5e5dd;
+            border-radius: 12px;
+        }
+        .alumni-project-label {
+            display: block;
+            font-size: 0.82em;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #51606f;
+            margin-bottom: 0.35em;
+        }
+        .alumni-project-title,
+        .alumni-project-title-jp {
+            margin: 0;
+            font-size: 0.92em;
+            line-height: 1.65;
+            color: #34495e;
+        }
+        .alumni-project-title-jp {
+            color: #5a6c7d;
+            margin-top: 0.35em;
         }
         @media (max-width: 768px) {
             .student-cards {
@@ -582,82 +662,204 @@
 
     <section class="students">
         <div class="container">
-            <h2>Students</h2>
+            <h2>Current Members</h2>
             <div class="student-section">
-                <h3>B4 Students (2025)</h3>
-                <div class="student-cards">
-                    <div class="student-card">
-                        <div class="student-image">
-                            <img src="images/members/2025-B4/shibagaki.jpg" alt="Rio Shibagaki" onerror="this.src='images/profile-placeholder.jpg'">
-                        </div>
-                        <div class="student-info">
-                            <h4 class="student-name">Rio Shibagaki</h4>
-                            <p class="student-name-jp">柴垣　遼大</p>
-                            <p class="research-topic">
-                                <strong>Research Topic:</strong>
-                                <span>Image Engineering for Secure Autonomous Driving System</span>
-                                <span class="topic-jp">自動運転システムに向けた画像情報工学</span>
-                            </p>
+                <div class="member-block">
+                    <div class="member-group">
+                        <h3 class="group-title">Master Students</h3>
+                        <div class="student-cards">
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="XU JIANFENG" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Jianfeng Xu</h4>
+                                    <p class="student-name-jp">ジョ ケンホウ<br> 徐剑峰</p>
+                                    <p class="research-topic">
+                                        <strong>Research Topic:</strong>
+                                        <span>Cross-lingual sign-language dialogue assistance</span>
+                                        <span class="topic-jp"> 多言語手話対話支援</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="Keigo Hiranuma" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Keigo Hiranuma</h4>
+                                    <p class="student-name-jp">平沼　圭悟</p>
+                                    <p class="research-topic">
+                                        <strong>Research Topic:</strong>
+                                        <span>Evaluating explainability in mathematics education support based on large language models</span>
+                                        <span class="topic-jp">大規模言語モデルに基づく数学教育支援における説明性の検証</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="student-card">
-                        <div class="student-image">
-                            <img src="images/members/dummy.JPG" alt="Shin Shimaoka" onerror="this.src='images/profile-placeholder.jpg'">
-                        </div>
-                        <div class="student-info">
-                            <h4 class="student-name">Shin Shimaoka</h4>
-                            <p class="student-name-jp">嶋岡　心</p>
-                            <p class="research-topic">
-                                <strong>Research Topic:</strong>
-                                <span>Human Behavior Recognition in Museums Using Image Analysis</span>
-                                <span class="topic-jp">博物館における人間行動認識</span>
-                            </p>
+                    <div class="member-group">
+                        <h3 class="group-title">B4 Students</h3>
+                        <div class="student-cards">
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="Kota Shinoda" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Kota Shinoda</h4>
+                                    <p class="student-name-jp">篠田　昂汰</p>
+                
+                                </div>
+                            </div>
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="Seikyo Niwa" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Seikyo Niwa</h4>
+                                    <p class="student-name-jp">丹羽　靖京</p>
+                                </div>
+                            </div>
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="Yuta Hara" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Yuta Hara</h4>
+                                    <p class="student-name-jp">原　優太</p>
+                                </div>
+                            </div>
+                            <div class="student-card">
+                                <div class="student-image real-photo tight-face">
+                                    <img src="images/members/2025-B4/shibagaki.jpg" alt="Rio Shibagaki" onerror="this.src='images/profile-placeholder.jpg'" style="object-position: 58% 35%;">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Rio Shibagaki</h4>
+                                    <p class="student-name-jp">柴垣　遼大</p>
+                                    <p class="research-topic">
+                                        <strong>Research Topic:</strong>
+                                        <span>Image Engineering for Secure Autonomous Driving System</span>
+                                        <span class="topic-jp">自動運転システムに向けた画像情報工学</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="student-card">
-                        <div class="student-image">
-                            <img src="images/members/dummy.JPG" alt="Keigo Hiranuma" onerror="this.src='images/profile-placeholder.jpg'">
-                        </div>
-                        <div class="student-info">
-                            <h4 class="student-name">Keigo Hiranuma</h4>
-                            <p class="student-name-jp">平沼　圭悟</p>
-                            <p class="research-topic">
-                                <strong>Research Topic:</strong>
-                                <span>Image Analysis for Education Technology</span>
-                                <span class="topic-jp">教育工学における画像解析</span>
-                            </p>
+                    <div class="member-group">
+                        <h3 class="group-title">Internship Students</h3>
+                        <div class="student-cards">
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="Aekkanut Yodwachirarot" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Aekkanut Yodwachirarot</h4>
+                                    <p class="research-topic">
+                                        <strong>Research Topic:</strong>
+                                        <span>Perception and Image Understanding for autonomous driving</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="Ratthathammanun Chaichana" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Ratthathammanun Chaichana</h4>
+                                    <p class="research-topic">
+                                        <strong>Research Topic:</strong>
+                                        <span>Behavior Cloning in dynamic environments</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="Trinnaya Damrongpatharawat" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Trinnaya Damrongpatharawat</h4>
+                                    <p class="research-topic">
+                                        <strong>Research Topic:</strong>
+                                        <span>Facial Expression Analysis for Mental Health Application</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="student-card">
+                                <div class="student-image">
+                                    <img src="images/members/dummy.JPG" alt="Makkawan Burana-amnuay" onerror="this.src='images/profile-placeholder.jpg'">
+                                </div>
+                                <div class="student-info">
+                                    <h4 class="student-name">Makkawan Burana-amnuay</h4>
+                                    <p class="research-topic">
+                                        <strong>Research Topic:</strong>
+                                        <span>Marmoset tracking and behavior analysis</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <br>
-                <h3>Internship Students (2025)</h3>
-                <div class="student-cards">
-                    <div class="student-card">
-                        <div class="student-image">
-                            <img src="images/members/2025-Intern/panipuk.jpg" alt="Panipuk Yotthamee" onerror="this.src='images/profile-placeholder.jpg'">
+
+                <div class="alumni-section">
+                    <h2>Alumni</h2>
+                    <div class="member-block">
+                        <div class="member-group">
+                            <h3 class="group-title">B4 Alumni</h3>
+                            <p class="group-year">Graduated in 2026</p>
+                            <div class="student-cards">
+                                <div class="student-card">
+                                    <div class="student-image">
+                                        <img src="images/members/dummy.JPG" alt="Shin Shimaoka" onerror="this.src='images/profile-placeholder.jpg'">
+                                    </div>
+                                    <div class="student-info">
+                                        <h4 class="student-name">Shin Shimaoka</h4>
+                                        <p class="student-name-jp">嶋岡　心</p>
+                                        <div class="alumni-project">
+                                            <span class="alumni-project-label">Graduation Research</span>
+                                            <p class="alumni-project-title">Psychological and Behavioral Understanding of Museum Visitors Using Image Analysis</p>
+                                            <p class="alumni-project-title-jp">博物館来館者における心理状態とマルチモーダル非言語行動の関係分析</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="student-info">
-                            <h4 class="student-name">Panipuk Yotthamee</h4>
-                            <p class="student-name-jp">ヨッタミー　パ二パック</p>
-                            <p class="research-topic">
-                                <strong>Research Topic:</strong>
-                                <span>Cross Cutural Facial Expression Analysis</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="student-card">
-                        <div class="student-image">
-                            <img src="images/members/2025-Intern/yingyi.jpg" alt="Yingyi Mao" onerror="this.src='images/profile-placeholder.jpg'">
-                        </div>
-                        <div class="student-info">
-                            <h4 class="student-name">Yingyi Mao</h4>
-                            <p class="student-name-jp">マオ　インイー</p>
-                            <p class="research-topic">
-                                <strong>Research Topic:</strong>
-                                <span>Image feature of Adversarial example for face recognition</span>
-                            </p>
+
+                        <div class="member-group">
+                            <h3 class="group-title">Internship Alumni</h3>
+                            <p class="group-year">Internship in 2025-2026</p>
+                            <div class="student-cards">
+                                <div class="student-card">
+                                    <div class="student-image real-photo tight-face extra-tight">
+                                        <img src="images/members/2025-Intern/panipuk.jpg" alt="Panipuk Yotthamee" onerror="this.src='images/profile-placeholder.jpg'" style="object-position: 50% 120%;">
+                                    </div>
+                                    <div class="student-info">
+                                        <h4 class="student-name">Panipuk Yotthamee</h4>
+                                        <p class="student-name-jp">ヨッタミー　パ二パック</p>
+                                        <div class="alumni-project">
+                                            <span class="alumni-project-label">Internship Research</span>
+                                            <p class="alumni-project-title">Ambiguous Facial Expression Analysis</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="student-card">
+                                    <div class="student-image real-photo">
+                                        <img src="images/members/2025-Intern/yingyi.jpg" alt="Yingyi Mao" onerror="this.src='images/profile-placeholder.jpg'" style="object-position: 48% 24%;">
+                                    </div>
+                                    <div class="student-info">
+                                        <h4 class="student-name">Yingyi Mao</h4>
+                                        <p class="student-name-jp">マオ　インイー</p>
+                                        <div class="alumni-project">
+                                            <span class="alumni-project-label">Internship Research</span>
+                                            <p class="alumni-project-title">Image feature of Adversarial example for face recognition</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
