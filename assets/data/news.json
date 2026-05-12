@@ -1,22 +1,22 @@
 {
     "news": [
         {
-            "date": "2026/04/13",
-            "title": "Welcome to the 4 internship students from universities in Thailand",
-            "content": "From the begining of April, we have several internship students joinging our lab from Naresuan University and Mahidol University. Cheering for them!",
-            "images": []
-        },
-        {
-            "date": "2025/4/7",
-            "title": "Welcome to the new B4/M1 students joining our lab",
-            "content": "We are excited to welcome our 2nd batch of B4 students and 1st batch of M1 students to the laboratory. We look forward to working together on innovative research projects.",
-            "images": []
+            "date": "2026/05/12",
+            "title": "Internship students joined the international exchange event at Yashiro High School in Chikuma",
+            "content": "Our internship students from Naresuan University and Mahidol University participated in the international exchange event at Yashiro High School in Chikuma, where they introduced their research and discussed research projects with high school students.",
+            "images": [
+                "images/news/202605/yashiro-eng1-web.jpg",
+                "images/news/202605/yashiro-eng2-web.jpg"
+            ]
         },
         {
             "date": "2026/04/06",
             "title": "Visitors from HCU",
             "content": "Welcome to Prof. Sila Temsiririrkkul and his team from Huachew Chalermprakiet University (HCU) for their visiting to our lab",
-            "images": ["images/news/202604/sila-visit1-web.jpg", "images/news/202604/sila-visit2-web.jpg"]
+            "images": [
+                "images/news/202604/sila-visit1-web.jpg",
+                "images/news/202604/sila-visit2-web.jpg"
+            ]
         },
         {
             "date": "2026/03/22",
@@ -28,7 +28,10 @@
             "date": "2026/03/13",
             "title": "Visitors from CMU",
             "content": "Welcome to Prof. Pikul Vejjanugraha, the faculty member from Collage of Arts, Media, and Technology, Chiangmai University who visited our lab for the closing meeting of internship students. Good work!",
-            "images": ["images/news/202603/pikul-visit1-web.jpg", "images/news/202603/pikul-visit2-web.jpg"]
+            "images": [
+                "images/news/202603/pikul-visit1-web.jpg",
+                "images/news/202603/pikul-visit2-web.jpg"
+            ]
         },
         {
             "date": "2025/11/24",
@@ -40,19 +43,28 @@
             "date": "2025/11/11",
             "title": "Invited talk at AI So-Go-Chi Research Seminar, Tohoku University",
             "content": "Prarinya has given an invited talk on Toward Trustworthy Image Recognition: Understanding and Mitigating Adversarial Examples. Details of talk can be found at https://www.aisogochi.tohoku.ac.jp/en/archives/729",
-            "images": ["images/news/202511/so-go-chi-1-web.jpg"]
+            "images": [
+                "images/news/202511/so-go-chi-1-web.jpg"
+            ]
         },
         {
             "date": "2025/10/25",
             "title": "Our students have given introduction of our laboratory at poster session at open campus event (Koubou-sai)",
             "content": "",
-            "images": ["images/news/202510/open-campus-1-web.jpg", "images/news/202510/open-campus-2-web.jpg"]
+            "images": [
+                "images/news/202510/open-campus-1-web.jpg",
+                "images/news/202510/open-campus-2-web.jpg"
+            ]
         },
         {
             "date": "2025/8/01",
             "title": "Visitors from MUEG",
             "content": "Faculty members and staffs from the Department of Computer Enginneering, Faculty of Engineerinng, Mahidol University have visited to our lab",
-            "images": ["images/news/202508/MUEG-visit-2025-1-web.JPG", "images/news/202508/MUEG-visit-2025-2-web.jpg", "images/news/202508/MUEG-visit-2025-3-web.jpg"]
+            "images": [
+                "images/news/202508/MUEG-visit-2025-1-web.JPG",
+                "images/news/202508/MUEG-visit-2025-2-web.jpg",
+                "images/news/202508/MUEG-visit-2025-3-web.jpg"
+            ]
         },
         {
             "date": "2025/7/16",
@@ -76,6 +88,12 @@
             "date": "2025/4/21",
             "title": "Our paper on \"Complex Emotion Estimation using Analysis-by-Synthesis of Facial Expression Images\" accepted by IEEE Access",
             "content": "",
+            "images": []
+        },
+        {
+            "date": "2025/4/7",
+            "title": "Welcome to the new B4/M1 students joining our lab",
+            "content": "We are excited to welcome our 2nd batch of B4 students and 1st batch of M1 students to the laboratory. We look forward to working together on innovative research projects.",
             "images": []
         },
         {
