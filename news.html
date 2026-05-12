@@ -41,6 +41,9 @@
             max-height: 90vh;
             max-width: 90vw;
             object-fit: contain;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            user-select: none;
         }
 
         .lightbox-nav {
@@ -161,6 +164,9 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            user-select: none;
         }
 
         .news-item:hover .news-image img {
@@ -196,10 +202,6 @@
             font-size: 0.95rem;
             line-height: 1.5;
             margin: 0;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         /* Single column layout */
@@ -423,6 +425,18 @@
                     }
                 });
             }, 500); // Small delay to ensure images are loaded
+
+            document.addEventListener('contextmenu', (e) => {
+                if (e.target.closest('.news-image') || e.target.closest('.lightbox img')) {
+                    e.preventDefault();
+                }
+            });
+
+            document.addEventListener('dragstart', (e) => {
+                if (e.target.closest('.news-image img') || e.target.closest('.lightbox img')) {
+                    e.preventDefault();
+                }
+            });
         });
     </script>
 </body>
