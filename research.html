@@ -12,6 +12,11 @@
         :root {
             --primary: #2C5A27;
             --primary-light: rgba(44, 90, 39, 0.1);
+            --primary-deep: #183d2c;
+            --accent-gold: #d8a94b;
+            --accent-rose: #cf718f;
+            --accent-blue: #5f73d6;
+            --accent-teal: #4fa88f;
             --text-dark: #333;
             --text-medium: #666;
             --text-light: #999;
@@ -184,9 +189,10 @@
         .subnav {
             position: sticky;
             top: 72px;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(44, 90, 39, 0.08);
+            box-shadow: 0 10px 30px rgba(24, 61, 44, 0.08);
             margin-bottom: 2em;
             z-index: 100;
         }
@@ -251,7 +257,10 @@
         /* Research Overview Section */
         .research-overview {
             padding: 3em 0;
-            background: #fff;
+            background:
+                radial-gradient(circle at top left, rgba(79, 168, 143, 0.14), transparent 26%),
+                radial-gradient(circle at top right, rgba(216, 169, 75, 0.12), transparent 24%),
+                #fff;
         }
 
         .research-overview h2 {
@@ -284,12 +293,13 @@
 
         .research-image {
             width: 100%;
-            border-radius: 8px;
+            border-radius: 22px;
             overflow: hidden;
             background: #f8f9fa;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 24px 40px rgba(24, 61, 44, 0.12);
             position: sticky;
             top: 140px; /* Match the scroll-margin-top */
+            border: 1px solid rgba(44, 90, 39, 0.08);
         }
 
         .research-image img {
@@ -314,18 +324,20 @@
         }
 
         .lang-button {
-            background: #2c5a27;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-deep) 100%);
             color: white;
             border: none;
-            padding: 0.5em 1em;
-            border-radius: 4px;
+            padding: 0.6em 1.1em;
+            border-radius: 999px;
             cursor: pointer;
             font-size: 0.9em;
-            transition: background-color 0.3s ease;
+            box-shadow: 0 12px 20px rgba(44, 90, 39, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .lang-button:hover {
-            background: #1f3f1c;
+            transform: translateY(-1px);
+            box-shadow: 0 16px 24px rgba(44, 90, 39, 0.24);
         }
 
         .content-text {
@@ -360,12 +372,13 @@
         }
 
         .content-wrapper li {
-            padding: 0.8em 1em;
-            background: #f8f9fa;
-            border-radius: 4px;
+            padding: 0.95em 1.1em;
+            background: linear-gradient(180deg, #ffffff 0%, #f4f7f3 100%);
+            border-radius: 12px;
             border: 1px solid rgba(44, 90, 39, 0.1);
             text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 18px rgba(24, 61, 44, 0.04);
         }
 
         .content-wrapper li:hover {
@@ -377,7 +390,8 @@
         /* Research Topics Section */
         .research-topics {
             padding: 4em 0;
-            background: #f8f9fa;
+            background:
+                linear-gradient(180deg, #f5f7f2 0%, #eef3ef 100%);
         }
 
         .research-topics h2 {
@@ -396,38 +410,126 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: #2c5a27;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-gold) 100%);
         }
 
         .research-topic {
-            background: #fff;
-            border-radius: 12px;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfcfa 100%);
+            border-radius: 24px;
             overflow: hidden;
             margin-bottom: 3em;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 24px 44px rgba(24, 61, 44, 0.08);
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(44, 90, 39, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .research-topic:last-child {
             margin-bottom: 0;
         }
 
+        .research-topic:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 50px rgba(24, 61, 44, 0.12);
+        }
+
         .topic-image {
             width: 100%;
             height: 300px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #eef4ef 0%, #dfe9e1 100%);
         }
 
-        .topic-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+        .topic-image::before {
+            content: '';
+            position: absolute;
+            inset: 22px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.26);
+            border: 1px solid rgba(255, 255, 255, 0.28);
         }
 
-        .research-topic:hover .topic-image img {
+        .research-topic:nth-of-type(1) .topic-image {
+            background: linear-gradient(135deg, #d8eee7 0%, #a5c9be 52%, #6d8f96 100%);
+        }
+
+        .research-topic:nth-of-type(2) .topic-image {
+            background: linear-gradient(135deg, #f7d6d7 0%, #e5b3c4 44%, #9270b8 100%);
+        }
+
+        .research-topic:nth-of-type(3) .topic-image {
+            background: linear-gradient(135deg, #dceaf3 0%, #adc3db 42%, #6d8994 100%);
+        }
+
+        .research-topic:nth-of-type(4) .topic-image {
+            background: linear-gradient(135deg, #efe5d8 0%, #d6d8b6 45%, #88a68e 100%);
+        }
+
+        .topic-image i {
+            font-size: 5.5rem;
+            color: #fff;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .topic-icon-combo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .topic-icon-combo::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 1.8rem;
+            height: 0.22rem;
+            transform: translate(-50%, -50%);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .topic-icon-combo .icon-badge {
+            width: 4.7rem;
+            height: 4.7rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(6px);
+        }
+
+        .topic-icon-combo .icon-human,
+        .topic-icon-combo .icon-action {
+            font-size: 2.25rem;
+            color: rgba(255, 255, 255, 0.98);
+            text-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+        }
+
+        .research-topic:hover .topic-image i {
             transform: scale(1.05);
+            color: #fffef7;
+        }
+
+        .research-topic:hover .topic-icon-combo {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
         }
 
         .topic-content {
@@ -435,14 +537,15 @@
         }
 
         .topic-content h3 {
-            color: #2c5a27;
+            color: var(--primary-deep);
             font-size: 1.4em;
             margin-bottom: 0.8em;
             font-weight: 600;
+            line-height: 1.25;
         }
 
         .topic-content p {
-            color: #444;
+            color: #47555a;
             line-height: 1.6;
             margin-bottom: 1em;
         }
@@ -457,17 +560,81 @@
         }
 
         .topic-content li {
-            color: #666;
-            padding-left: 1.5em;
+            color: #4c5e60;
+            padding: 0.9em 1em 0.9em 2.1em;
             position: relative;
-            line-height: 1.4;
+            line-height: 1.45;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #f9fbf8 0%, #f1f5f0 100%);
+            border: 1px solid rgba(44, 90, 39, 0.08);
+            box-shadow: 0 8px 16px rgba(24, 61, 44, 0.04);
         }
 
         .topic-content li::before {
             content: '•';
-            color: #2c5a27;
+            color: var(--primary);
             position: absolute;
-            left: 0.5em;
+            left: 0.85em;
+        }
+
+        .application-areas {
+            margin-top: 3.5em;
+            padding: 2.4em;
+            border-radius: 24px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbf7 100%);
+            border: 1px solid rgba(44, 90, 39, 0.08);
+            box-shadow: 0 24px 44px rgba(24, 61, 44, 0.08);
+        }
+
+        .application-areas h3 {
+            color: var(--primary-deep);
+            font-size: 1.5em;
+            margin-bottom: 0.6em;
+        }
+
+        .application-areas .section-intro {
+            color: #47555a;
+            line-height: 1.7;
+            margin-bottom: 1.5em;
+        }
+
+        .application-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2em;
+        }
+
+        .application-card {
+            padding: 1.4em;
+            border-radius: 18px;
+            background: linear-gradient(180deg, #fcfdfa 0%, #f0f5ef 100%);
+            border: 1px solid rgba(44, 90, 39, 0.08);
+            box-shadow: 0 10px 18px rgba(24, 61, 44, 0.05);
+        }
+
+        .application-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.9em;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-deep) 100%);
+            color: #fff;
+            box-shadow: 0 12px 18px rgba(24, 61, 44, 0.16);
+        }
+
+        .application-card h4 {
+            color: var(--primary-deep);
+            font-size: 1.05em;
+            margin-bottom: 0.6em;
+        }
+
+        .application-card p {
+            color: #4c5e60;
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* Grant Section Styles */
@@ -661,26 +828,25 @@
                             <button class="lang-button" id="langToggle">日本語</button>
                         </div>
                         <div class="content-text" lang="en">
-                            <p>Our laboratory focuses on developing innovative solutions in image information engineering, with a particular emphasis on human-centric approaches and trustworthy AI systems. We strive to create technology that enhances human capabilities while ensuring reliability, safety, and ethical considerations.</p>
+                            <p>Our laboratory advances Trustworthy Human-Centric Image Information Engineering. We study how visual and multimodal information can be analyzed, interpreted, and deployed in ways that remain useful to people while preserving reliability, safety, and human values.</p>
+                            <p>Within this framework, our research is organized into a technical foundation, a human understanding layer, and a trustworthiness layer for modern AI systems, followed by application areas where these elements are integrated.</p>
                             <p>Key research areas include:</p>
                             <ul>
-                                <li>Computer Vision and Image Processing</li>
-                                <li>Human Behavior Analysis</li>
-                                <li>Affective Computing</li>
-                                <li>Trustworthy AI Systems</li>
-                                <li>Human-Computer Interaction</li>
+                                <li>Computer Vision and Image Understanding</li>
+                                <li>Affective Computing and Human Understanding</li>
+                                <li>Trustworthy, Secure, and Interactive AI</li>
+                                <li>Applications in health, education, and communication support</li>
                             </ul>
                         </div>
                         <div class="content-text" lang="ja">
-                            <p>パリンヤー研究室では、「画像情報工学を活用して、人間とコンピュータが共生する幸福で豊かな世界を創成する 」というコンセプトのもと、次世代の画像認識・理解の研究に取り組んでいます。</p>
-                            <p>人のライフスタイルの多様性への意識が高い社会において、人間と機械との有益なインタラクションを研究しながら、異なる価値観、文化に渡る人間行動や心理の理解を深めることを目指しています。これを実現するため、本研究室では画像情報科学の要素技術である、画像解析、認識、理解について人の特性の詳細な分析とコンピュータサイエンスを統合したコンピュータビジョンの研究に取り組みます。特に知能機械(コンピュータ、ロボット、対話エージェントなど)と人間とが共に安全、安心、思いやりを持って信頼性の高い相互作用が実現できるよう推進し、AI駆動の時代に知能機械が人間の生活を豊かにする未来を創造したいと願っています。</p>
+                            <p>パリンヤー研究室では、「Trustworthy Human-Centric Image Information Engineering」という枠組みのもと、画像情報およびマルチモーダル情報を人のために信頼できる形で活用する研究に取り組んでいます。視覚情報をどのように解析し、どのように人間理解へ結び付け、さらにどのように安全かつ責任ある形で社会実装するかを一体として考えています。</p>
+                            <p>本研究室の研究は、画像を扱うための技術基盤、人の感情や行動を理解するための人間理解層、そして現代的なAIシステムの信頼性・安全性・対話性を支える層、という役割の異なる三つの研究領域を中心に構成されています。その上で、それらを健康支援、教育支援、コミュニケーション支援へと応用しています。</p>
                             <p>主な研究分野：</p>
                             <ul>
-                                <li>コンピュータビジョンと画像処理</li>
-                                <li>人間行動分析</li>
-                                <li>感情コンピューティング</li>
-                                <li>信頼できるAIシステム</li>
-                                <li>ヒューマンコンピュータインタラクション</li>
+                                <li>コンピュータビジョンと画像理解</li>
+                                <li>感情コンピューティングと人間理解</li>
+                                <li>信頼性・安全性・対話性を備えたAI</li>
+                                <li>健康支援・教育支援・コミュニケーション支援への応用</li>
                             </ul>
                         </div>
                     </div>
@@ -696,17 +862,20 @@
                 <!-- Computer Vision Topic -->
                 <div class="research-topic">
                     <div class="topic-image">
-                        <img src="images/research/computer-vision.jpg" alt="Computer Vision Research">
+                        <i class="fas fa-eye" aria-hidden="true"></i>
                     </div>
                     <div class="topic-content">
                         <h3>Computer Vision and Image Understanding</h3>
-                        <p>We develop advanced computer vision algorithms to understand and analyze human behavior, focusing on creating intelligent systems that can perceive and interpret visual information in ways that complement human capabilities.</p>
+                        <p>
+                            We develop core technologies for understanding images, video, and multimodal sensory data. Our work focuses on visual analysis, representation learning, sensing, measurement, and recognition, with an emphasis on real-world visual understanding.
+                        </p>
                         <p>Key aspects:</p>
                         <ul>
-                            <li>Human behavior analysis and understanding</li>
-                            <li>Visual perception and cognitive modeling</li>
-                            <li>Scene understanding and context analysis</li>
-                            <li>Multi-modal image processing techniques</li>
+                            <li>2D/3D Image Processing</li>
+                            <li>Vision-based sensing, measurement, and tracking</li>
+                            <li>Visual representation learning and feature extraction</li>
+                            <li>Image analysis and recognition</li>
+                            <li>Human visual perception and understanding</li>
                         </ul>
                     </div>
                 </div>
@@ -714,17 +883,18 @@
                 <!-- Affective Computing Topic -->
                 <div class="research-topic">
                     <div class="topic-image">
-                        <img src="images/research/affective-computing.jpg" alt="Affective Computing Research">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
                     </div>
                     <div class="topic-content">
-                        <h3>Affective Computing and Human Psychology</h3>
-                        <p>Our research explores the intersection of human emotions, psychology, and computer vision, aiming to develop systems that can understand and respond to human emotional states across different cultural contexts.</p>
+                        <h3>Affective Computing and Human Understanding</h3>
+                        <p>We explore how intelligent systems can understand human affect, behavior, and psychological states from facial expressions and other nonverbal signals. We are particularly interested in how emotional communication varies across people and cultures, and in developing AI systems that can interpret these signals more appropriately.</p>
                         <p>Key aspects:</p>
                         <ul>
-                            <li>Cross-cultural emotion recognition</li>
-                            <li>Behavioral pattern analysis</li>
-                            <li>Psychological state assessment</li>
-                            <li>Cultural-aware interaction systems</li>
+                            <li>Facial expression and nonverbal behavior</li>
+                            <li>Multimodal sensing and analysis</li>
+                            <li>Individual and cultural diversity</li>
+                            <li>Social and emotional communication</li>
+                            <li>Affective Human-centered AI</li>
                         </ul>
                     </div>
                 </div>
@@ -732,36 +902,47 @@
                 <!-- Trustworthy AI Topic -->
                 <div class="research-topic">
                     <div class="topic-image">
-                        <img src="images/research/trustworthy-ai.jpg" alt="Trustworthy AI Research">
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <div class="topic-content">
-                        <h3>Secure and Trustworthy Image Understanding</h3>
-                        <p>We focus on developing reliable and secure image understanding systems that can be trusted in real-world applications, ensuring privacy, fairness, and robustness in AI-driven visual analysis.</p>
+                        <h3>Trustworthy, Secure, and Interactive AI</h3>
+                        <p>We examines how AI systems can be made reliable, safe, and trustworthy in real-world use. We study robustness, privacy, security, and responsible interaction in AI systems that combine vision, language, and multimodal information, including LLM-based and interactive settings.</p>
                         <p>Key aspects:</p>
                         <ul>
-                            <li>Privacy-preserving image analysis</li>
-                            <li>Robust and reliable visual recognition</li>
-                            <li>Secure multi-party computation for visual data</li>
-                            <li>Ethical considerations in visual AI</li>
+                            <li>Adversarial attack analysis, defense, and integrity assessment in AI systems</li>
+                            <li>Privacy and safety issues in human-centered multimodal AI</li>
+                            <li>Responsible design of interactive AI systems</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Human-Computer Interaction Topic -->
-                <div class="research-topic">
-                    <div class="topic-image">
-                        <img src="images/research/hci.jpg" alt="Human-Computer Interaction Research">
-                    </div>
-                    <div class="topic-content">
-                        <h3>Human-Centric Interactive Systems</h3>
-                        <p>Our research in HCI focuses on creating intuitive and natural interfaces between humans and intelligent machines, emphasizing the importance of human-centered design in visual interaction systems.</p>
-                        <p>Key aspects:</p>
-                        <ul>
-                            <li>Natural visual interfaces</li>
-                            <li>Interactive visualization systems</li>
-                            <li>Adaptive user experience design</li>
-                            <li>Cross-cultural interaction patterns</li>
-                        </ul>
+                <div class="application-areas">
+                    <h3>Application Areas</h3>
+                    <p class="section-intro">
+                        Our research is applied to human-centered domains where computer vision, affective computing, and trustworthy AI come together in practice. These areas represent real-world contexts for developing, testing, and deploying visual AI technologies.
+                    </p>
+                    <div class="application-grid">
+                        <div class="application-card">
+                            <div class="application-icon">
+                                <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                            </div>
+                            <h4>Health and Physiological Support</h4>
+                            <p>Respiratory measurement, physiological-state estimation, and visual sensing methods that support health-related understanding and assistance.</p>
+                        </div>
+                        <div class="application-card">
+                            <div class="application-icon">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <h4>Learning and Educational Support</h4>
+                            <p>Educational feedback, lecture analysis, and AI-supported learning systems that help people understand, practice, and improve more effectively.</p>
+                        </div>
+                        <div class="application-card">
+                            <div class="application-icon">
+                                <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                            </div>
+                            <h4>Communication and Social Support</h4>
+                            <p>Human-centered systems for communication assistance, multicultural understanding, and social interaction support in real-world settings.</p>
+                        </div>
                     </div>
                 </div>
             </div>
