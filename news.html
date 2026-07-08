@@ -288,42 +288,62 @@
     </div>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/data/news.js"></script>
     <script>
-        // Load and display news items
+        function renderNews(data) {
+            const newsContainer = document.getElementById('newsContainer');
+            newsContainer.innerHTML = '';
+
+            data.news.forEach(item => {
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+
+                let imageHtml = '';
+                if (item.images && item.images.length > 0) {
+                    imageHtml = `
+                    <div class="news-images">
+                        ${item.images.map(img => `
+                            <div class="news-image">
+                                <img src="${img}" alt="${item.title}">
+                            </div>
+                        `).join('')}
+                    </div>`;
+                }
+
+                newsItem.innerHTML = `
+                    ${imageHtml}
+                    <div class="news-content">
+                        <div class="news-date">${item.date}</div>
+                        <h3 class="news-title">${item.title}</h3>
+                        <p class="news-excerpt">${item.content}</p>
+                    </div>
+                `;
+                newsContainer.appendChild(newsItem);
+            });
+        }
+
+        // Load and display news items.
+        // On file:// pages, fetch() can fail even when the JSON exists,
+        // so we fall back to a mirrored JS data file for local preview.
         async function loadNews() {
+            if (window.location.protocol === 'file:' && window.NEWS_DATA && Array.isArray(window.NEWS_DATA.news)) {
+                renderNews(window.NEWS_DATA);
+                return;
+            }
+
             try {
                 const response = await fetch('assets/data/news.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
                 const data = await response.json();
-                const newsContainer = document.getElementById('newsContainer');
-                
-                data.news.forEach(item => {
-                    const newsItem = document.createElement('div');
-                    newsItem.className = 'news-item';
-                    
-                    let imageHtml = '';
-                    if (item.images && item.images.length > 0) {
-                        imageHtml = `
-                        <div class="news-images">
-                            ${item.images.map(img => `
-                                <div class="news-image">
-                                    <img src="${img}" alt="${item.title}">
-                                </div>
-                            `).join('')}
-                        </div>`;
-                    }
-                    
-                    newsItem.innerHTML = `
-                        ${imageHtml}
-                        <div class="news-content">
-                            <div class="news-date">${item.date}</div>
-                            <h3 class="news-title">${item.title}</h3>
-                            <p class="news-excerpt">${item.content}</p>
-                        </div>
-                    `;
-                    newsContainer.appendChild(newsItem);
-                });
+                renderNews(data);
             } catch (error) {
-                console.error('Error loading news:', error);
+                if (window.NEWS_DATA && Array.isArray(window.NEWS_DATA.news)) {
+                    renderNews(window.NEWS_DATA);
+                } else {
+                    console.error('Error loading news:', error);
+                }
             }
         }
 

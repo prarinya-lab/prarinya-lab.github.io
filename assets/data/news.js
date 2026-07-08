@@ -1,0 +1,130 @@
+window.NEWS_DATA = {
+    "news": [
+        {
+            "date": "2026/06/01",
+            "title": "Welcome 3 new internship students joining our lab in June 2026",
+            "content": "We are excited to welcome Natnicha Sujarae and Surapot Ratananawin from SIIT, Thailand, and Wentao Dai from Chiang Mai University, Thailand, to our lab as internship students this month. We look forward to working together on their research projects.",
+            "images": []
+        },
+        {
+            "date": "2026/05/12",
+            "title": "Internship students joined the international exchange event at Yashiro High School in Chikuma",
+            "content": "Our internship students from Naresuan University and Mahidol University participated in the international exchange event at Yashiro High School in Chikuma, where they introduced their research and discussed research projects with high school students.",
+            "images": [
+                "images/news/202605/yashiro-eng1-web.jpg",
+                "images/news/202605/yashiro-eng2-web.jpg"
+            ]
+        },
+        {
+            "date": "2026/04/13",
+            "title": "Welcome 4 internship students from universities in Thailand joining our lab",
+            "content": "From the beginning of April, we welcomed four internship students from Naresuan University and Mahidol University to our lab. We look forward to working together on their research projects.",
+            "images": []
+        },
+        {
+            "date": "2026/04/07",
+            "title": "Welcome our new B4 students and M1 student joining our lab in April 2026",
+            "content": "We are excited to welcome our new B4 students and M1 student to the laboratory this semester. We look forward to working together on their research projects and supporting their growth in the lab.",
+            "images": []
+        },
+        {
+            "date": "2026/04/06",
+            "title": "Visitors from HCU",
+            "content": "Welcome to Prof. Sila Temsiririrkkul and his team from Huachew Chalermprakiet University (HCU) for their visiting to our lab",
+            "images": [
+                "images/news/202604/sila-visit1-web.jpg",
+                "images/news/202604/sila-visit2-web.jpg"
+            ]
+        },
+        {
+            "date": "2026/03/22",
+            "title": "Graduation of the first batch B4 students",
+            "content": "Congratulation of the B4 students who succcessfuly pass their final year research and receive their Bachelor degree today. ",
+            "images": []
+        },
+        {
+            "date": "2026/03/13",
+            "title": "Visitors from CMU",
+            "content": "Welcome to Prof. Pikul Vejjanugraha, the faculty member from Collage of Arts, Media, and Technology, Chiangmai University who visited our lab for the closing meeting of internship students. Good work!",
+            "images": [
+                "images/news/202603/pikul-visit1-web.jpg",
+                "images/news/202603/pikul-visit2-web.jpg"
+            ]
+        },
+        {
+            "date": "2025/11/24",
+            "title": "Welcome 2 internship students from Chiangmai University joining our lab from November 24, 2025 - March 13, 2026",
+            "content": "We are excited to welcome Panipuk and Yingyi from Collage of Arts, Media, and Technology, Chiangmai University to the laboratory. ",
+            "images": []
+        },
+        {
+            "date": "2025/11/11",
+            "title": "Invited talk at AI So-Go-Chi Research Seminar, Tohoku University",
+            "content": "Prarinya has given an invited talk on Toward Trustworthy Image Recognition: Understanding and Mitigating Adversarial Examples. Details of talk can be found at https://www.aisogochi.tohoku.ac.jp/en/archives/729",
+            "images": [
+                "images/news/202511/so-go-chi-1-web.jpg"
+            ]
+        },
+        {
+            "date": "2025/10/25",
+            "title": "Our students have given introduction of our laboratory at poster session at open campus event (Koubou-sai)",
+            "content": "",
+            "images": [
+                "images/news/202510/open-campus-1-web.jpg",
+                "images/news/202510/open-campus-2-web.jpg"
+            ]
+        },
+        {
+            "date": "2025/8/01",
+            "title": "Visitors from MUEG",
+            "content": "Faculty members and staffs from the Department of Computer Enginneering, Faculty of Engineerinng, Mahidol University have visited to our lab",
+            "images": [
+                "images/news/202508/MUEG-visit-2025-1-web.JPG",
+                "images/news/202508/MUEG-visit-2025-2-web.jpg",
+                "images/news/202508/MUEG-visit-2025-3-web.jpg"
+            ]
+        },
+        {
+            "date": "2025/7/16",
+            "title": "Our paper on \"Network Intrusion Detection System Based on Reinforcement Learning Technique Optimization\" accepted by ProvSec2025",
+            "content": "",
+            "images": []
+        },
+        {
+            "date": "2025/6/28",
+            "title": "3 of our papers accepted to SICE2025",
+            "content": "",
+            "images": []
+        },
+        {
+            "date": "2025/4/23",
+            "title": "Updated website with new design and content",
+            "content": "We have updated the website with a new design and content to provide a better user experience.",
+            "images": []
+        },
+        {
+            "date": "2025/4/21",
+            "title": "Our paper on \"Complex Emotion Estimation using Analysis-by-Synthesis of Facial Expression Images\" accepted by IEEE Access",
+            "content": "",
+            "images": []
+        },
+        {
+            "date": "2025/4/7",
+            "title": "Welcome to the new B4/M1 students joining our lab",
+            "content": "We are excited to welcome our 2nd batch of B4 students and 1st batch of M1 students to the laboratory. We look forward to working together on innovative research projects.",
+            "images": []
+        },
+        {
+            "date": "2025/4/7",
+            "title": "Welcome the first batch of B4 students joining our lab",
+            "content": "We are excited to welcome our first batch of B4 students to the laboratory. We look forward to working together on innovative research projects.",
+            "images": []
+        },
+        {
+            "date": "2025/4",
+            "title": "The laboratory's website is now transfer to github.io",
+            "content": "We have successfully migrated our laboratory website to GitHub Pages (github.io) for improved accessibility and maintenance.",
+            "images": []
+        }
+    ]
+};
