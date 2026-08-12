@@ -1,6 +1,12 @@
 {
     "news": [
         {
+            "date": "2026/08/12",
+            "title": "3 of our papers accepted to SICE2026, ACIIW, and AIxMHC",
+            "content": "Three papers from our lab have been accepted for presentation at SICE2026, ACIIW, and AIxMHC. These works cover cross-cultural interpretation of ambiguous facial expressions, emotion recognition from skeleton motion, and facial affect recognition in telemental-health videos.",
+            "images": []
+        },
+        {
             "date": "2026/06/01",
             "title": "Welcome 3 new internship students joining our lab in June 2026",
             "content": "We are excited to welcome Natnicha Sujarae and Surapot Ratananawin from SIIT, Thailand, and Wentao Dai from Chiang Mai University, Thailand, to our lab as internship students this month. We look forward to working together on their research projects.",
