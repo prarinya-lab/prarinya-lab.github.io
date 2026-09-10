@@ -1,6 +1,12 @@
 window.NEWS_DATA = {
     "news": [
         {
+            "date": "2026/09/10",
+            "title": "Welcome Nicolas Kano Chavira to our lab",
+            "content": "We are pleased to welcome Nicolas Kano Chavira (加納　チャビーラ　ニコラス) from Mexico to our lab as part of a trainee program with the International Exchange Division of the Nagano Prefectural Government. We look forward to supporting his training and international exchange experience at Shinshu University.",
+            "images": []
+        },
+        {
             "date": "2026/08/12",
             "title": "3 of our papers accepted to SICE2026, ACIIW, and AIxMHC",
             "content": "Three papers from our lab have been accepted for presentation at SICE2026, ACIIW, and AIxMHC. These works cover cross-cultural interpretation of ambiguous facial expressions, emotion recognition from skeleton motion, and facial affect recognition in telemental-health videos.",
