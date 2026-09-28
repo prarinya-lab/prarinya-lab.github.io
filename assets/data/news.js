@@ -1,6 +1,16 @@
 window.NEWS_DATA = {
     "news": [
         {
+            "date": "2026/09/27",
+            "title": "Presentations at the IEICE Shinetsu Branch Annual Conference",
+            "content": "Jianfeng Xu, Kota Shinoda, and Makkawan Burana-amnuay presented their research at the IEICE Shinetsu Branch Annual Conference held at Shinshu University on September 27, 2026.",
+            "images": [
+                "images/news/202609/ieice-shinetsu-xu-web.jpg",
+                "images/news/202609/ieice-shinetsu-shinoda-web.jpg",
+                "images/news/202609/ieice-shinetsu-makkawan-web.jpg"
+            ]
+        },
+        {
             "date": "2026/09/10",
             "title": "Welcome Nicolas Kano Chavira to our lab",
             "content": "We are pleased to welcome Nicolas Kano Chavira (加納　チャビーラ　ニコラス) from Mexico to our lab as part of a trainee program with the International Exchange Division of the Nagano Prefectural Government. We look forward to supporting his training and international exchange experience at Shinshu University.",
