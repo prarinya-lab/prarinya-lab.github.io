@@ -1,6 +1,12 @@
 {
     "news": [
         {
+            "date": "2026/09/29",
+            "title": "Two papers accepted to ACCV 2026 and KSE 2026",
+            "content": "Two papers led by Makkawan Burana-amnuay have been accepted for presentation at the 18th Asian Conference on Computer Vision (ACCV 2026) and the 18th International Conference on Knowledge and Systems Engineering (KSE 2026). The studies address automated marmoset behavior analysis and introduce MC-Marmo, a multi-view dataset for video-based behavior monitoring.",
+            "images": []
+        },
+        {
             "date": "2026/09/27",
             "title": "Presentations at the IEICE Shinetsu Branch Annual Conference",
             "content": "Jianfeng Xu, Kota Shinoda, and Makkawan Burana-amnuay presented their research at the IEICE Shinetsu Branch Annual Conference held at Shinshu University on September 27, 2026.",
