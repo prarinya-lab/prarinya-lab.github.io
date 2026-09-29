@@ -268,6 +268,22 @@
             font-weight: 400;
         }
 
+        .news-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
+            margin-top: 0.9rem;
+            color: #2c5a27;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .news-read-more:hover {
+            color: #1a3618;
+            text-decoration: underline;
+        }
+
         .news-images {
             width: 100%;
             overflow: hidden;
@@ -298,6 +314,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        img {
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            user-select: none;
         }
 
         .news-image:hover img {
@@ -661,7 +683,7 @@
 <body>
     <nav class="main-nav">
         <div class="container">
-            <img src="images/shinshu-logo.png" alt="Shinshu University Logo" class="university-logo">
+            <img src="images/shinshu-logo.png" alt="Shinshu University Logo" class="university-logo" draggable="false">
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="research.html">Research</a></li>
@@ -760,7 +782,7 @@
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightbox-close">&times;</button>
         <div class="lightbox-content">
-            <img id="lightbox-image" src="" alt="">
+            <img id="lightbox-image" src="" alt="" draggable="false">
             <div class="lightbox-nav">
                 <button id="lightbox-prev">❮</button>
                 <button id="lightbox-next">❯</button>
@@ -782,6 +804,17 @@
             }
         });
 
+        function getNewsId(item) {
+            const datePart = String(item.date || '')
+                .replace(/[^0-9]+/g, '-')
+                .replace(/^-|-$/g, '');
+            const titlePart = String(item.title || '')
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '');
+            return `news-${datePart}-${titlePart || 'item'}`;
+        }
+
         // Load and display latest news items
         async function loadLatestNews() {
             try {
@@ -797,6 +830,7 @@
                     newsItem.className = 'news-item';
                     
                     const date = item.date.replace(/\//g, '.');
+                    const fullNewsUrl = `news.html#${getNewsId(item)}`;
                     let imageHtml = '';
                     if (item.images && item.images.length > 0) {
                         // Show all images in a grid
@@ -804,7 +838,7 @@
                         <div class="news-images">
                             ${item.images.slice(0, 3).map(img => `
                                 <div class="news-image">
-                                    <img src="${img}" alt="${item.title}">
+                                    <img src="${img}" alt="${item.title}" draggable="false">
                                 </div>
                             `).join('')}
                         </div>`;
@@ -815,9 +849,10 @@
                         <div class="news-content">
                             <div class="news-date">${date}</div>
                             <h3 class="news-title">
-                                <a href="news.html">${item.title}</a>
+                                <a href="${fullNewsUrl}">${item.title}</a>
                             </h3>
                             ${item.content ? `<p class="news-excerpt">${item.content}</p>` : ''}
+                            <a class="news-read-more" href="${fullNewsUrl}" aria-label="Read the full news item: ${item.title}">Read full news <span aria-hidden="true">→</span></a>
                         </div>
                     `;
                     newsContainer.appendChild(newsItem);
@@ -910,6 +945,18 @@
         // Initialize news when the page is ready
         document.addEventListener('DOMContentLoaded', () => {
             loadLatestNews();
+
+            document.addEventListener('contextmenu', (event) => {
+                if (event.target.closest('img')) {
+                    event.preventDefault();
+                }
+            });
+
+            document.addEventListener('dragstart', (event) => {
+                if (event.target.closest('img')) {
+                    event.preventDefault();
+                }
+            });
             
             // Add click handlers to news images after they're loaded
             setTimeout(() => {

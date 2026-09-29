@@ -128,6 +128,12 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             margin-bottom: 1rem;
             border: 1px solid #eee;
+            scroll-margin-top: 96px;
+        }
+
+        .news-item:target {
+            border-color: rgba(44, 90, 39, 0.45);
+            box-shadow: 0 5px 18px rgba(44, 90, 39, 0.18);
         }
 
         .news-item:hover {
@@ -290,6 +296,25 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/data/news.js"></script>
     <script>
+        function getNewsId(item) {
+            const datePart = String(item.date || '')
+                .replace(/[^0-9]+/g, '-')
+                .replace(/^-|-$/g, '');
+            const titlePart = String(item.title || '')
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '');
+            return `news-${datePart}-${titlePart || 'item'}`;
+        }
+
+        function scrollToRequestedNews() {
+            if (!window.location.hash) return;
+            const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+            if (target) {
+                requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+            }
+        }
+
         function renderNews(data) {
             const newsContainer = document.getElementById('newsContainer');
             newsContainer.innerHTML = '';
@@ -297,6 +322,7 @@
             data.news.forEach(item => {
                 const newsItem = document.createElement('div');
                 newsItem.className = 'news-item';
+                newsItem.id = getNewsId(item);
 
                 let imageHtml = '';
                 if (item.images && item.images.length > 0) {
@@ -304,7 +330,7 @@
                     <div class="news-images">
                         ${item.images.map(img => `
                             <div class="news-image">
-                                <img src="${img}" alt="${item.title}">
+                                <img src="${img}" alt="${item.title}" draggable="false">
                             </div>
                         `).join('')}
                     </div>`;
@@ -320,6 +346,8 @@
                 `;
                 newsContainer.appendChild(newsItem);
             });
+
+            scrollToRequestedNews();
         }
 
         // Load and display news items.
