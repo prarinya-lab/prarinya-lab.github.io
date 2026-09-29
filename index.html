@@ -284,6 +284,10 @@
             text-decoration: underline;
         }
 
+        .news-read-more[hidden] {
+            display: none;
+        }
+
         .news-images {
             width: 100%;
             overflow: hidden;
@@ -852,14 +856,26 @@
                                 <a href="${fullNewsUrl}">${item.title}</a>
                             </h3>
                             ${item.content ? `<p class="news-excerpt">${item.content}</p>` : ''}
-                            <a class="news-read-more" href="${fullNewsUrl}" aria-label="Read the full news item: ${item.title}">Read full news <span aria-hidden="true">→</span></a>
+                            <a class="news-read-more" href="${fullNewsUrl}" aria-label="Read the full news item: ${item.title}" hidden>Read full news <span aria-hidden="true">→</span></a>
                         </div>
                     `;
                     newsContainer.appendChild(newsItem);
                 });
+
+                requestAnimationFrame(updateReadMoreLinks);
             } catch (error) {
                 console.error('Error loading news:', error);
             }
+        }
+
+        function updateReadMoreLinks() {
+            document.querySelectorAll('#latestNewsContainer .news-item').forEach(newsItem => {
+                const excerpt = newsItem.querySelector('.news-excerpt');
+                const readMoreLink = newsItem.querySelector('.news-read-more');
+                if (!readMoreLink) return;
+
+                readMoreLink.hidden = !excerpt || excerpt.scrollHeight <= excerpt.clientHeight + 1;
+            });
         }
 
         // Initialize lightbox
@@ -945,6 +961,7 @@
         // Initialize news when the page is ready
         document.addEventListener('DOMContentLoaded', () => {
             loadLatestNews();
+            window.addEventListener('resize', updateReadMoreLinks);
 
             document.addEventListener('contextmenu', (event) => {
                 if (event.target.closest('img')) {
